@@ -13,7 +13,7 @@
 	"ignorePaths": [
 		".vscode/**",
 		"target/**",
-		"testdata/*.in"
+		"testdata/**/*.in"
 	],
 	"ignoreRegExpList": []
 }

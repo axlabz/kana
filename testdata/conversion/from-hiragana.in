@@ -1,0 +1,52 @@
+# Conversions from hiragana
+# =========================
+#
+# Fields: hiragana, katakana, romaji
+#
+
+てぃ	ティ	ti
+でぃ	ディ	di
+どぅ	ドゥ	du
+
+ゟ	ヨリ	yori
+
+ゐ	ヰ	wi
+ゑ	ヱ	we
+を	ヲ	wo
+ゔ	ヴ	vu
+
+はゝ	ハヽ	haha
+ばゝ	バヽ	baba
+ぱゝ	パヽ	papa
+
+はゞ	ハヾ	haba
+ばゞ	バヾ	baba
+ぱゞ	パヾ	papa
+
+はゝゝ	ハヽヽ	hahaha
+はゞゝゞ	ハヾヽヾ	habahaba
+
+ゟゝ	ヨリヽ	yoriri
+ゟゞ	ヨリヾ	yoriri
+
+#----[ Small kana ]------------------------------------------------------------#
+
+ぁ	ァ	a
+ぃ	ィ	i
+ぅ	ゥ	u
+ぇ	ェ	e
+ぉ	ォ	o
+っ	ッ	tsu
+ゃ	ャ	ya
+ゅ	ュ	yu
+ょ	ョ	yo
+
+ゎ	ヮ	wa
+ゕ	ヵ	ka
+
+# transliterate to romaji as "ka" (https://en.wikipedia.org/wiki/Small_ke)
+ゖ	ヶ	ka
+
+#----[ General input ]---------------------------------------------------------#
+
+しゃぎゃつっじゃあんなん　んあんんざ　xzm	shagyatsujjaan'nan n'an'nza xzm

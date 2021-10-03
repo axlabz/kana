@@ -1,0 +1,50 @@
+# IME-only inputs
+# ===============
+#
+# Fields: ime, hiragana, katakana
+#
+
+#----[ Small kana ]------------------------------------------------------------#
+
+xtsu	っ	ッ
+xtu	っ	ッ
+xa	ぁ	ァ
+xi	ぃ	ィ
+xu	ぅ	ゥ
+xe	ぇ	ェ
+xo	ぉ	ォ
+xya	ゃ	ャ
+xyu	ゅ	ュ
+xyo	ょ	ョ
+xka	ゕ	ヵ
+xke	ゖ	ヶ
+xwa	ゎ	ヮ
+
+ltsu	っ	ッ
+ltu	っ	ッ
+la	ぁ	ァ
+li	ぃ	ィ
+lu	ぅ	ゥ
+le	ぇ	ェ
+lo	ぉ	ォ
+lya	ゃ	ャ
+lyu	ゅ	ュ
+lyo	ょ	ョ
+lka	ゕ	ヵ
+lke	ゖ	ヶ
+lwa	ゎ	ヮ
+
+#----[ Rare kana ]-------------------------------------------------------------#
+
+xwi	ゐ	ヰ
+xwe	ゑ	ヱ
+
+xva	わ゙	ヷ
+xvi	ゐ゙	ヸ
+xve	ゑ゙	ヹ
+xvo	を゙	ヺ
+
+# those are shortcuts
+xdu	どぅ	ドゥ
+xti	てぃ	ティ
+xdi	でぃ	ディ

@@ -1,0 +1,80 @@
+# Romaji long vowels to katakana
+# ==============================
+#
+# These are special non-standard conversions.
+#
+# Fields: romaji, katakana
+#
+
+a	ア
+aa	アー
+aaa	アアー
+aaaa	アアアー
+
+AAAA	アアアー
+AaAa	アアアー
+aAaA	アアアー
+
+i	イ
+ii	イー
+iii	イイー
+iiii	イイイー
+
+u	ウ
+uu	ウー
+uuu	ウウー
+uuuu	ウウウー
+
+e	エ
+ee	エー
+eee	エエー
+eeee	エエエー
+
+o	オ
+oo	オー
+ooo	オオー
+oooo	オオオー
+
+#----[ consonants ]------------------------------------------------------------#
+
+ka	カ
+kaa	カー
+kaaa	カアー
+kaaaa	カアアー
+
+ki	キ
+kii	キー
+kiii	キイー
+kiiii	キイイー
+
+ku	ク
+kuu	クー
+kuuu	クウー
+kuuuu	クウウー
+
+ke	ケ
+kee	ケー
+keee	ケエー
+keeee	ケエエー
+
+ko	コ
+koo	コー
+kooo	コオー
+koooo	コオオー
+
+#----[ digraphs ]--------------------------------------------------------------#
+
+kya	キャ
+kyaa	キャー
+kyaaa	キャアー
+kyaaaa	キャアアー
+
+kyu	キュ
+kyuu	キュー
+kyuuu	キュウー
+kyuuuu	キュウウー
+
+kyo	キョ
+kyoo	キョー
+kyooo	キョオー
+kyoooo	キョオオー

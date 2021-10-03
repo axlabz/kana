@@ -1,0 +1,105 @@
+# Conversion from halfwidth katakana
+# ==================================
+#
+# Fields: halfwidth, hiragana, romaji
+#
+
+#----[ Direct mappings ]-------------------------------------------------------#
+
+ｦ	を	wo
+ｧ	ぁ	a
+ｨ	ぃ	i
+ｩ	ぅ	u
+ｪ	ぇ	e
+ｫ	ぉ	o
+ｬ	ゃ	ya
+ｭ	ゅ	yu
+ｮ	ょ	yo
+ｯ	っ	~
+ｰ	ー	-
+ｱ	あ	a
+ｲ	い	i
+ｳ	う	u
+ｴ	え	e
+ｵ	お	o
+ｶ	か	ka
+ｷ	き	ki
+ｸ	く	ku
+ｹ	け	ke
+ｺ	こ	ko
+ｻ	さ	sa
+ｼ	し	shi
+ｽ	す	su
+ｾ	せ	se
+ｿ	そ	so
+ﾀ	た	ta
+ﾁ	ち	chi
+ﾂ	つ	tsu
+ﾃ	て	te
+ﾄ	と	to
+ﾅ	な	na
+ﾆ	に	ni
+ﾇ	ぬ	nu
+ﾈ	ね	ne
+ﾉ	の	no
+ﾊ	は	ha
+ﾋ	ひ	hi
+ﾌ	ふ	fu
+ﾍ	へ	he
+ﾎ	ほ	ho
+ﾏ	ま	ma
+ﾐ	み	mi
+ﾑ	む	mu
+ﾒ	め	me
+ﾓ	も	mo
+ﾔ	や	ya
+ﾕ	ゆ	yu
+ﾖ	よ	yo
+ﾗ	ら	ra
+ﾘ	り	ri
+ﾙ	る	ru
+ﾚ	れ	re
+ﾛ	ろ	ro
+ﾜ	わ	wa
+ﾝ	ん	n
+
+#----[ voicing marks ]---------------------------------------------------------#
+
+ｳ゙	ゔ	vu
+ｶ゙	が	ga
+ｷ゙	ぎ	gi
+ｸ゙	ぐ	gu
+ｹ゙	げ	ge
+ｺ゙	ご	go
+ｻ゙	ざ	za
+ｼ゙	じ	ji
+ｽ゙	ず	zu
+ｾ゙	ぜ	ze
+ｿ゙	ぞ	zo
+ﾀ゙	だ	da
+ﾁ゙	ぢ	di
+ﾂ゙	づ	du
+ﾃ゙	で	de
+ﾄ゙	ど	do
+ﾊ゙	ば	ba
+ﾋ゙	び	bi
+ﾌ゙	ぶ	bu
+ﾍ゙	べ	be
+ﾎ゙	ぼ	bo
+ﾎ゚	ぽ	po
+ﾊ゚	ぱ	pa
+ﾋ゚	ぴ	pi
+ﾌ゚	ぷ	pu
+ﾍ゚	ぺ	pe
+ﾜ゙	わ゙	va
+
+#----[ combining ]-------------------------------------------------------------#
+
+# Those are just a random sample to make sure this is working. We don't need to
+# test everything because the halfwidth katakana is just converted to katakana
+# before converting.
+
+ﾌｧ	ふぁ	fa
+ﾋｬ	ひゃ	hya
+ﾋ゙ｬ	びゃ	bya
+ﾋ゚ｬ	ぴゃ	pya

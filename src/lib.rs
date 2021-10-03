@@ -8,6 +8,8 @@ pub fn answer() -> u64 {
 	42
 }
 
+// TODO: test combining marks and spaces
+
 #[cfg(test)]
 mod tests {
 	use crate::answer;

@@ -1,0 +1,136 @@
+# Conversions from romaji
+# =======================
+#
+# Fields: romaji, hiragana, katakana
+#
+
+#----[ one way sillables ]-----------------------------------------------------#
+
+# those are non-standard romaji inputs that don't map back from kana
+
+qu	く	ク
+tu	つ	ツ
+du	づ	ヅ
+
+ca	か	カ
+ci	し	シ
+cu	く	ク
+ce	せ	セ
+co	こ	コ
+
+si	し	シ
+zi	じ	ジ
+
+ti	ち	チ
+dji	ぢ	ヂ
+dzi	ぢ	ヂ
+
+tu	つ	ツ
+dzu	づ	ヅ
+
+hu	ふ	フ
+
+wu	う	ウ
+
+# non-standard digraphs
+
+jya	じゃ	ジャ
+jyu	じゅ	ジュ
+jye	じぇ	ジェ
+jyo	じょ	ジョ
+
+zya	じゃ	ジャ
+zyu	じゅ	ジュ
+zye	じぇ	ジェ
+zyo	じょ	ジョ
+
+tya	ちゃ	チャ
+tyu	ちゅ	チュ
+tye	ちぇ	チェ
+tyo	ちょ	チョ
+
+dja	ぢゃ	ヂャ
+dju	ぢゅ	ヂュ
+dje	ぢぇ	ヂェ
+djo	ぢょ	ヂョ
+
+dza	ぢゃ	ヂャ
+dze	ぢぇ	ヂェ
+dzo	ぢょ	ヂョ
+
+qwa	くぁ	クァ
+qwi	くぃ	クィ
+qwe	くぇ	クェ
+qwo	くぉ	クォ
+
+
+#----[ n conversions ]---------------------------------------------------------#
+
+# multiple `n` are converted to `ん` (instead of `っ`)
+
+n	ん	ン
+n'	ん	ン
+nna	んな	ンナ
+nnna	んんな	ンンナ
+
+#----[ quotes ]----------------------------------------------------------------#
+
+# quotes can be used to disambiguate
+
+'	’	’
+n'na	んな	ンナ
+n'n'na	んんな	ンンナ
+n'n'n'a	んんんあ	ンンンア
+a'a	ああ	アア
+i'i	いい	イイ
+u'u	うう	ウウ
+e'e	ええ	エエ
+o'o	おお	オオ
+ka'a	かあ	カア
+ki'i	きい	キイ
+ku'u	くう	クウ
+ke'e	けえ	ケエ
+ko'o	こお	コオ
+
+#----[ extended vowels ]-------------------------------------------------------#
+
+a-e-i-o-u-	あーえーいーおーうーあーえーいーおーう－	アーエーイーオーウーアーエーイーオーウー
+âêîôûÂÊÎÔÛ	あーえーいーおーうーあーえーいーおーう－	アーエーイーオーウーアーエーイーオーウー
+āēīōūĀĒĪŌŪ	あーえーいーおーうーあーえーいーおーう－	アーエーイーオーウーアーエーイーオーウー
+
+ka-ke-ki-ko-ku-	かーけーきーこーく－	カーケーキーコークー
+kâkêkîkôkû	かーけーきーこーく－	カーケーキーコークー
+kākēkīkōkū	かーけーきーこーく－	カーケーキーコークー
+
+kya-kyu-kyo-	きゃ－きゅ－きょ－	キャーキューキョー
+kyâkyûkyô	きゃ－きゅ－きょ－	キャーキューキョー
+kyākyūkyō	きゃ－きゅ－きょ－	キャーキューキョー
+
+#----[ ambiguous ]-------------------------------------------------------------#
+
+# nn sequences
+n'na	んな	ンナ
+N'NA	んな	ンナ
+
+# ny sequences
+n'ya	んや	ンヤ
+N'YA	んや	ンヤ
+
+n'yu	んゆ	ンユ
+N'YU	んゆ	ンユ
+
+n'yo	んよ	ンヨ
+N'YO	んよ	ンヨ
+
+# n + vowel sequences
+n'a	んあ	ンア
+n'e	んえ	ンエ
+n'i	んい	ンイ
+n'o	んお	ンオ
+n'u	んう	ンウ
+
+N'A	んあ	ンア
+N'E	んえ	ンエ
+N'I	んい	ンイ
+N'O	んお	ンオ
+N'U	んう	ンウ

@@ -1,0 +1,121 @@
+# Additional conversions
+# ======================
+#
+# This contains additional conversions to `table.in` to test advanced cases and
+# more general inputs. Only reversible conversions that can be mapped either
+# way are in this file (directional cases are on their specific files).
+#
+# Fields: romaji, hiragana, katakana
+#
+
+#----[ small-tsu handling ]----------------------------------------------------#
+
+っは	ッハ	hha
+っっは	ッッハ	hhha
+っっっは	ッッッハ	hhhha
+っぱ	ッパ	ppa
+っっぱ	ッッパ	pppa
+っっっぱ	ッッッパ	ppppa
+っちゃ	ッチャ	ttya
+っっちゃ	ッッチャ	tttya
+っっっちゃ	ッッッチャ	ttttya
+
+#----[ ん handling ]-----------------------------------------------------------#
+
+ん	ン	n
+んな	ンナ	nna
+んんな	ンンナ	nnna
+
+#----[ ambiguous patterns ]----------------------------------------------------#
+
+んんんあ	ンンンア	nnn'a
+んんんい	ンンンイ	nnn'i
+んんんう	ンンンウ	nnn'u
+んんんえ	ンンンエ	nnn'e
+んんんお	ンンンオ	nnn'o
+
+#----[ special cases ]---------------------------------------------------------#
+
+くぁっくぁ	クァックァ	quaqqua
+くぃっくぃ	クィックィ	quiqqui
+くぇっくぇ	クェックェ	queqque
+くぉっくぉ	クォックォ	quoqquo
+
+#----[ double consonants ]-----------------------------------------------------#
+
+ばっば	バッバ	babba
+かっか	カッカ	kakka
+ちゃっちゃ	チャッチャ	chaccha
+だっだ	ダッダ	dadda
+ふっふ	フッフ	fuffu
+がっが	ガッガ	gagga
+はっは	ハッハ	hahha
+じゃっじゃ	ジャッジャ	jajja
+かっか	カッカ	kakka
+まっま	マッマ	mamma
+なんな	ナンナ	nan'na
+ぱっぱ	パッパ	pappa
+くぁっくぁ	クァックァ	quaqqua
+らっら	ラッラ	rarra
+さっさ	サッサ	sassa
+しゃっしゃ	シャッシャ	shassha
+たった	タッタ	tatta
+つっつ	ツッツ	tsuttsu
+ゔぁっゔぁ	ヴァッヴァ	vavva
+わっわ	ワッワ	wawwa
+やっや	ヤッヤ	yayya
+ざっざ	ザッザ	zazza
+くぁっくぁ	クァックァ	quaqqua
+
+#----[ random tests ]----------------------------------------------------------#
+
+あーいーうーえーおー	アーイーウーエーオー	a-i-u-e-o-
+
+そうしんうぃんどう	ソウシンウィンドウ	soushinWINDOU
+ああんいぇああ	アアンイェアア	aan'yeaa
+ゔぁゔぃゔゔぇゔぉ	ヴァヴィヴヴェヴォ	vavivuvevo
+
+っっべあ	ッッベア	bbbea
+
+あっっっっっっっっっっか	アッッッッッッッッッッカ	akkkkkkkkkkka
+あっっっっっっっっっか	アッッッッッッッッッカ	akkkkkkkkkka
+あっっっっっっっっか	アッッッッッッッッカ	akkkkkkkkka
+あっっっっっっっか	アッッッッッッッカ	akkkkkkkka
+あっっっっっっか	アッッッッッッカ	akkkkkkka
+あっっっっっか	アッッッッッカ	akkkkkka
+あっっっっか	アッッッッカ	akkkkka
+あっっっか	アッッッカ	akkkka
+あっっか	アッッカ	akkka
+あっか	アッカ	akka
+
+#----[ from wana-kana ]--------------------------------------------------------#
+
+おなじ	オナジ	onaji
+ぶっつうじ	ブッツージ	buttsuuji
+わにかに	ワニカニ	wanikani
+わにかに　あいうえお　鰐蟹　１２３４５　＠＃＄％	ワニカニ　アイウエオ　鰐蟹　１２３４５　＠＃＄％	wanikani aiueo 鰐蟹 12345 @#$%
+座禅「ざぜん」すたいる	座禅「ザゼン」スタイル	座禅[zazen]sutairu
+ばつげーむ	バツゲーム	batsuge-mu
+
+# Quick Brown Fox Hiragana to Romaji
+いろはにほへと	イロハニホヘト	irohanihoheto
+ちりぬるを	チリヌルヲ	chirinuruwo
+わかよたれそ	ワカヨタレソ	wakayotareso
+つねならむ	ツネナラム	tsunenaramu
+ううぃのおくやま	ウウィノークヤマ	uwinookuyama
+けふこえて	ケフコエテ	kefukoete
+あさきゆめみし	アサキユメミシ	asakiyumemishi
+うぇひもせすん	ウェヒモセスン	wehimosesun
+
+罰げーむ・ばつげーむ	罰ゲーム・バツゲーム	罰GE-MU/batsuge-mu
+
+# Double and single n"
+きんにくまん	キンニクマン	kin'nikuman
+# N extravaganza
+んんにんにんにゃんやん	ンンニンニンニャンヤン	n'n'nin'nin'nyan'yan
+# Double consonants
+かっぱ　たった　しゅっしゅ　ちゃっちゃ　やっつ	カッパ　タッタ　シュッシュ　チャッチャ　ヤッツ	kappa tatta shusshu chaccha yattsu
+
+# Apostrophes in vague consonant vowel combos:
+おんよみ	オンヨミ	on'yomi
+んよ　んあ　んゆ	ンヨ　ンア　ンユ	n'yo n'a n'yu
