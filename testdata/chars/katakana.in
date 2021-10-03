@@ -1,0 +1,98 @@
+# All katakana characters
+
+U+30A0	゠	Katakana-Hiragana Double Hyphen
+U+30A1	ァ	Katakana Letter Small A
+U+30A2	ア	Katakana Letter A
+U+30A3	ィ	Katakana Letter Small I
+U+30A4	イ	Katakana Letter I
+U+30A5	ゥ	Katakana Letter Small U
+U+30A6	ウ	Katakana Letter U
+U+30A7	ェ	Katakana Letter Small E
+U+30A8	エ	Katakana Letter E
+U+30A9	ォ	Katakana Letter Small O
+U+30AA	オ	Katakana Letter O
+U+30AB	カ	Katakana Letter Ka
+U+30AC	ガ	Katakana Letter Ga
+U+30AD	キ	Katakana Letter Ki
+U+30AE	ギ	Katakana Letter Gi
+U+30AF	ク	Katakana Letter Ku
+U+30B0	グ	Katakana Letter Gu
+U+30B1	ケ	Katakana Letter Ke
+U+30B2	ゲ	Katakana Letter Ge
+U+30B3	コ	Katakana Letter Ko
+U+30B4	ゴ	Katakana Letter Go
+U+30B5	サ	Katakana Letter Sa
+U+30B6	ザ	Katakana Letter Za
+U+30B7	シ	Katakana Letter Si
+U+30B8	ジ	Katakana Letter Zi
+U+30B9	ス	Katakana Letter Su
+U+30BA	ズ	Katakana Letter Zu
+U+30BB	セ	Katakana Letter Se
+U+30BC	ゼ	Katakana Letter Ze
+U+30BD	ソ	Katakana Letter So
+U+30BE	ゾ	Katakana Letter Zo
+U+30BF	タ	Katakana Letter Ta
+U+30C0	ダ	Katakana Letter Da
+U+30C1	チ	Katakana Letter Ti
+U+30C2	ヂ	Katakana Letter Di
+U+30C3	ッ	Katakana Letter Small Tu
+U+30C4	ツ	Katakana Letter Tu
+U+30C5	ヅ	Katakana Letter Du
+U+30C6	テ	Katakana Letter Te
+U+30C7	デ	Katakana Letter De
+U+30C8	ト	Katakana Letter To
+U+30C9	ド	Katakana Letter Do
+U+30CA	ナ	Katakana Letter Na
+U+30CB	ニ	Katakana Letter Ni
+U+30CC	ヌ	Katakana Letter Nu
+U+30CD	ネ	Katakana Letter Ne
+U+30CE	ノ	Katakana Letter No
+U+30CF	ハ	Katakana Letter Ha
+U+30D0	バ	Katakana Letter Ba
+U+30D1	パ	Katakana Letter Pa
+U+30D2	ヒ	Katakana Letter Hi
+U+30D3	ビ	Katakana Letter Bi
+U+30D4	ピ	Katakana Letter Pi
+U+30D5	フ	Katakana Letter Hu
+U+30D6	ブ	Katakana Letter Bu
+U+30D7	プ	Katakana Letter Pu
+U+30D8	ヘ	Katakana Letter He
+U+30D9	ベ	Katakana Letter Be
+U+30DA	ペ	Katakana Letter Pe
+U+30DB	ホ	Katakana Letter Ho
+U+30DC	ボ	Katakana Letter Bo
+U+30DD	ポ	Katakana Letter Po
+U+30DE	マ	Katakana Letter Ma
+U+30DF	ミ	Katakana Letter Mi
+U+30E0	ム	Katakana Letter Mu
+U+30E1	メ	Katakana Letter Me
+U+30E2	モ	Katakana Letter Mo
+U+30E3	ャ	Katakana Letter Small Ya
+U+30E4	ヤ	Katakana Letter Ya
+U+30E5	ュ	Katakana Letter Small Yu
+U+30E6	ユ	Katakana Letter Yu
+U+30E7	ョ	Katakana Letter Small Yo
+U+30E8	ヨ	Katakana Letter Yo
+U+30E9	ラ	Katakana Letter Ra
+U+30EA	リ	Katakana Letter Ri
+U+30EB	ル	Katakana Letter Ru
+U+30EC	レ	Katakana Letter Re
+U+30ED	ロ	Katakana Letter Ro
+U+30EE	ヮ	Katakana Letter Small Wa
+U+30EF	ワ	Katakana Letter Wa
+U+30F0	ヰ	Katakana Letter Wi
+U+30F1	ヱ	Katakana Letter We
+U+30F2	ヲ	Katakana Letter Wo
+U+30F3	ン	Katakana Letter N
+U+30F4	ヴ	Katakana Letter Vu
+U+30F5	ヵ	Katakana Letter Small Ka
+U+30F6	ヶ	Katakana Letter Small Ke
+U+30F7	ヷ	Katakana Letter Va
+U+30F8	ヸ	Katakana Letter Vi
+U+30F9	ヹ	Katakana Letter Ve
+U+30FA	ヺ	Katakana Letter Vo
+U+30FB	・	Katakana Middle Dot
+U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+U+30FF	ヿ	Katakana Digraph Koto

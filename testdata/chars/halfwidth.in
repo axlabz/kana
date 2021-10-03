@@ -1,0 +1,125 @@
+# Halfwidth characters
+
+U+FF61	｡	Halfwidth Ideographic Full Stop
+U+FF62	｢	Halfwidth Left Corner Bracket
+U+FF63	｣	Halfwidth Right Corner Bracket
+U+FF64	､	Halfwidth Ideographic Comma
+U+FF65	･	Halfwidth Katakana Middle Dot
+U+FF66	ｦ	Halfwidth Katakana Letter Wo
+U+FF67	ｧ	Halfwidth Katakana Letter Small A
+U+FF68	ｨ	Halfwidth Katakana Letter Small I
+U+FF69	ｩ	Halfwidth Katakana Letter Small U
+U+FF6A	ｪ	Halfwidth Katakana Letter Small E
+U+FF6B	ｫ	Halfwidth Katakana Letter Small O
+U+FF6C	ｬ	Halfwidth Katakana Letter Small Ya
+U+FF6D	ｭ	Halfwidth Katakana Letter Small Yu
+U+FF6E	ｮ	Halfwidth Katakana Letter Small Yo
+U+FF6F	ｯ	Halfwidth Katakana Letter Small Tu
+U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+U+FF71	ｱ	Halfwidth Katakana Letter A
+U+FF72	ｲ	Halfwidth Katakana Letter I
+U+FF73	ｳ	Halfwidth Katakana Letter U
+U+FF74	ｴ	Halfwidth Katakana Letter E
+U+FF75	ｵ	Halfwidth Katakana Letter O
+U+FF76	ｶ	Halfwidth Katakana Letter Ka
+U+FF77	ｷ	Halfwidth Katakana Letter Ki
+U+FF78	ｸ	Halfwidth Katakana Letter Ku
+U+FF79	ｹ	Halfwidth Katakana Letter Ke
+U+FF7A	ｺ	Halfwidth Katakana Letter Ko
+U+FF7B	ｻ	Halfwidth Katakana Letter Sa
+U+FF7C	ｼ	Halfwidth Katakana Letter Si
+U+FF7D	ｽ	Halfwidth Katakana Letter Su
+U+FF7E	ｾ	Halfwidth Katakana Letter Se
+U+FF7F	ｿ	Halfwidth Katakana Letter So
+U+FF80	ﾀ	Halfwidth Katakana Letter Ta
+U+FF81	ﾁ	Halfwidth Katakana Letter Ti
+U+FF82	ﾂ	Halfwidth Katakana Letter Tu
+U+FF83	ﾃ	Halfwidth Katakana Letter Te
+U+FF84	ﾄ	Halfwidth Katakana Letter To
+U+FF85	ﾅ	Halfwidth Katakana Letter Na
+U+FF86	ﾆ	Halfwidth Katakana Letter Ni
+U+FF87	ﾇ	Halfwidth Katakana Letter Nu
+U+FF88	ﾈ	Halfwidth Katakana Letter Ne
+U+FF89	ﾉ	Halfwidth Katakana Letter No
+U+FF8A	ﾊ	Halfwidth Katakana Letter Ha
+U+FF8B	ﾋ	Halfwidth Katakana Letter Hi
+U+FF8C	ﾌ	Halfwidth Katakana Letter Hu
+U+FF8D	ﾍ	Halfwidth Katakana Letter He
+U+FF8E	ﾎ	Halfwidth Katakana Letter Ho
+U+FF8F	ﾏ	Halfwidth Katakana Letter Ma
+U+FF90	ﾐ	Halfwidth Katakana Letter Mi
+U+FF91	ﾑ	Halfwidth Katakana Letter Mu
+U+FF92	ﾒ	Halfwidth Katakana Letter Me
+U+FF93	ﾓ	Halfwidth Katakana Letter Mo
+U+FF94	ﾔ	Halfwidth Katakana Letter Ya
+U+FF95	ﾕ	Halfwidth Katakana Letter Yu
+U+FF96	ﾖ	Halfwidth Katakana Letter Yo
+U+FF97	ﾗ	Halfwidth Katakana Letter Ra
+U+FF98	ﾘ	Halfwidth Katakana Letter Ri
+U+FF99	ﾙ	Halfwidth Katakana Letter Ru
+U+FF9A	ﾚ	Halfwidth Katakana Letter Re
+U+FF9B	ﾛ	Halfwidth Katakana Letter Ro
+U+FF9C	ﾜ	Halfwidth Katakana Letter Wa
+U+FF9D	ﾝ	Halfwidth Katakana Letter N
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+U+FFA0	ﾠ	Halfwidth Hangul Filler
+U+FFA1	ﾡ	Halfwidth Hangul Letter Kiyeok
+U+FFA2	ﾢ	Halfwidth Hangul Letter Ssangkiyeok
+U+FFA3	ﾣ	Halfwidth Hangul Letter Kiyeok-Sios
+U+FFA4	ﾤ	Halfwidth Hangul Letter Nieun
+U+FFA5	ﾥ	Halfwidth Hangul Letter Nieun-Cieuc
+U+FFA6	ﾦ	Halfwidth Hangul Letter Nieun-Hieuh
+U+FFA7	ﾧ	Halfwidth Hangul Letter Tikeut
+U+FFA8	ﾨ	Halfwidth Hangul Letter Ssangtikeut
+U+FFA9	ﾩ	Halfwidth Hangul Letter Rieul
+U+FFAA	ﾪ	Halfwidth Hangul Letter Rieul-Kiyeok
+U+FFAB	ﾫ	Halfwidth Hangul Letter Rieul-Mieum
+U+FFAC	ﾬ	Halfwidth Hangul Letter Rieul-Pieup
+U+FFAD	ﾭ	Halfwidth Hangul Letter Rieul-Sios
+U+FFAE	ﾮ	Halfwidth Hangul Letter Rieul-Thieuth
+U+FFAF	ﾯ	Halfwidth Hangul Letter Rieul-Phieuph
+U+FFB0	ﾰ	Halfwidth Hangul Letter Rieul-Hieuh
+U+FFB1	ﾱ	Halfwidth Hangul Letter Mieum
+U+FFB2	ﾲ	Halfwidth Hangul Letter Pieup
+U+FFB3	ﾳ	Halfwidth Hangul Letter Ssangpieup
+U+FFB4	ﾴ	Halfwidth Hangul Letter Pieup-Sios
+U+FFB5	ﾵ	Halfwidth Hangul Letter Sios
+U+FFB6	ﾶ	Halfwidth Hangul Letter Ssangsios
+U+FFB7	ﾷ	Halfwidth Hangul Letter Ieung
+U+FFB8	ﾸ	Halfwidth Hangul Letter Cieuc
+U+FFB9	ﾹ	Halfwidth Hangul Letter Ssangcieuc
+U+FFBA	ﾺ	Halfwidth Hangul Letter Chieuch
+U+FFBB	ﾻ	Halfwidth Hangul Letter Khieukh
+U+FFBC	ﾼ	Halfwidth Hangul Letter Thieuth
+U+FFBD	ﾽ	Halfwidth Hangul Letter Phieuph
+U+FFBE	ﾾ	Halfwidth Hangul Letter Hieuh
+U+FFC2	ￂ	Halfwidth Hangul Letter A
+U+FFC3	ￃ	Halfwidth Hangul Letter Ae
+U+FFC4	ￄ	Halfwidth Hangul Letter Ya
+U+FFC5	ￅ	Halfwidth Hangul Letter Yae
+U+FFC6	ￆ	Halfwidth Hangul Letter Eo
+U+FFC7	ￇ	Halfwidth Hangul Letter E
+U+FFCA	ￊ	Halfwidth Hangul Letter Yeo
+U+FFCB	ￋ	Halfwidth Hangul Letter Ye
+U+FFCC	ￌ	Halfwidth Hangul Letter O
+U+FFCD	ￍ	Halfwidth Hangul Letter Wa
+U+FFCE	ￎ	Halfwidth Hangul Letter Wae
+U+FFCF	ￏ	Halfwidth Hangul Letter Oe
+U+FFD2	ￒ	Halfwidth Hangul Letter Yo
+U+FFD3	ￓ	Halfwidth Hangul Letter U
+U+FFD4	ￔ	Halfwidth Hangul Letter Weo
+U+FFD5	ￕ	Halfwidth Hangul Letter We
+U+FFD6	ￖ	Halfwidth Hangul Letter Wi
+U+FFD7	ￗ	Halfwidth Hangul Letter Yu
+U+FFDA	ￚ	Halfwidth Hangul Letter Eu
+U+FFDB	ￛ	Halfwidth Hangul Letter Yi
+U+FFDC	ￜ	Halfwidth Hangul Letter I
+
+U+FFE8	￨	Halfwidth Forms Light Vertical
+U+FFE9	￩	Halfwidth Leftwards Arrow
+U+FFEA	￪	Halfwidth Upwards Arrow
+U+FFEB	￫	Halfwidth Rightwards Arrow
+U+FFEC	￬	Halfwidth Downwards Arrow
+U+FFED	￭	Halfwidth Black Square
+U+FFEE	￮	Halfwidth White Circle

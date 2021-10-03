@@ -1,0 +1,106 @@
+# Fullwidth characters
+
+U+FF01	！	Fullwidth Exclamation Mark
+U+FF02	＂	Fullwidth Quotation Mark
+U+FF03	＃	Fullwidth Number Sign
+U+FF04	＄	Fullwidth Dollar Sign
+U+FF05	％	Fullwidth Percent Sign
+U+FF06	＆	Fullwidth Ampersand
+U+FF07	＇	Fullwidth Apostrophe
+U+FF08	（	Fullwidth Left Parenthesis
+U+FF09	）	Fullwidth Right Parenthesis
+U+FF0A	＊	Fullwidth Asterisk
+U+FF0B	＋	Fullwidth Plus Sign
+U+FF0C	，	Fullwidth Comma
+U+FF0D	－	Fullwidth Hyphen-Minus
+U+FF0E	．	Fullwidth Full Stop
+U+FF0F	／	Fullwidth Solidus
+U+FF10	０	Fullwidth Digit Zero
+U+FF11	１	Fullwidth Digit One
+U+FF12	２	Fullwidth Digit Two
+U+FF13	３	Fullwidth Digit Three
+U+FF14	４	Fullwidth Digit Four
+U+FF15	５	Fullwidth Digit Five
+U+FF16	６	Fullwidth Digit Six
+U+FF17	７	Fullwidth Digit Seven
+U+FF18	８	Fullwidth Digit Eight
+U+FF19	９	Fullwidth Digit Nine
+U+FF1A	：	Fullwidth Colon
+U+FF1B	；	Fullwidth Semicolon
+U+FF1C	＜	Fullwidth Less-Than Sign
+U+FF1D	＝	Fullwidth Equals Sign
+U+FF1E	＞	Fullwidth Greater-Than Sign
+U+FF1F	？	Fullwidth Question Mark
+U+FF20	＠	Fullwidth Commercial At
+U+FF21	Ａ	Fullwidth Latin Capital Letter A
+U+FF22	Ｂ	Fullwidth Latin Capital Letter B
+U+FF23	Ｃ	Fullwidth Latin Capital Letter C
+U+FF24	Ｄ	Fullwidth Latin Capital Letter D
+U+FF25	Ｅ	Fullwidth Latin Capital Letter E
+U+FF26	Ｆ	Fullwidth Latin Capital Letter F
+U+FF27	Ｇ	Fullwidth Latin Capital Letter G
+U+FF28	Ｈ	Fullwidth Latin Capital Letter H
+U+FF29	Ｉ	Fullwidth Latin Capital Letter I
+U+FF2A	Ｊ	Fullwidth Latin Capital Letter J
+U+FF2B	Ｋ	Fullwidth Latin Capital Letter K
+U+FF2C	Ｌ	Fullwidth Latin Capital Letter L
+U+FF2D	Ｍ	Fullwidth Latin Capital Letter M
+U+FF2E	Ｎ	Fullwidth Latin Capital Letter N
+U+FF2F	Ｏ	Fullwidth Latin Capital Letter O
+U+FF30	Ｐ	Fullwidth Latin Capital Letter P
+U+FF31	Ｑ	Fullwidth Latin Capital Letter Q
+U+FF32	Ｒ	Fullwidth Latin Capital Letter R
+U+FF33	Ｓ	Fullwidth Latin Capital Letter S
+U+FF34	Ｔ	Fullwidth Latin Capital Letter T
+U+FF35	Ｕ	Fullwidth Latin Capital Letter U
+U+FF36	Ｖ	Fullwidth Latin Capital Letter V
+U+FF37	Ｗ	Fullwidth Latin Capital Letter W
+U+FF38	Ｘ	Fullwidth Latin Capital Letter X
+U+FF39	Ｙ	Fullwidth Latin Capital Letter Y
+U+FF3A	Ｚ	Fullwidth Latin Capital Letter Z
+U+FF3B	［	Fullwidth Left Square Bracket
+U+FF3C	＼	Fullwidth Reverse Solidus
+U+FF3D	］	Fullwidth Right Square Bracket
+U+FF3E	＾	Fullwidth Circumflex Accent
+U+FF3F	＿	Fullwidth Low Line
+U+FF40	｀	Fullwidth Grave Accent
+U+FF41	ａ	Fullwidth Latin Small Letter A
+U+FF42	ｂ	Fullwidth Latin Small Letter B
+U+FF43	ｃ	Fullwidth Latin Small Letter C
+U+FF44	ｄ	Fullwidth Latin Small Letter D
+U+FF45	ｅ	Fullwidth Latin Small Letter E
+U+FF46	ｆ	Fullwidth Latin Small Letter F
+U+FF47	ｇ	Fullwidth Latin Small Letter G
+U+FF48	ｈ	Fullwidth Latin Small Letter H
+U+FF49	ｉ	Fullwidth Latin Small Letter I
+U+FF4A	ｊ	Fullwidth Latin Small Letter J
+U+FF4B	ｋ	Fullwidth Latin Small Letter K
+U+FF4C	ｌ	Fullwidth Latin Small Letter L
+U+FF4D	ｍ	Fullwidth Latin Small Letter M
+U+FF4E	ｎ	Fullwidth Latin Small Letter N
+U+FF4F	ｏ	Fullwidth Latin Small Letter O
+U+FF50	ｐ	Fullwidth Latin Small Letter P
+U+FF51	ｑ	Fullwidth Latin Small Letter Q
+U+FF52	ｒ	Fullwidth Latin Small Letter R
+U+FF53	ｓ	Fullwidth Latin Small Letter S
+U+FF54	ｔ	Fullwidth Latin Small Letter T
+U+FF55	ｕ	Fullwidth Latin Small Letter U
+U+FF56	ｖ	Fullwidth Latin Small Letter V
+U+FF57	ｗ	Fullwidth Latin Small Letter W
+U+FF58	ｘ	Fullwidth Latin Small Letter X
+U+FF59	ｙ	Fullwidth Latin Small Letter Y
+U+FF5A	ｚ	Fullwidth Latin Small Letter Z
+U+FF5B	｛	Fullwidth Left Curly Bracket
+U+FF5C	｜	Fullwidth Vertical Line
+U+FF5D	｝	Fullwidth Right Curly Bracket
+U+FF5E	～	Fullwidth Tilde
+U+FF5F	｟	Fullwidth Left White Parenthesis
+U+FF60	｠	Fullwidth Right White Parenthesis
+
+U+FFE0	￠	Fullwidth Cent Sign
+U+FFE1	￡	Fullwidth Pound Sign
+U+FFE2	￢	Fullwidth Not Sign
+U+FFE3	￣	Fullwidth Macron
+U+FFE4	￤	Fullwidth Broken Bar
+U+FFE5	￥	Fullwidth Yen Sign
+U+FFE6	￦	Fullwidth Won Sign

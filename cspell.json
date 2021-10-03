@@ -1,0 +1,19 @@
+{
+	"version": "0.2",
+	"language": "en",
+	"words": [
+		"kangxi",
+		"masu",
+		"romaji",
+		"yori"
+	],
+	"flagWords": [
+		"teh"
+	],
+	"ignorePaths": [
+		".vscode/**",
+		"target/**",
+		"testdata/*.in"
+	],
+	"ignoreRegExpList": []
+}

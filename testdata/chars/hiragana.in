@@ -1,0 +1,95 @@
+# All hiragana characters
+
+U+3041	ぁ	Hiragana Letter Small A
+U+3042	あ	Hiragana Letter A
+U+3043	ぃ	Hiragana Letter Small I
+U+3044	い	Hiragana Letter I
+U+3045	ぅ	Hiragana Letter Small U
+U+3046	う	Hiragana Letter U
+U+3047	ぇ	Hiragana Letter Small E
+U+3048	え	Hiragana Letter E
+U+3049	ぉ	Hiragana Letter Small O
+U+304A	お	Hiragana Letter O
+U+304B	か	Hiragana Letter Ka
+U+304C	が	Hiragana Letter Ga
+U+304D	き	Hiragana Letter Ki
+U+304E	ぎ	Hiragana Letter Gi
+U+304F	く	Hiragana Letter Ku
+U+3050	ぐ	Hiragana Letter Gu
+U+3051	け	Hiragana Letter Ke
+U+3052	げ	Hiragana Letter Ge
+U+3053	こ	Hiragana Letter Ko
+U+3054	ご	Hiragana Letter Go
+U+3055	さ	Hiragana Letter Sa
+U+3056	ざ	Hiragana Letter Za
+U+3057	し	Hiragana Letter Si
+U+3058	じ	Hiragana Letter Zi
+U+3059	す	Hiragana Letter Su
+U+305A	ず	Hiragana Letter Zu
+U+305B	せ	Hiragana Letter Se
+U+305C	ぜ	Hiragana Letter Ze
+U+305D	そ	Hiragana Letter So
+U+305E	ぞ	Hiragana Letter Zo
+U+305F	た	Hiragana Letter Ta
+U+3060	だ	Hiragana Letter Da
+U+3061	ち	Hiragana Letter Ti
+U+3062	ぢ	Hiragana Letter Di
+U+3063	っ	Hiragana Letter Small Tu
+U+3064	つ	Hiragana Letter Tu
+U+3065	づ	Hiragana Letter Du
+U+3066	て	Hiragana Letter Te
+U+3067	で	Hiragana Letter De
+U+3068	と	Hiragana Letter To
+U+3069	ど	Hiragana Letter Do
+U+306A	な	Hiragana Letter Na
+U+306B	に	Hiragana Letter Ni
+U+306C	ぬ	Hiragana Letter Nu
+U+306D	ね	Hiragana Letter Ne
+U+306E	の	Hiragana Letter No
+U+306F	は	Hiragana Letter Ha
+U+3070	ば	Hiragana Letter Ba
+U+3071	ぱ	Hiragana Letter Pa
+U+3072	ひ	Hiragana Letter Hi
+U+3073	び	Hiragana Letter Bi
+U+3074	ぴ	Hiragana Letter Pi
+U+3075	ふ	Hiragana Letter Hu
+U+3076	ぶ	Hiragana Letter Bu
+U+3077	ぷ	Hiragana Letter Pu
+U+3078	へ	Hiragana Letter He
+U+3079	べ	Hiragana Letter Be
+U+307A	ぺ	Hiragana Letter Pe
+U+307B	ほ	Hiragana Letter Ho
+U+307C	ぼ	Hiragana Letter Bo
+U+307D	ぽ	Hiragana Letter Po
+U+307E	ま	Hiragana Letter Ma
+U+307F	み	Hiragana Letter Mi
+U+3080	む	Hiragana Letter Mu
+U+3081	め	Hiragana Letter Me
+U+3082	も	Hiragana Letter Mo
+U+3083	ゃ	Hiragana Letter Small Ya
+U+3084	や	Hiragana Letter Ya
+U+3085	ゅ	Hiragana Letter Small Yu
+U+3086	ゆ	Hiragana Letter Yu
+U+3087	ょ	Hiragana Letter Small Yo
+U+3088	よ	Hiragana Letter Yo
+U+3089	ら	Hiragana Letter Ra
+U+308A	り	Hiragana Letter Ri
+U+308B	る	Hiragana Letter Ru
+U+308C	れ	Hiragana Letter Re
+U+308D	ろ	Hiragana Letter Ro
+U+308E	ゎ	Hiragana Letter Small Wa
+U+308F	わ	Hiragana Letter Wa
+U+3090	ゐ	Hiragana Letter Wi
+U+3091	ゑ	Hiragana Letter We
+U+3092	を	Hiragana Letter Wo
+U+3093	ん	Hiragana Letter N
+U+3094	ゔ	Hiragana Letter Vu
+U+3095	ゕ	Hiragana Letter Small Ka
+U+3096	ゖ	Hiragana Letter Small Ke
+U+3099	◌゙	Combining Katakana-Hiragana Voiced Sound Mark
+U+309A	◌゚	Combining Katakana-Hiragana Semi-Voiced Sound Mark
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+309F	ゟ	Hiragana Digraph Yori
