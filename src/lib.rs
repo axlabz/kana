@@ -3,13 +3,11 @@
 //! Provides conversion between hiragana, katakana, and romaji, as well as
 //! helper functions related to Japanese characters.
 
-use kana_macros::answer;
-
 extern crate kana_macros;
 
 /// Sample function.
 pub fn answer() -> u64 {
-	answer!()
+	42
 }
 
 // TODO: test combining marks and spaces
