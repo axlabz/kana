@@ -102,12 +102,12 @@ fn parse_char(input: syn::parse::ParseStream) -> syn::Result<CharRangeOrList> {
 	if let Ok(chr) = fork.parse::<LitChar>() {
 		input.advance_to(&fork);
 
-		let (is_range, inclusive) = if input.peek(Token![..]) {
-			input.parse::<Token![..]>()?;
-			(true, false)
-		} else if input.peek(Token![..=]) {
+		let (is_range, inclusive) = if input.peek(Token![..=]) {
 			input.parse::<Token![..=]>()?;
 			(true, true)
+		} else if input.peek(Token![..]) {
+			input.parse::<Token![..]>()?;
+			(true, false)
 		} else {
 			(false, false)
 		};
