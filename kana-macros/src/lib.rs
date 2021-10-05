@@ -5,6 +5,9 @@ use syn::parse_macro_input;
 mod chars;
 use chars::{CharFlag, CharMatches};
 
+mod ranges;
+use ranges::RangeBuilder;
+
 /// Receives a list of character matching expressions and returns a closure
 /// function that maps a single `char` to the respective mapping combination.
 ///
@@ -27,7 +30,15 @@ use chars::{CharFlag, CharMatches};
 /// resulting type of the provided flags.
 #[proc_macro]
 pub fn charinfo(input: TokenStream) -> TokenStream {
-	let _input = parse_macro_input!(input as CharMatches);
+	let mut ranges = RangeBuilder::new();
+	let CharMatches(input) = parse_macro_input!(input as CharMatches);
+	for m in input {
+		for range in m.ranges {
+			for CharFlag(flag) in &m.flags {
+				ranges = ranges.add(range.start, range.end, flag);
+			}
+		}
+	}
 
 	TokenStream::from(quote! {
 		|x: char| -> Option<u32> { ::std::option::Option::None }
