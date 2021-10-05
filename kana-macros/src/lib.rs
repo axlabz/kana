@@ -46,12 +46,15 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 	};
 
 	let matches = charset.ranges().map(|(start, end, flags)| {
-		let is_single = (end as u32) - (start as u32) == 1;
 		let flags = to_flags(flags);
-		if is_single {
+
+		// go back to an inclusive range
+		let end = (end as u32) - 1;
+		let end = unsafe { char::from_u32_unchecked(end) };
+		if start == end {
 			quote! { #start => #flags, }
 		} else {
-			quote! { #start..#end => #flags, }
+			quote! { #start ..= #end => #flags, }
 		}
 	});
 
