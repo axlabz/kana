@@ -23,6 +23,8 @@ pub struct CharRange {
 
 	/// End character of the range (exclusive).
 	pub end: char,
+
+	pub span: proc_macro2::Span,
 }
 
 impl Parse for CharMatches {
@@ -111,9 +113,12 @@ fn parse_char(input: syn::parse::ParseStream) -> syn::Result<CharRangeOrList> {
 		};
 
 		return if is_range {
+			let sta_pos = chr.span();
 			let chr = chr.value();
 			let pos = input.fork();
-			let end = input.parse::<LitChar>()?.value();
+			let end = input.parse::<LitChar>()?;
+			let end_pos = end.span();
+			let end = end.value();
 			if end < chr {
 				return Err(pos.error("invalid character range (end is before the start)"));
 			} else if inclusive && end == chr {
@@ -125,18 +130,22 @@ fn parse_char(input: syn::parse::ParseStream) -> syn::Result<CharRangeOrList> {
 			Ok(CharRangeOrList::Single(CharRange {
 				start: chr,
 				end: end,
+				span: sta_pos.join(end_pos).unwrap_or(sta_pos),
 			}))
 		} else {
+			let pos = chr.span();
 			let chr = chr.value();
 			Ok(CharRangeOrList::Single(CharRange {
 				start: chr,
 				end: next_char(chr),
+				span: pos,
 			}))
 		};
 	}
 
 	let fork = input.fork();
 	if let Ok(str) = fork.parse::<LitStr>() {
+		let pos = str.span();
 		input.advance_to(&fork);
 
 		return Ok(CharRangeOrList::List(
@@ -145,6 +154,7 @@ fn parse_char(input: syn::parse::ParseStream) -> syn::Result<CharRangeOrList> {
 				.map(|c| CharRange {
 					start: c,
 					end: next_char(c),
+					span: pos,
 				})
 				.collect(),
 		));
