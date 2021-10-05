@@ -1,5 +1,5 @@
 use proc_macro::TokenStream;
-use quote::quote;
+use quote::{format_ident, quote};
 use syn::parse_macro_input;
 
 mod chars;
@@ -30,17 +30,39 @@ use ranges::RangeBuilder;
 /// resulting type of the provided flags.
 #[proc_macro]
 pub fn charinfo(input: TokenStream) -> TokenStream {
-	let mut ranges = RangeBuilder::new();
+	let mut charset = RangeBuilder::new();
 	let CharMatches(input) = parse_macro_input!(input as CharMatches);
 	for m in input {
 		for range in m.ranges {
 			for CharFlag(flag) in &m.flags {
-				ranges = ranges.add(range.start, range.end, flag);
+				charset = charset.add(range.start, range.end, flag);
 			}
 		}
 	}
 
-	TokenStream::from(quote! {
-		|x: char| -> Option<u32> { ::std::option::Option::None }
-	})
+	let to_flags = |flags: Vec<&str>| {
+		let flags = flags.into_iter().map(|x| format_ident!("{}", x));
+		quote! { Some( #( #flags )|* ) }
+	};
+
+	let matches = charset.ranges().map(|(start, end, flags)| {
+		let is_single = (end as u32) - (start as u32) == 1;
+		let flags = to_flags(flags);
+		if is_single {
+			quote! { #start => #flags, }
+		} else {
+			quote! { #start..#end => #flags, }
+		}
+	});
+
+	let tokens = quote! {
+		|x: char| -> Option<u32> {
+			match x {
+				#( #matches )*
+				_ => None
+			}
+		}
+	};
+
+	tokens.into()
 }
