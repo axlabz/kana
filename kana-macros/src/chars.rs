@@ -14,7 +14,9 @@ pub struct CharMatch {
 }
 
 /// A single flag for a character matching expression from [`charinfo!`].
-pub struct CharFlag(pub String);
+///
+/// Flags are either one or two identifiers (e.g. `Flag` or `FlagType::Flag`).
+pub struct CharFlag(pub String, pub String);
 
 /// Single range of characters from a [`charinfo!`] matching expression.
 pub struct CharRange {
@@ -70,8 +72,14 @@ impl Parse for CharMatch {
 
 		let mut flags: Vec<CharFlag> = Vec::new();
 		loop {
-			let str = input.call(Ident::parse)?.unraw().to_string();
-			flags.push(CharFlag(str));
+			let str1 = input.call(Ident::parse)?.unraw().to_string();
+			let str2 = if input.peek(Token![::]) {
+				input.parse::<Token![::]>()?;
+				input.call(Ident::parse)?.unraw().to_string()
+			} else {
+				String::new()
+			};
+			flags.push(CharFlag(str1, str2));
 			if input.peek(Token![|]) {
 				input.parse::<Token![|]>()?;
 			} else {

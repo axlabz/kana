@@ -34,14 +34,27 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 	let CharMatches(input) = parse_macro_input!(input as CharMatches);
 	for m in input {
 		for range in m.ranges {
-			for CharFlag(flag) in &m.flags {
-				charset = charset.add(range.start, range.end, flag);
+			for CharFlag(flag1, flag2) in &m.flags {
+				let flag = if flag2.len() > 0 {
+					format!("{}::{}", flag1, flag2)
+				} else {
+					flag1.clone()
+				};
+				charset = charset.add(range.start, range.end, &flag);
 			}
 		}
 	}
 
 	let to_flags = |flags: Vec<&str>| {
-		let flags = flags.into_iter().map(|x| format_ident!("{}", x));
+		let flags = flags.into_iter().map(|x| {
+			if x.contains("::") {
+				let ids = x.split("::").map(|x| format_ident!("{}", x));
+				quote! { #( #ids )::* }
+			} else {
+				let id = format_ident!("{}", x);
+				quote! { #id }
+			}
+		});
 		quote! { Some( #( #flags )|* ) }
 	};
 
@@ -59,7 +72,7 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 	});
 
 	let tokens = quote! {
-		|x: char| -> Option<u32> {
+		|x: char| {
 			match x {
 				#( #matches )*
 				_ => None
