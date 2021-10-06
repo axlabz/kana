@@ -87,4 +87,14 @@ fn main() {
 
 	let _ = charinfo!('a'..='b' => A | B, 'b'..='c' => B | C, 'd' => D);
 	let _ = charinfo!('a'..='b' => A | B, 'b'..='c' => B | C, 'd' => D,);
+
+	//----[ string ranges ]---------------------------------------------------//
+
+	// single branch
+	let _ = charinfo!("abc" => A | B | C);
+	let _ = charinfo!("abc" => A | B | C,);
+
+	// multiple branches
+	let _ = charinfo!("ab" => A | B, "bc" => B | C);
+	let _ = charinfo!("ab" => A | B, "bc" => B | C,);
 }

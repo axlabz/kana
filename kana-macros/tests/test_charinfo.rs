@@ -121,5 +121,42 @@ fn complex() {
 	assert_eq!(info('\r'), Some(SPACE));
 	assert_eq!(info('\n'), Some(SPACE));
 	assert_eq!(info('\0'), Some(EXTRA));
+	assert_eq!(info('\x08'), Some(EXTRA));
+}
+
+#[test]
+fn complex_strings() {
+	const ALPHA: u32 = 1 << 0;
+	const DIGIT: u32 = 1 << 1;
+	const UPPER: u32 = 1 << 2;
+	const LOWER: u32 = 1 << 3;
+	const SPACE: u32 = 1 << 4;
+	const IDENT: u32 = 1 << 5;
+	const EXTRA: u32 = 1 << 6;
+
+	let info = charinfo!(
+		"0123456789" => DIGIT,
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ" => ALPHA | UPPER,
+		"abcdefghijklmnopqrstuvwxyz" => ALPHA | LOWER,
+		" \t" => SPACE,
+		"\r\n" => SPACE,
+		"_" => IDENT,
+		"abcdefghijklmnopqrstuvwxyz" | "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | "0123456789" => IDENT,
+		"\0\x01\x02\x03\x04\x05\x06\x07\x08" => EXTRA,
+	);
+
+	assert_eq!(info('~'), None);
+	assert_eq!(info('0'), Some(DIGIT | IDENT));
+	assert_eq!(info('9'), Some(DIGIT | IDENT));
+	assert_eq!(info('A'), Some(ALPHA | UPPER | IDENT));
+	assert_eq!(info('Z'), Some(ALPHA | UPPER | IDENT));
+	assert_eq!(info('a'), Some(ALPHA | LOWER | IDENT));
+	assert_eq!(info('z'), Some(ALPHA | LOWER | IDENT));
+	assert_eq!(info('_'), Some(IDENT));
+	assert_eq!(info(' '), Some(SPACE));
+	assert_eq!(info('\t'), Some(SPACE));
+	assert_eq!(info('\r'), Some(SPACE));
+	assert_eq!(info('\n'), Some(SPACE));
+	assert_eq!(info('\0'), Some(EXTRA));
 	assert_eq!(info('\x06'), Some(EXTRA));
 }
