@@ -3,7 +3,15 @@
 //! Provides conversion between hiragana, katakana, and romaji, as well as
 //! helper functions related to Japanese characters.
 
+#![feature(type_alias_impl_trait)]
+
 extern crate kana_macros;
+
+mod chars;
+pub use chars::{flags, Flags};
+
+mod is;
+pub use is::*;
 
 /// Sample function.
 pub fn answer() -> u64 {
