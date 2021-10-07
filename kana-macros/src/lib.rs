@@ -28,10 +28,14 @@ use ranges::RangeBuilder;
 ///
 /// This macro results in a closure `|x: char| -> Option<F>` where `F` is the
 /// resulting type of the provided flags.
+///
+/// If a "catch-all" rule with the syntax `* => FLAG` is provided, then instead
+/// of returning an `Option`, the generated closure will return the given flag
+/// for unmapped characters.
 #[proc_macro]
 pub fn charinfo(input: TokenStream) -> TokenStream {
 	let mut charset = RangeBuilder::new();
-	let CharMatches(input) = parse_macro_input!(input as CharMatches);
+	let CharMatches(input, catch_all) = parse_macro_input!(input as CharMatches);
 	for m in input {
 		for range in m.ranges {
 			for CharFlag(flag1, flag2) in &m.flags {
@@ -55,7 +59,11 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 				quote! { #id }
 			}
 		});
-		quote! { Some( #( #flags )|* ) }
+		if catch_all.is_some() {
+			quote! { #( #flags )|* }
+		} else {
+			quote! { Some( #( #flags )|* ) }
+		}
 	};
 
 	let matches = charset.ranges().map(|(start, end, flags)| {
@@ -71,11 +79,24 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 		}
 	});
 
+	let catch_all = if let Some(CharFlag(a, b)) = &catch_all {
+		let catch_all = if b.len() > 0 {
+			let (a, b) = (format_ident!("{}", a), format_ident!("{}", b));
+			quote! { #a :: #b }
+		} else {
+			let id = format_ident!("{}", a);
+			quote! { #id }
+		};
+		quote! { _ => #catch_all }
+	} else {
+		quote! { _ => ::std::option::Option::None }
+	};
+
 	let tokens = quote! {
 		|x: char| {
 			match x {
 				#( #matches )*
-				_ => None
+				#catch_all
 			}
 		}
 	};

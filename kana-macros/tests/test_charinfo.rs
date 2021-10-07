@@ -160,3 +160,16 @@ fn complex_strings() {
 	assert_eq!(info('\0'), Some(EXTRA));
 	assert_eq!(info('\x06'), Some(EXTRA));
 }
+
+#[test]
+fn catch_all() {
+	const A: u32 = 1;
+	const X: u32 = 2;
+	let info = charinfo!(
+		'a' => A,
+		* => X,
+	);
+	assert_eq!(info('a'), A);
+	assert_eq!(info('b'), X);
+	assert_eq!(info('c'), X);
+}

@@ -5,7 +5,7 @@ use syn::{
 };
 
 /// List of character mapping expressions used by [`charinfo!`].
-pub struct CharMatches(pub Vec<CharMatch>);
+pub struct CharMatches(pub Vec<CharMatch>, pub Option<CharFlag>);
 
 /// Represents a single matching expression from [`charinfo!`].
 pub struct CharMatch {
@@ -32,8 +32,19 @@ pub struct CharRange {
 impl Parse for CharMatches {
 	fn parse(input: syn::parse::ParseStream) -> syn::Result<Self> {
 		let mut matches: Vec<CharMatch> = Vec::new();
+		let mut catch_all: Option<CharFlag> = None;
 		loop {
-			matches.push(input.parse()?);
+			if input.peek(Token![*]) {
+				let pos = input.fork();
+				input.parse::<Token![*]>()?;
+				input.parse::<Token![=>]>()?;
+				if catch_all.is_some() {
+					return Err(pos.error("only one catch-all rule is allowed"));
+				}
+				catch_all = Some(input.parse()?);
+			} else {
+				matches.push(input.parse()?);
+			}
 			if input.peek(Token![,]) {
 				input.parse::<Token![,]>()?;
 				if input.is_empty() {
@@ -47,7 +58,7 @@ impl Parse for CharMatches {
 		if !input.is_empty() {
 			Err(input.error("expected either a comma or end of input"))
 		} else {
-			Ok(CharMatches(matches))
+			Ok(CharMatches(matches, catch_all))
 		}
 	}
 }
@@ -72,14 +83,7 @@ impl Parse for CharMatch {
 
 		let mut flags: Vec<CharFlag> = Vec::new();
 		loop {
-			let str1 = input.call(Ident::parse)?.unraw().to_string();
-			let str2 = if input.peek(Token![::]) {
-				input.parse::<Token![::]>()?;
-				input.call(Ident::parse)?.unraw().to_string()
-			} else {
-				String::new()
-			};
-			flags.push(CharFlag(str1, str2));
+			flags.push(input.parse::<CharFlag>()?);
 			if input.peek(Token![|]) {
 				input.parse::<Token![|]>()?;
 			} else {
@@ -88,6 +92,19 @@ impl Parse for CharMatch {
 		}
 
 		Ok(CharMatch { ranges, flags })
+	}
+}
+
+impl Parse for CharFlag {
+	fn parse(input: syn::parse::ParseStream) -> syn::Result<Self> {
+		let str1 = input.call(Ident::parse)?.unraw().to_string();
+		let str2 = if input.peek(Token![::]) {
+			input.parse::<Token![::]>()?;
+			input.call(Ident::parse)?.unraw().to_string()
+		} else {
+			String::new()
+		};
+		Ok(CharFlag(str1, str2))
 	}
 }
 

@@ -7,6 +7,8 @@ const B: u32 = 2;
 const C: u32 = 2;
 const D: u32 = 2;
 
+const NONE: u32 = 0;
+
 fn main() {
 	//----[ single char, single flag ]----------------------------------------//
 
@@ -97,4 +99,8 @@ fn main() {
 	// multiple branches
 	let _ = charinfo!("ab" => A | B, "bc" => B | C);
 	let _ = charinfo!("ab" => A | B, "bc" => B | C,);
+
+	//----[ catch-all result ]------------------------------------------------//
+
+	let _ = charinfo!(* => NONE);
 }
