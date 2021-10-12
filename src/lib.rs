@@ -7,8 +7,11 @@
 
 extern crate kana_macros;
 
+mod flags;
+pub use flags::{Flag, Flags};
+
 mod chars;
-pub use chars::{flags, Flags};
+pub use chars::flags;
 
 mod is;
 pub use is::*;
