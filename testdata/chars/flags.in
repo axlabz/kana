@@ -1,84 +1,84 @@
-# Test data for character flags
+// Test data for character flags
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-# Format
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-#
-# Lines starting with `:=` set a space separated list of flags that are expected
-# for all characters after that line, until the next `:=` line.
-#
-# Available flags (from `chars.rs`):
-#
-# - JAPANESE
-# - ROMAJI
-# - SPACE
-#
-# - HIRAGANA
-# - KATAKANA
-# - KANA
-# - KANJI
-# - ROMAN
-#
-# - PUNCTUATION
-# - SYMBOL
-#
-# - WORD
-# - FULLWIDTH
-# - HALFWIDTH
-# - SMALL
-# - NUMBER
-# - RARE
-# - RADICAL
-#
-# Characters are specified either as a single line, sets, or ranges.
-#
-# Character lines are specified as a tab-separated list of fields containing:
-# - The Unicode codepoint
-# - The optional literal character
-# - Character description
-# > `U+FF01	！	Fullwidth Exclamation Mark`
-#
-# Character set lines start with `>` followed by the raw characters, optionally
-# separated by spaces.
-#
-# Character range lines start with `~` followed by the tab-separated fields:
-# - Unicode codepoint for the range start
-# - Unicode codepoint for the range end
-# - Character range description
-# > `U+2B740	U+2B81D	CJK Unified Ideographs Extension D (`𫝀` to `𫠝`)`
-#
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Format
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//
+// Lines starting with `:=` set a list of flags separated by `+` that are
+// expected for all characters after that line, until the next `:=` line.
+//
+// Available flags (from `chars.rs`):
+//
+// - JAPANESE
+// - ROMAJI
+// - SPACE
+//
+// - HIRAGANA
+// - KATAKANA
+// - KANA
+// - KANJI
+// - ROMAN
+//
+// - PUNCTUATION
+// - SYMBOL
+//
+// - WORD
+// - FULLWIDTH
+// - HALFWIDTH
+// - SMALL
+// - NUMBER
+// - RARE
+// - RADICAL
+//
+// Characters are specified either as a single line, sets, or ranges.
+//
+// Character lines are specified as a tab-separated list of fields containing:
+// - The Unicode codepoint
+// - The optional literal character
+// - Character description
+// > `U+FF01	！	Fullwidth Exclamation Mark`
+//
+// Character set lines start with `>` followed by the raw characters, optionally
+// separated by spaces.
+//
+// Character range lines start with `~` followed by the tab-separated fields:
+// - Unicode codepoint for the range start
+// - Unicode codepoint for the range end
+// - Character range description
+// > `U+2B740	U+2B81D	CJK Unified Ideographs Extension D (`𫝀` to `𫠝`)`
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-# Table of Contents
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-#
-# Sections in this file (`## NAME` to search):
-#
-# - [Spaces]
-# - [Romaji]
-# - [Fullwidth]
-# - [Kana]
-# - [Hiragana]
-# - [Katakana]
-# - [CJK Symbols and Punctuation]
-# - [Japanese Symbols]
-# - [Radicals]
-# - [Kanji]
-#
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Table of Contents
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//
+// Sections in this file:
+//
+// - [Spaces]
+// - [Romaji]
+// - [Fullwidth]
+// - [Kana]
+// - [Hiragana]
+// - [Katakana]
+// - [CJK Symbols and Punctuation]
+// - [Japanese Symbols]
+// - [Radicals]
+// - [Kanji]
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-##-----------------------------------------------------------------------------#
-## Spaces
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Spaces]
+//----------------------------------------------------------------------------//
 
-# White-space and line breaks
+// White-space and line breaks
 
 := SPACE
 
-# spell-checker: ignore NBSP NNBSP MMSP
+// spell-checker: ignore NBSP NNBSP MMSP
 
-# Zs Space Separator category
+// Zs Space Separator category
 U+0020		Space (SP)
 U+00A0		No-Break Space (NBSP)
 U+1680		Ogham Space Mark
@@ -97,28 +97,28 @@ U+202F		Narrow No-Break Space (NNBSP)
 U+205F		Medium Mathematical Space (MMSP)
 U+3000		Ideographic Space
 
-# Additional ASCII spaces/line breaks
+// Additional ASCII spaces/line breaks
 U+0009		<Character Tabulation> (HT, TAB)
 U+000A		<End of Line> (EOL, LF, NL)
 U+000B		<Line Tabulation> (VT)
 U+000C		<Form Feed> (FF)
 U+000D		<Carriage Return> (CR)
 
-# Additional Unicode line breaks
+// Additional Unicode line breaks
 U+2028		Line Separator
 U+2029		Paragraph Separator
 
-##-----------------------------------------------------------------------------#
-## Romaji
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Romaji]
+//----------------------------------------------------------------------------//
 
-#---------------#
-#  Punctuation  #
-#---------------#
+//---------------//
+//  Punctuation  //
+//---------------//
 
-:= ROMAJI PUNCTUATION
+:= ROMAJI+PUNCTUATION
 
-# ASCII with fullwidth mappings
+// ASCII with fullwidth mappings
 U+0021	!	Exclamation Mark
 U+0028	(	Left Parenthesis
 U+0029	)	Right Parenthesis
@@ -132,25 +132,25 @@ U+005D	]	Right Square Bracket
 U+007B	{	Left Curly Bracket
 U+007D	}	Right Curly Bracket
 
-# Additional characters that can be mapped to Japanese
+// Additional characters that can be mapped to Japanese
 U+00AB	«	Left-Pointing Double Angle Quotation Mark
 U+00BB	»	Right-Pointing Double Angle Quotation Mark
 
-:= ROMAJI PUNCTUATION WORD
+:= ROMAJI+PUNCTUATION+WORD
 
-# ASCII used in romanization
-U+0027	'	Apostrophe      # Used to disambiguate sillables
-U+002D	-	Hyphen-Minus    # Represent the long vowel mark
-U+002F	/	Solidus         # Maps to a katakana middle dot
+// ASCII used in romanization
+U+0027	'	Apostrophe      // Used to disambiguate sillables
+U+002D	-	Hyphen-Minus    // Represent the long vowel mark
+U+002F	/	Solidus         // Maps to a katakana middle dot
 U+00B7	·	Middle Dot
 
-#-----------#
-#  Symbols  #
-#-----------#
+//-----------//
+//  Symbols  //
+//-----------//
 
-:= ROMAJI SYMBOL
+:= ROMAJI+SYMBOL
 
-# ASCII with direct fullwidth mappings
+// ASCII with direct fullwidth mappings
 U+0022	"	Quotation Mark
 U+0023	#	Number Sign
 U+0024	$	Dollar Sign
@@ -169,7 +169,7 @@ U+0060	`	Grave Accent
 U+007C	|	Vertical Line
 U+007E	~	Tilde
 
-# Additional symbols with fullwidth equivalents
+// Additional symbols with fullwidth equivalents
 U+00A2	¢	Cent Sign
 U+00A3	£	Pound Sign
 U+00A5	¥	Yen Sign
@@ -178,11 +178,11 @@ U+00AC	¬	Not Sign
 U+00AF	¯	Macron
 U+20A9	₩	Won Sign
 
-#----------------------#
-#  Letters and digits  #
-#----------------------#
+//----------------------//
+//  Letters and digits  //
+//----------------------//
 
-:= ROMAJI ROMAN NUMBER WORD
+:= ROMAJI+ROMAN+NUMBER+WORD
 
 U+0030	0	Digit Zero
 U+0031	1	Digit One
@@ -195,7 +195,7 @@ U+0037	7	Digit Seven
 U+0038	8	Digit Eight
 U+0039	9	Digit Nine
 
-:= ROMAJI ROMAN WORD
+:= ROMAJI+ROMAN+WORD
 
 U+0041	A	Latin Capital Letter A
 U+0042	B	Latin Capital Letter B
@@ -251,7 +251,7 @@ U+0078	x	Latin Small Letter X
 U+0079	y	Latin Small Letter Y
 U+007A	z	Latin Small Letter Z
 
-# Those are used for extended vowels in romanization
+// Those are used for extended vowels in romanization
 
 U+00C2	Â	Latin Capital Letter A with Circumflex
 U+00CA	Ê	Latin Capital Letter E with Circumflex
@@ -277,11 +277,11 @@ U+012B	ī	Latin Small Letter I with Macron
 U+014D	ō	Latin Small Letter O with Macron
 U+016B	ū	Latin Small Letter U with Macron
 
-##-----------------------------------------------------------------------------#
-## Fullwidth
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Fullwidth]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE FULLWIDTH PUNCTUATION
+:= JAPANESE+FULLWIDTH+PUNCTUATION
 
 U+FF01	！	Fullwidth Exclamation Mark
 U+FF08	（	Fullwidth Left Parenthesis
@@ -298,7 +298,7 @@ U+FF5D	｝	Fullwidth Right Curly Bracket
 U+FF5F	｟	Fullwidth Left White Parenthesis
 U+FF60	｠	Fullwidth Right White Parenthesis
 
-:= JAPANESE FULLWIDTH SYMBOL
+:= JAPANESE+FULLWIDTH+SYMBOL
 
 U+FF02	＂	Fullwidth Quotation Mark
 U+FF03	＃	Fullwidth Number Sign
@@ -331,7 +331,7 @@ U+FFE4	￤	Fullwidth Broken Bar
 U+FFE5	￥	Fullwidth Yen Sign
 U+FFE6	￦	Fullwidth Won Sign
 
-:= JAPANESE FULLWIDTH WORD ROMAN NUMBER
+:= JAPANESE+FULLWIDTH+WORD+ROMAN+NUMBER
 
 U+FF10	０	Fullwidth Digit Zero
 U+FF11	１	Fullwidth Digit One
@@ -344,7 +344,7 @@ U+FF17	７	Fullwidth Digit Seven
 U+FF18	８	Fullwidth Digit Eight
 U+FF19	９	Fullwidth Digit Nine
 
-:= JAPANESE FULLWIDTH WORD ROMAN
+:= JAPANESE+FULLWIDTH+WORD+ROMAN
 
 U+FF21	Ａ	Fullwidth Latin Capital Letter A
 U+FF22	Ｂ	Fullwidth Latin Capital Letter B
@@ -400,21 +400,21 @@ U+FF58	ｘ	Fullwidth Latin Small Letter X
 U+FF59	ｙ	Fullwidth Latin Small Letter Y
 U+FF5A	ｚ	Fullwidth Latin Small Letter Z
 
-##-----------------------------------------------------------------------------#
-## Kana
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Kana]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE KANA WORD
+:= JAPANESE+KANA+WORD
 
 U+3099		Combining Katakana-Hiragana Voiced Sound Mark
 U+309A		Combining Katakana-Hiragana Semi-Voiced Sound Mark
 
-:= JAPANESE KANA WORD PUNCTUATION
+:= JAPANESE+KANA+WORD+PUNCTUATION
 
 U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
 U+30FB	・	Katakana Middle Dot
 
-:= JAPANESE KANA WORD PUNCTUATION RARE
+:= JAPANESE+KANA+WORD+PUNCTUATION+RARE
 
 U+309B	゛	Katakana-Hiragana Voiced Sound Mark
 U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
@@ -423,23 +423,23 @@ U+309E	ゞ	Hiragana Voiced Iteration Mark
 U+30FD	ヽ	Katakana Iteration Mark
 U+30FE	ヾ	Katakana Voiced Iteration Mark
 
-:= JAPANESE KANA WORD PUNCTUATION RARE HALFWIDTH
+:= JAPANESE+KANA+WORD+PUNCTUATION+RARE+HALFWIDTH
 
 U+FF65	･	Halfwidth Katakana Middle Dot
 U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
 U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
 U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
 
-:= JAPANESE SYMBOL
+:= JAPANESE+SYMBOL
 
-# This is used mostly as a separator (https://en.wiktionary.org/wiki/゠)
+// This is used mostly as a separator (https://en.wiktionary.org/wiki/゠)
 U+30A0	゠	Katakana-Hiragana Double Hyphen
 
-##-----------------------------------------------------------------------------#
-## Hiragana
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Hiragana]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE HIRAGANA WORD SMALL
+:= JAPANESE+HIRAGANA+WORD+SMALL
 
 U+3041	ぁ	Hiragana Letter Small A
 U+3043	ぃ	Hiragana Letter Small I
@@ -451,7 +451,7 @@ U+3083	ゃ	Hiragana Letter Small Ya
 U+3085	ゅ	Hiragana Letter Small Yu
 U+3087	ょ	Hiragana Letter Small Yo
 
-:= JAPANESE HIRAGANA WORD SMALL RARE
+:= JAPANESE+HIRAGANA+WORD+SMALL+RARE
 
 U+308E	ゎ	Hiragana Letter Small Wa
 U+3095	ゕ	Hiragana Letter Small Ka
@@ -461,14 +461,14 @@ U+1B150	𛅐	Hiragana Letter Small Wi
 U+1B151	𛅑	Hiragana Letter Small We
 U+1B152	𛅒	Hiragana Letter Small Wo
 
-:= JAPANESE HIRAGANA WORD RARE
+:= JAPANESE+HIRAGANA+WORD+RARE
 
 U+3090	ゐ	Hiragana Letter Wi
 U+3091	ゑ	Hiragana Letter We
 U+309F	ゟ	Hiragana Digraph Yori
 U+1B001	𛀁	Hiragana Letter Archaic Ye
 
-:= JAPANESE HIRAGANA WORD
+:= JAPANESE+HIRAGANA+WORD
 
 U+3042	あ	Hiragana Letter A
 U+3044	い	Hiragana Letter I
@@ -543,11 +543,11 @@ U+3092	を	Hiragana Letter Wo
 U+3093	ん	Hiragana Letter N
 U+3094	ゔ	Hiragana Letter Vu
 
-##-----------------------------------------------------------------------------#
-## Katakana
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Katakana]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE KATAKANA WORD SMALL
+:= JAPANESE+KATAKANA+WORD+SMALL
 
 U+30A1	ァ	Katakana Letter Small A
 U+30A3	ィ	Katakana Letter Small I
@@ -559,13 +559,13 @@ U+30E3	ャ	Katakana Letter Small Ya
 U+30E5	ュ	Katakana Letter Small Yu
 U+30E7	ョ	Katakana Letter Small Yo
 
-:= JAPANESE KATAKANA WORD SMALL RARE
+:= JAPANESE+KATAKANA+WORD+SMALL+RARE
 
 U+30EE	ヮ	Katakana Letter Small Wa
 U+30F5	ヵ	Katakana Letter Small Ka
 U+30F6	ヶ	Katakana Letter Small Ke
 
-# Katakana Phonetic Extensions (Ainu)
+// Katakana Phonetic Extensions (Ainu)
 U+31F0	ㇰ	Katakana Letter Small Ku
 U+31F1	ㇱ	Katakana Letter Small Si
 U+31F2	ㇲ	Katakana Letter Small Su
@@ -583,7 +583,7 @@ U+31FD	ㇽ	Katakana Letter Small Ru
 U+31FE	ㇾ	Katakana Letter Small Re
 U+31FF	ㇿ	Katakana Letter Small Ro
 
-:= JAPANESE KATAKANA WORD RARE
+:= JAPANESE+KATAKANA+WORD+RARE
 
 U+30FF	ヿ	Katakana Digraph Koto
 U+30F0	ヰ	Katakana Letter Wi
@@ -599,7 +599,7 @@ U+1B165	𛅥	Katakana Letter Small We
 U+1B166	𛅦	Katakana Letter Small Wo
 U+1B167	𛅧	Katakana Letter Small N
 
-:= JAPANESE KATAKANA WORD
+:= JAPANESE+KATAKANA+WORD
 
 U+30A2	ア	Katakana Letter A
 U+30A4	イ	Katakana Letter I
@@ -674,7 +674,7 @@ U+30F2	ヲ	Katakana Letter Wo
 U+30F3	ン	Katakana Letter N
 U+30F4	ヴ	Katakana Letter Vu
 
-:= JAPANESE KATAKANA WORD HALFWIDTH SMALL
+:= JAPANESE+KATAKANA+WORD+HALFWIDTH+SMALL
 
 U+FF67	ｧ	Halfwidth Katakana Letter Small A
 U+FF68	ｨ	Halfwidth Katakana Letter Small I
@@ -686,7 +686,7 @@ U+FF6D	ｭ	Halfwidth Katakana Letter Small Yu
 U+FF6E	ｮ	Halfwidth Katakana Letter Small Yo
 U+FF6F	ｯ	Halfwidth Katakana Letter Small Tu
 
-:= JAPANESE KATAKANA WORD HALFWIDTH
+:= JAPANESE+KATAKANA+WORD+HALFWIDTH
 
 U+FF66	ｦ	Halfwidth Katakana Letter Wo
 U+FF71	ｱ	Halfwidth Katakana Letter A
@@ -735,22 +735,22 @@ U+FF9B	ﾛ	Halfwidth Katakana Letter Ro
 U+FF9C	ﾜ	Halfwidth Katakana Letter Wa
 U+FF9D	ﾝ	Halfwidth Katakana Letter N
 
-##-----------------------------------------------------------------------------#
-## CJK Symbols and Punctuation
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [CJK Symbols and Punctuation]
+//----------------------------------------------------------------------------//
 
-# spell-checker: ignore geta
+// spell-checker: ignore geta
 
 := SPACE
 
 U+3000	　	Ideographic Space
 
-:= JAPANESE PUNCTUATION
+:= JAPANESE+PUNCTUATION
 
 U+3001	、	Ideographic Comma
 U+3002	。	Ideographic Full Stop
 
-# Parenthesis-like characters
+// Parenthesis-like characters
 U+3008	〈	Left Angle Bracket
 U+3009	〉	Right Angle Bracket
 U+300A	《	Left Double Angle Bracket
@@ -770,11 +770,11 @@ U+3019	〙	Right White Tortoise Shell Bracket
 U+301A	〚	Left White Square Bracket
 U+301B	〛	Right White Square Bracket
 
-:= JAPANESE SYMBOL NUMBER
+:= JAPANESE+SYMBOL+NUMBER
 
 U+3007	〇	Ideographic Number Zero
 
-:= JAPANESE SYMBOL
+:= JAPANESE+SYMBOL
 
 U+3003	〃	Ditto Mark
 U+3004	〄	Japanese Industrial Standard Symbol
@@ -796,10 +796,10 @@ U+3026	〦	Hangzhou Numeral Six
 U+3027	〧	Hangzhou Numeral Seven
 U+3028	〨	Hangzhou Numeral Eight
 U+3029	〩	Hangzhou Numeral Nine
-U+302A	◌〪	Ideographic Level Tone Mark
-U+302B	◌〫	Ideographic Rising Tone Mark
-U+302C	◌〬	Ideographic Departing Tone Mark
-U+302D	◌〭	Ideographic Entering Tone Mark
+U+302A		Ideographic Level Tone Mark
+U+302B		Ideographic Rising Tone Mark
+U+302C		Ideographic Departing Tone Mark
+U+302D		Ideographic Entering Tone Mark
 U+302E	〮	Hangul Single Dot Tone Mark
 U+302F	〯	Hangul Double Dot Tone Mark
 U+3030	〰	Wavy Dash
@@ -818,23 +818,23 @@ U+303D	〽	Part Alternation Mark
 U+303E	〾	Ideographic Variation Indicator
 U+303F	〿	Ideographic Half Fill Space
 
-# Note on kana repeat marks
-# - https://en.wiktionary.org/wiki/〱
+// Note on kana repeat marks
+// - https://en.wiktionary.org/wiki/〱
 
-# Note on the masu mark:
-#
-# Used phonetically as shorthand for the masu polite verb ending, by homophony
-# of 枡 (masu) and the suffix ます (masu).
-# (reference https://en.wiktionary.org/wiki/〼)
+// Note on the masu mark:
+//
+// Used phonetically as shorthand for the masu polite verb ending, by homophony
+// of 枡 (masu) and the suffix ます (masu).
+// (reference https://en.wiktionary.org/wiki/〼)
 
-:= JAPANESE WORD KANA RARE
+:= JAPANESE+WORD+KANA+RARE
 U+303C	〼	Masu Mark
 
-##-----------------------------------------------------------------------------#
-## Japanese Symbols
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Japanese Symbols]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE SYMBOL NUMBER
+:= JAPANESE+SYMBOL+NUMBER
 
 U+3248	㉈	Circled Number Ten On Black Square
 U+3249	㉉	Circled Number Twenty On Black Square
@@ -895,9 +895,9 @@ U+3227	㈧	Parenthesized Ideograph Eight
 U+3228	㈨	Parenthesized Ideograph Nine
 U+3229	㈩	Parenthesized Ideograph Ten
 
-:= JAPANESE SYMBOL
+:= JAPANESE+SYMBOL
 
-# spell-checker: disable
+// spell-checker: disable
 
 U+3200	㈀	Parenthesized Hangul Kiyeok
 U+3201	㈁	Parenthesized Hangul Nieun
@@ -1361,21 +1361,21 @@ U+FFEC	￬	Halfwidth Downwards Arrow
 U+FFED	￭	Halfwidth Black Square
 U+FFEE	￮	Halfwidth White Circle
 
-# spell-checker: enable
+// spell-checker: enable
 
-##-----------------------------------------------------------------------------#
-## Radicals
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Radicals]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE SYMBOL RADICAL
+:= JAPANESE+SYMBOL+RADICAL
 
-# Kanji Radicals (2E80 - 2EF3 / 2F00 - 2FD5)
+// Kanji Radicals (2E80 - 2EF3 / 2F00 - 2FD5)
 
 > ⺀⺁⺂⺃⺄⺅⺆⺇⺈⺉⺊⺋⺌⺍⺎⺏⺐⺑⺒⺓⺔⺕⺖⺗⺘⺙⺛⺜⺝⺞⺟⺠⺡⺢⺣⺤⺥⺦⺧⺨⺩⺪⺫⺬⺭⺮⺯⺰
 > ⺱⺲⺳⺴⺵⺶⺷⺸⺹⺺⺻⺼⺽⺾⺿⻀⻁⻂⻃⻄⻅⻆⻇⻈⻉⻊⻋⻌⻍⻎⻏⻐⻑⻒⻓⻔⻕⻖⻗⻘⻙⻚⻛⻜⻝⻞⻟⻠
 > ⻡⻢⻣⻤⻥⻦⻧⻨⻩⻪⻫⻬⻭⻮⻯⻰⻱⻲⻳
 
-# Kangxi (2F00 - 2FD5)
+// Kangxi (2F00 - 2FD5)
 
 > ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯
 > ⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟
@@ -1383,25 +1383,25 @@ U+FFEE	￮	Halfwidth White Circle
 > ⾐⾑⾒⾓⾔⾕⾖⾗⾘⾙⾚⾛⾜⾝⾞⾟⾠⾡⾢⾣⾤⾥⾦⾧⾨⾩⾪⾫⾬⾭⾮⾯⾰⾱⾲⾳⾴⾵⾶⾷⾸⾹⾺⾻⾼⾽⾾⾿
 > ⿀⿁⿂⿃⿄⿅⿆⿇⿈⿉⿊⿋⿌⿍⿎⿏⿐⿑⿒⿓⿔⿕
 
-##-----------------------------------------------------------------------------#
-## Kanji
-##-----------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// [Kanji]
+//----------------------------------------------------------------------------//
 
-:= JAPANESE WORD KANJI NUMBER
+:= JAPANESE+WORD+KANJI+NUMBER
 
 > 零 一 二 三 四 五 六 七 八 九 十 百 千 万 億 兆
 
-:= JAPANESE WORD KANJI
+:= JAPANESE+WORD+KANJI
 
-# All ranges
-~ U+03400	U+04DBF	CJK Unified Ideographs Extension A  # CJK Unified Ideographs Extension A (`㐀` to `䶵`)
-~ U+20000	U+2A6DF	CJK Unified Ideographs Extension B  # CJK Unified Ideographs Extension B (`𠀀` to `𪛖`)
-~ U+2A700	U+2B73F	CJK Unified Ideographs Extension C  # CJK Unified Ideographs Extension C (`𪜀` to `𫜴`)
-~ U+2B740	U+2B81F	CJK Unified Ideographs Extension D  # CJK Unified Ideographs Extension D (`𫝀` to `𫠝`)
-~ U+2B820	U+2CEAF	CJK Unified Ideographs Extension E  # CJK Unified Ideographs Extension E (most don't render)
-~ U+2CEB0	U+2EBEF	CJK Unified Ideographs Extension F  # CJK Unified Ideographs Extension F (none render)
+// All ranges
+~ U+03400	U+04DBF	CJK Unified Ideographs Extension A  // CJK Unified Ideographs Extension A (`㐀` to `䶵`)
+~ U+20000	U+2A6DF	CJK Unified Ideographs Extension B  // CJK Unified Ideographs Extension B (`𠀀` to `𪛖`)
+~ U+2A700	U+2B73F	CJK Unified Ideographs Extension C  // CJK Unified Ideographs Extension C (`𪜀` to `𫜴`)
+~ U+2B740	U+2B81F	CJK Unified Ideographs Extension D  // CJK Unified Ideographs Extension D (`𫝀` to `𫠝`)
+~ U+2B820	U+2CEAF	CJK Unified Ideographs Extension E  // CJK Unified Ideographs Extension E (most don't render)
+~ U+2CEB0	U+2EBEF	CJK Unified Ideographs Extension F  // CJK Unified Ideographs Extension F (none render)
 
-# CJK Compatibility Ideographs (F900 - FA6D)
+// CJK Compatibility Ideographs (F900 - FA6D)
 
 > 豈 更 車 賈 滑 串 句 龜 龜 契 金 喇 奈 懶 癩 羅
 > 蘿 螺 裸 邏 樂 洛 烙 珞 落 酪 駱 亂 卵 欄 爛 蘭
@@ -1427,7 +1427,7 @@ U+FFEE	￮	Halfwidth White Circle
 > 祖 祝 禍 禎 穀 突 節 練 縉 繁 署 者 臭 艹 艹 著
 > 褐 視 謁 謹 賓 贈 辶 逸 難 響 頻 恵 𤋮 舘
 
-# CJK Unifed Ideographs - Common and Uncommon Kanji (4E00 - 9FAF)
+// CJK Unifed Ideographs - Common and Uncommon Kanji (4E00 - 9FAF)
 
 > 一 丁 丂 七 丄 丅 丆 万 丈 三 上 下 丌 不 与 丏
 > 丐 丑 丒 专 且 丕 世 丗 丘 丙 业 丛 东 丝 丞 丟
@@ -2740,7 +2740,7 @@ U+FFEE	￮	Halfwidth White Circle
 > 鿀 鿁 鿂 鿃 鿄 鿅 鿆 鿇 鿈 鿉 鿊 鿋 鿌 鿍 鿎 鿏
 > 鿐 鿑 鿒 鿓 鿔 鿕
 
-# CJK unified ideographs Extension A - Rare kanji (3400 - 4DBF)
+// CJK unified ideographs Extension A - Rare kanji (3400 - 4DBF)
 
 > 㐀 㐁 㐂 㐃 㐄 㐅 㐆 㐇 㐈 㐉 㐊 㐋 㐌 㐍 㐎 㐏
 > 㐐 㐑 㐒 㐓 㐔 㐕 㐖 㐗 㐘 㐙 㐚 㐛 㐜 㐝 㐞 㐟
@@ -3156,6 +3156,6 @@ U+FFEE	￮	Halfwidth White Circle
 > 䶰 䶱 䶲 䶳 䶴 䶵
 
 
-#------------------------------------------------------------------------------#
-# END OF FILE
-#------------------------------------------------------------------------------#
+//----------------------------------------------------------------------------//
+// END OF FILE
+//----------------------------------------------------------------------------//
