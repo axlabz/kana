@@ -15,7 +15,7 @@ pub fn get_flags(chr: char) -> Flags {
 	let get = charinfo!(
 
 		// basic ASCII spaces, including line breaks
-		" \t\r\n" => flag::SPACE,
+		" \t\r\n\x0B\x0C" => flag::SPACE,
 
 		// space separator Unicode category
 		'\u{00A0}' | '\u{1680}' | '\u{2000}' | '\u{2001}' | '\u{2002}' |
@@ -24,7 +24,7 @@ pub fn get_flags(chr: char) -> Flags {
 		'\u{3000}' => flag::SPACE,
 
 		// additional Unicode line/paragraph separators
-		'\u{2028}' | '\u{2029}' => flag::SPACE,
+		'\u{0085}' | '\u{2028}' | '\u{2029}' => flag::SPACE,
 
 		* => flag::NONE,
 	);

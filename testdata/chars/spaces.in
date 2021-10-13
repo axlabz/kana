@@ -1,25 +1,33 @@
-# Space characters
-U+0020	Space (SP)
-U+00A0	No-Break Space (NBSP)
-U+1680	Ogham Space Mark
-U+2000	En Quad
-U+2001	Em Quad
-U+2002	En Space
-U+2003	Em Space
-U+2004	Three-Per-Em Space
-U+2005	Four-Per-Em Space
-U+2006	Six-Per-Em Space
-U+2007	Figure Space
-U+2008	Punctuation Space
-U+2009	Thin Space
-U+200A	Hair Space
-U+202F	Narrow No-Break Space (NNBSP)
-U+205F	Medium Mathematical Space (MMSP)
-U+3000	Ideographic Space
+// spell-checker: ignore NBSP NNBSP MMSP
 
-# We also consider those as spaces for our intents and purposes
-U+2028	Line Separator
-U+2029	Paragraph Separator
-U+0009	Character Tabulation (HT, TAB)
-U+000A	End of Line (EOL, LF, NL)
-U+000D	Carriage Return (CR)
+// Space characters
+U+0020		Space (SP)
+U+00A0		No-Break Space (NBSP)
+U+1680		Ogham Space Mark
+U+2000		En Quad
+U+2001		Em Quad
+U+2002		En Space
+U+2003		Em Space
+U+2004		Three-Per-Em Space
+U+2005		Four-Per-Em Space
+U+2006		Six-Per-Em Space
+U+2007		Figure Space
+U+2008		Punctuation Space
+U+2009		Thin Space
+U+200A		Hair Space
+U+202F		Narrow No-Break Space (NNBSP)
+U+205F		Medium Mathematical Space (MMSP)
+U+3000		Ideographic Space
+
+// We also consider those as spaces for our intents and purposes:
+
+// ASCII range line breaks
+U+000A		<End of Line> (EOL, LF, NL)
+U+000B		<Line Tabulation> (VT)
+U+000C		<Form Feed> (FF)
+U+000D		<Carriage Return> (CR)
+U+0085		<Next Line> (NEL)
+
+// Additional Unicode line breaks
+U+2028		Line Separator
+U+2029		Paragraph Separator

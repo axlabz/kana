@@ -39,6 +39,7 @@ pub struct TestChar {
 	pub info: TestCharInfo,
 }
 
+#[derive(Debug)]
 /// Information for a [`TestChar`].
 pub enum TestCharInfo {
 	/// Defines a single character.

@@ -2,13 +2,14 @@
 	"version": "0.2",
 	"language": "en",
 	"words": [
-		"aiueo",
-		"āīūēō",
-		"âîûêô",
-		"aeiou",
-		"āēīōū",
-		"âêîôû",
 		"abcdefghijklmnopqrstuvwxyz",
+		"aeiou",
+		"âêîôû",
+		"āēīōū",
+		"aiueo",
+		"âîûêô",
+		"āīūēō",
+		"bitor",
 		"kangxi",
 		"masu",
 		"romaji",
@@ -21,7 +22,7 @@
 	"ignorePaths": [
 		".vscode/**",
 		"target/**",
-		"testdata/**/*.in"
+		"testdata/**/*.int"
 	],
 	"ignoreRegExpList": []
 }
