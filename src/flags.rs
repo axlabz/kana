@@ -1,47 +1,45 @@
-use std::ops::{BitAnd, BitOr, BitOrAssign};
+use std::{
+	fmt::Debug,
+	ops::{BitAnd, BitOr, BitOrAssign},
+};
 
 /// Separator for flag names in string representations.
 pub const SEPARATOR: &'static str = "+";
 
-/// Set of bitwise character flags.
+/// Set of bitwise character flags returned by [`flags`](crate::chars::flags).
 ///
-/// Constants for the individual flag values are defined in [`Flags`].
+/// This cannot be created directly. Constants for the individual flag values
+/// are defined in [`Flag`]. Those can be combined with the `|` operator.
+///
+/// See the [`Flag`] namespace and individual constant documentation for more
+/// information on the available flags.
 #[derive(Clone, Copy, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct Flags(u32);
 
 impl Flags {
 	/// Numeric value for this flag.
-	pub fn bits(&self) -> u32 {
+	pub const fn bits(self) -> u32 {
 		self.0
+	}
+
+	/// Combine Flag values. This is equivalent to the `|` operator but is
+	/// available in constant expressions.
+	pub const fn and(self, other: Flags) -> Flags {
+		Flags(self.0 | other.0)
 	}
 }
 
-/// Contains all valid [`Flag`] constants.
-#[allow(non_snake_case)]
-pub mod Flag {
-	use super::Flags;
-
-	pub const NONE: Flags = Flags(0);
-	pub const JAPANESE: Flags = Flags(1 << 0);
-	pub const ROMAJI: Flags = Flags(1 << 1);
-	pub const SPACE: Flags = Flags(1 << 2);
-	pub const HIRAGANA: Flags = Flags(1 << 3);
-	pub const KATAKANA: Flags = Flags(1 << 4);
-	pub const KANA: Flags = Flags(1 << 5);
-	pub const KANJI: Flags = Flags(1 << 6);
-	pub const ROMAN: Flags = Flags(1 << 7);
-	pub const PUNCTUATION: Flags = Flags(1 << 8);
-	pub const SYMBOL: Flags = Flags(1 << 9);
-	pub const WORD: Flags = Flags(1 << 10);
-	pub const FULLWIDTH: Flags = Flags(1 << 11);
-	pub const HALFWIDTH: Flags = Flags(1 << 12);
-	pub const SMALL: Flags = Flags(1 << 13);
-	pub const NUMBER: Flags = Flags(1 << 14);
-	pub const RARE: Flags = Flags(1 << 15);
-	pub const RADICAL: Flags = Flags(1 << 16);
+impl Default for Flags {
+	fn default() -> Self {
+		Flag::NONE
+	}
 }
 
-const ALL_FLAGS: [(Flags, &'static str); 18] = [
+//----------------------------------------------------------------------------//
+// Flag definitions
+//----------------------------------------------------------------------------//
+
+const ALL_FLAGS: [(Flags, &'static str); 19] = [
 	(Flag::NONE, "NONE"),
 	(Flag::JAPANESE, "JAPANESE"),
 	(Flag::ROMAJI, "ROMAJI"),
@@ -60,10 +58,200 @@ const ALL_FLAGS: [(Flags, &'static str); 18] = [
 	(Flag::NUMBER, "NUMBER"),
 	(Flag::RARE, "RARE"),
 	(Flag::RADICAL, "RADICAL"),
+	(Flag::LINEBREAK, "LINEBREAK"),
 ];
 
+/// Contains all valid [`Flags`] constants. A combination of these is returned
+/// by the [`flags`](crate::chars::flags) function.
+///
+/// ## Overall categories
+///
+/// Broad categories that include all mapped characters. Those can be useful
+/// to segment portions of text and isolate Japanese and Romaji text in a
+/// larger context.
+///
+/// - [`JAPANESE`]
+/// - [`ROMAJI`]
+/// - [`SPACE`]
+///
+/// ## Word characters
+///
+/// Letter, digits, and mid-word marks. The combination of these can be used
+/// to extract possible words in a text.
+///
+/// - [`HIRAGANA`]
+/// - [`KATAKANA`]
+/// - [`KANA`]
+/// - [`KANJI`]
+/// - [`ROMAN`]
+///
+/// ## Punctuation and symbols
+///
+/// Non-word text characters. These are usually relevant for text segmentation
+/// (punctuation in particular).
+///
+/// - [`PUNCTUATION`]
+/// - [`SYMBOL`]
+///
+/// ## Extra flags
+///
+/// These provide additional information about characters across all categories
+/// that can be relevant in specific contexts.
+///
+/// - [`WORD`]
+/// - [`FULLWIDTH`]
+/// - [`HALFWIDTH`]
+/// - [`SMALL`]
+/// - [`RARE`]
+/// - [`NUMBER`]
+/// - [`RADICAL`]
+/// - [`LINEBREAK`]
+///
+#[allow(non_snake_case)]
+pub mod Flag {
+	use super::Flags;
+
+	/// Default zero value for [`Flags`].
+	pub const NONE: Flags = Flags(0);
+
+	//----[ Overall categories ]----------------------------------------------//
+
+	/// Includes characters specific to Japanese.
+	///
+	/// ## Notes
+	///
+	/// - This includes the [`KANJI`] range, not all of which is specific
+	/// to Japanese or even mapped to existing characters.
+	///
+	/// - The _Ideographic Space_ (`U+3000`) commonly used in Japanese text
+	/// is mapped as [`SPACE`] instead.
+	pub const JAPANESE: Flags = Flags(1 << 0);
+
+	/// Includes all ASCII and extended (e.g. `āīūēō` and `âîûêô`) characters
+	/// that are used in the romanized transliterations.
+	///
+	/// This includes all characters, including ASCII punctuation and symbols
+	/// that have [`JAPANESE`] mappings.
+	pub const ROMAJI: Flags = Flags(1 << 1);
+
+	/// Space separator characters, including line breaks.
+	///
+	/// This includes the entire `Zs` Unicode category, common ASCII space
+	/// separators (such as tabs), and [`LINEBREAK`].
+	pub const SPACE: Flags = Flags(1 << 2);
+
+	//----[ Word characters ]-------------------------------------------------//
+
+	/// Hiragana characters. Note that some common kana related characters are
+	/// flagged as [`KANA`] instead (e.g. the long vowel mark).
+	///
+	/// See also: [`SMALL`], [`RARE`].
+	pub const HIRAGANA: Flags = Flags(1 << 3);
+
+	/// Katakana characters. Note that some common kana related characters are
+	/// flagged as [`KANA`] instead (e.g. the long vowel mark).
+	///
+	/// See also: [`SMALL`], [`RARE`], [`HALFWIDTH`].
+	pub const KATAKANA: Flags = Flags(1 << 4);
+
+	/// Includes kana related characters that are not strictly only hiragana
+	/// or katakana (even if they fall on the respective Unicode ranges).
+	///
+	/// Examples of characters with this flag are mid-word punctuation (e.g.
+	/// the long vowel mark), the voiced sound marks (both combining and
+	/// non-combining), and some [`RARE`] ones (e.g. kana iteration marks).
+	///
+	/// ## Notes
+	///
+	/// - For the purposes of text segmentation, those should be considered as
+	/// part of a kana word.
+	pub const KANA: Flags = Flags(1 << 5);
+
+	/// Kanji characters.
+	///
+	/// Note that this includes the entire Unicode range for kanji, not all of
+	/// which is specific to Japanese or even mapped to existing characters.
+	pub const KANJI: Flags = Flags(1 << 6);
+
+	/// Roman letters and digits.
+	///
+	/// This includes both ASCII and fullwidth characters. Those are flagged
+	/// with [`ROMAJI`] and [`JAPANESE`]+[`FULLWIDTH`] flags respectively.
+	pub const ROMAN: Flags = Flags(1 << 7);
+
+	//----[ Punctuation and symbols ]-----------------------------------------//
+
+	/// Non-word text punctuation. Includes both [`JAPANESE`] and [`ROMAJI`]
+	/// characters. The [`JAPANESE`] punctuation includes the [`FULLWIDTH`]
+	/// equivalents for ASCII.
+	///
+	/// Compared to [`SYMBOL`], punctuation is directly related to sentence
+	/// structure. This makes it particularly relevant for text segmentation.
+	pub const PUNCTUATION: Flags = Flags(1 << 8);
+
+	/// Non-word textual symbols. Note that [`PUNCTUATION`] is not included in
+	/// this.
+	pub const SYMBOL: Flags = Flags(1 << 9);
+
+	//----[ Extra flags ]-----------------------------------------------------//
+
+	/// Flags any character that is part of a word. Includes both [`ROMAJI`]
+	/// and [`JAPANESE`].
+	///
+	/// The purpose of this flag is to be used for simple word segmentation.
+	///
+	/// Includes characters from [`HIRAGANA`], [`KATAKANA`], [`KANA`], [`KANJI`],
+	/// and [`ROMAN`].
+	///
+	/// Some characters in this also include the [`PUNCTUATION`] flag. Those
+	/// indicate mid-word punctuation characters such as `・`, `－` and their
+	/// romaji equivalents (including `'`).
+	pub const WORD: Flags = Flags(1 << 10);
+
+	/// Fullwidth variants of ASCII characters. This includes characters in
+	/// the [`ROMAN`], [`PUNCTUATION`], and [`SYMBOL`] ranges.
+	///
+	/// See also [`NUMBER`].
+	pub const FULLWIDTH: Flags = Flags(1 << 11);
+
+	/// Halfwidth [`KATAKANA`] characters.
+	pub const HALFWIDTH: Flags = Flags(1 << 12);
+
+	/// Small [`KATAKANA`] and [`HIRAGANA`] characters.
+	///
+	/// Note that this includes [`RARE`] small characters such as the Ainu
+	/// katakana extensions.
+	pub const SMALL: Flags = Flags(1 << 13);
+
+	/// Numeric characters from [`ROMAJI`] and [`JAPANESE`].
+	///
+	/// Note that this includes the numeral [`KANJI`]. To target decimal digits
+	/// specifically, the [`ROMAJI`] and [`FULLWIDTH`] flags can be used with
+	/// this one.
+	pub const NUMBER: Flags = Flags(1 << 14);
+
+	/// Rare, unusual, and archaic kana characters. In general, those can be
+	/// mapped to more usual kana.
+	pub const RARE: Flags = Flags(1 << 15);
+
+	/// Kanji radical [`SYMBOL`] characters.
+	pub const RADICAL: Flags = Flags(1 << 16);
+
+	/// Any linebreak character. All of these are included in [`SPACE`].
+	///
+	/// Includes:
+	/// - `U+000A` <End of Line> (EOL, LF, NL)
+	/// - `U+000B` <Line Tabulation> (VT)
+	/// - `U+000C` <Form Feed> (FF)
+	/// - `U+000D` <Carriage Return> (CR)
+	/// - `U+0085` <Next Line> (NEL)
+	/// - `U+2028` Line Separator
+	/// - `U+2029` Paragraph Separator
+	pub const LINEBREAK: Flags = Flags(1 << 17);
+}
+
 //----------------------------------------------------------------------------//
-// OPERATOR
+// Operators
 //----------------------------------------------------------------------------//
 
 impl BitOr for Flags {
@@ -174,6 +362,22 @@ impl std::fmt::Debug for Flags {
 #[cfg(test)]
 mod tests {
 	use super::*;
+
+	#[test]
+	fn flags_support_bit_ops() {
+		let flag: Flags = Flag::HIRAGANA | Flag::KATAKANA;
+		assert!(flag & Flag::HIRAGANA);
+		assert!(flag & Flag::KATAKANA);
+		assert!(!(flag & Flag::JAPANESE));
+	}
+
+	#[test]
+	fn flags_and() {
+		const FLAG: Flags = Flag::HIRAGANA.and(Flag::KATAKANA);
+		assert!(FLAG & Flag::HIRAGANA);
+		assert!(FLAG & Flag::KATAKANA);
+		assert!(!(FLAG & Flag::JAPANESE));
+	}
 
 	#[test]
 	fn flags_are_unique() {
