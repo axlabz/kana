@@ -6,12 +6,12 @@ use std::{
 /// Separator for flag names in string representations.
 pub const SEPARATOR: &'static str = "+";
 
-/// Set of bitwise character flags returned by [`flags`](crate::chars::flags).
+/// Set of bitwise character flags returned by [`get_flags`](crate::chars::get_flags).
 ///
 /// This cannot be created directly. Constants for the individual flag values
-/// are defined in [`Flag`]. Those can be combined with the `|` operator.
+/// are defined in [`flag`]. Those can be combined with the `|` operator.
 ///
-/// See the [`Flag`] namespace and individual constant documentation for more
+/// See the [`flag`] namespace and individual constant documentation for more
 /// information on the available flags.
 #[derive(Clone, Copy, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct Flags(u32);
@@ -31,7 +31,7 @@ impl Flags {
 
 impl Default for Flags {
 	fn default() -> Self {
-		Flag::NONE
+		flag::NONE
 	}
 }
 
@@ -40,25 +40,25 @@ impl Default for Flags {
 //----------------------------------------------------------------------------//
 
 const ALL_FLAGS: [(Flags, &'static str); 19] = [
-	(Flag::NONE, "NONE"),
-	(Flag::JAPANESE, "JAPANESE"),
-	(Flag::ROMAJI, "ROMAJI"),
-	(Flag::SPACE, "SPACE"),
-	(Flag::HIRAGANA, "HIRAGANA"),
-	(Flag::KATAKANA, "KATAKANA"),
-	(Flag::KANA, "KANA"),
-	(Flag::KANJI, "KANJI"),
-	(Flag::ROMAN, "ROMAN"),
-	(Flag::PUNCTUATION, "PUNCTUATION"),
-	(Flag::SYMBOL, "SYMBOL"),
-	(Flag::WORD, "WORD"),
-	(Flag::FULLWIDTH, "FULLWIDTH"),
-	(Flag::HALFWIDTH, "HALFWIDTH"),
-	(Flag::SMALL, "SMALL"),
-	(Flag::NUMBER, "NUMBER"),
-	(Flag::RARE, "RARE"),
-	(Flag::RADICAL, "RADICAL"),
-	(Flag::LINEBREAK, "LINEBREAK"),
+	(flag::NONE, "NONE"),
+	(flag::JAPANESE, "JAPANESE"),
+	(flag::ROMAJI, "ROMAJI"),
+	(flag::SPACE, "SPACE"),
+	(flag::HIRAGANA, "HIRAGANA"),
+	(flag::KATAKANA, "KATAKANA"),
+	(flag::KANA, "KANA"),
+	(flag::KANJI, "KANJI"),
+	(flag::ROMAN, "ROMAN"),
+	(flag::PUNCTUATION, "PUNCTUATION"),
+	(flag::SYMBOL, "SYMBOL"),
+	(flag::WORD, "WORD"),
+	(flag::FULLWIDTH, "FULLWIDTH"),
+	(flag::HALFWIDTH, "HALFWIDTH"),
+	(flag::SMALL, "SMALL"),
+	(flag::NUMBER, "NUMBER"),
+	(flag::RARE, "RARE"),
+	(flag::RADICAL, "RADICAL"),
+	(flag::LINEBREAK, "LINEBREAK"),
 ];
 
 /// Contains all valid [`Flags`] constants. A combination of these is returned
@@ -107,8 +107,7 @@ const ALL_FLAGS: [(Flags, &'static str); 19] = [
 /// - [`RADICAL`]
 /// - [`LINEBREAK`]
 ///
-#[allow(non_snake_case)]
-pub mod Flag {
+pub mod flag {
 	use super::Flags;
 
 	/// Default zero value for [`Flags`].
@@ -304,7 +303,7 @@ impl std::str::FromStr for Flags {
 		if s.trim().len() == 0 {
 			return Err(FlagParseError::Empty);
 		}
-		let mut result = Flag::NONE;
+		let mut result = flag::NONE;
 		for it in s.split(SEPARATOR) {
 			let mut valid = false;
 			for &(flag, name) in ALL_FLAGS.iter() {
@@ -365,18 +364,18 @@ mod tests {
 
 	#[test]
 	fn flags_support_bit_ops() {
-		let flag: Flags = Flag::HIRAGANA | Flag::KATAKANA;
-		assert!(flag & Flag::HIRAGANA);
-		assert!(flag & Flag::KATAKANA);
-		assert!(!(flag & Flag::JAPANESE));
+		let flag: Flags = flag::HIRAGANA | flag::KATAKANA;
+		assert!(flag & flag::HIRAGANA);
+		assert!(flag & flag::KATAKANA);
+		assert!(!(flag & flag::JAPANESE));
 	}
 
 	#[test]
 	fn flags_and() {
-		const FLAG: Flags = Flag::HIRAGANA.and(Flag::KATAKANA);
-		assert!(FLAG & Flag::HIRAGANA);
-		assert!(FLAG & Flag::KATAKANA);
-		assert!(!(FLAG & Flag::JAPANESE));
+		const FLAG: Flags = flag::HIRAGANA.and(flag::KATAKANA);
+		assert!(FLAG & flag::HIRAGANA);
+		assert!(FLAG & flag::KATAKANA);
+		assert!(!(FLAG & flag::JAPANESE));
 	}
 
 	#[test]
@@ -405,7 +404,7 @@ mod tests {
 
 	#[test]
 	fn flags_should_parse() {
-		let mut combined = Flag::NONE;
+		let mut combined = flag::NONE;
 		for &(flag, name) in ALL_FLAGS.iter() {
 			let parsed: Flags = name.parse().unwrap();
 			assert_eq!(parsed, flag);
@@ -423,7 +422,7 @@ mod tests {
 
 	#[test]
 	fn flags_should_parse_display() {
-		let mut combined = Flag::NONE;
+		let mut combined = flag::NONE;
 		for &(flag, _) in ALL_FLAGS.iter() {
 			let text = format!("{}", flag);
 			let parsed: Flags = text.parse().unwrap();

@@ -1,6 +1,6 @@
 //! Character testing functions.
 
-use crate::chars::{flags, Flags};
+use crate::{flag, get_flags};
 
 /// Returns true if the given character is hiragana.
 ///
@@ -51,5 +51,5 @@ pub fn is_punctuation(_chr: char) -> bool {
 
 /// Returns true if the given character is [`SPACE`](crate::chars::Flags::SPACE).
 pub fn is_space(chr: char) -> bool {
-	flags(chr) & Flags::SPACE != 0
+	get_flags(chr) & flag::SPACE
 }
