@@ -29,6 +29,7 @@
 // - NUMBER
 // - RARE
 // - RADICAL
+// - LINEBREAK
 //
 // Characters are specified either as a single line, sets, or ranges.
 //
@@ -97,12 +98,17 @@ U+202F		Narrow No-Break Space (NNBSP)
 U+205F		Medium Mathematical Space (MMSP)
 U+3000		Ideographic Space
 
-// Additional ASCII spaces/line breaks
+// Additional ASCII spaces
 U+0009		<Character Tabulation> (HT, TAB)
+
+:= SPACE+LINEBREAK
+
+// ASCII range line breaks
 U+000A		<End of Line> (EOL, LF, NL)
 U+000B		<Line Tabulation> (VT)
 U+000C		<Form Feed> (FF)
 U+000D		<Carriage Return> (CR)
+U+0085		<Next Line> (NEL)
 
 // Additional Unicode line breaks
 U+2028		Line Separator
