@@ -1,0 +1,155 @@
+// ROMAN characters
+
+U+0030	0	Digit Zero
+U+0031	1	Digit One
+U+0032	2	Digit Two
+U+0033	3	Digit Three
+U+0034	4	Digit Four
+U+0035	5	Digit Five
+U+0036	6	Digit Six
+U+0037	7	Digit Seven
+U+0038	8	Digit Eight
+U+0039	9	Digit Nine
+
+U+0041	A	Latin Capital Letter A
+U+0042	B	Latin Capital Letter B
+U+0043	C	Latin Capital Letter C
+U+0044	D	Latin Capital Letter D
+U+0045	E	Latin Capital Letter E
+U+0046	F	Latin Capital Letter F
+U+0047	G	Latin Capital Letter G
+U+0048	H	Latin Capital Letter H
+U+0049	I	Latin Capital Letter I
+U+004A	J	Latin Capital Letter J
+U+004B	K	Latin Capital Letter K
+U+004C	L	Latin Capital Letter L
+U+004D	M	Latin Capital Letter M
+U+004E	N	Latin Capital Letter N
+U+004F	O	Latin Capital Letter O
+U+0050	P	Latin Capital Letter P
+U+0051	Q	Latin Capital Letter Q
+U+0052	R	Latin Capital Letter R
+U+0053	S	Latin Capital Letter S
+U+0054	T	Latin Capital Letter T
+U+0055	U	Latin Capital Letter U
+U+0056	V	Latin Capital Letter V
+U+0057	W	Latin Capital Letter W
+U+0058	X	Latin Capital Letter X
+U+0059	Y	Latin Capital Letter Y
+U+005A	Z	Latin Capital Letter Z
+
+U+0061	a	Latin Small Letter A
+U+0062	b	Latin Small Letter B
+U+0063	c	Latin Small Letter C
+U+0064	d	Latin Small Letter D
+U+0065	e	Latin Small Letter E
+U+0066	f	Latin Small Letter F
+U+0067	g	Latin Small Letter G
+U+0068	h	Latin Small Letter H
+U+0069	i	Latin Small Letter I
+U+006A	j	Latin Small Letter J
+U+006B	k	Latin Small Letter K
+U+006C	l	Latin Small Letter L
+U+006D	m	Latin Small Letter M
+U+006E	n	Latin Small Letter N
+U+006F	o	Latin Small Letter O
+U+0070	p	Latin Small Letter P
+U+0071	q	Latin Small Letter Q
+U+0072	r	Latin Small Letter R
+U+0073	s	Latin Small Letter S
+U+0074	t	Latin Small Letter T
+U+0075	u	Latin Small Letter U
+U+0076	v	Latin Small Letter V
+U+0077	w	Latin Small Letter W
+U+0078	x	Latin Small Letter X
+U+0079	y	Latin Small Letter Y
+U+007A	z	Latin Small Letter Z
+
+U+00C2	Â	Latin Capital Letter A with Circumflex
+U+00CA	Ê	Latin Capital Letter E with Circumflex
+U+00CE	Î	Latin Capital Letter I with Circumflex
+U+00D4	Ô	Latin Capital Letter O with Circumflex
+U+00DB	Û	Latin Capital Letter U with Circumflex
+
+U+00E2	â	Latin Small Letter A with Circumflex
+U+00EA	ê	Latin Small Letter E with Circumflex
+U+00EE	î	Latin Small Letter I with Circumflex
+U+00F4	ô	Latin Small Letter O with Circumflex
+U+00FB	û	Latin Small Letter U with Circumflex
+
+U+0100	Ā	Latin Capital Letter A with Macron
+U+0112	Ē	Latin Capital Letter E with Macron
+U+012A	Ī	Latin Capital Letter I with Macron
+U+014C	Ō	Latin Capital Letter O with Macron
+U+016A	Ū	Latin Capital Letter U with Macron
+
+U+0101	ā	Latin Small Letter A with Macron
+U+0113	ē	Latin Small Letter E with Macron
+U+012B	ī	Latin Small Letter I with Macron
+U+014D	ō	Latin Small Letter O with Macron
+U+016B	ū	Latin Small Letter U with Macron
+
+U+FF10	０	Fullwidth Digit Zero
+U+FF11	１	Fullwidth Digit One
+U+FF12	２	Fullwidth Digit Two
+U+FF13	３	Fullwidth Digit Three
+U+FF14	４	Fullwidth Digit Four
+U+FF15	５	Fullwidth Digit Five
+U+FF16	６	Fullwidth Digit Six
+U+FF17	７	Fullwidth Digit Seven
+U+FF18	８	Fullwidth Digit Eight
+U+FF19	９	Fullwidth Digit Nine
+
+U+FF21	Ａ	Fullwidth Latin Capital Letter A
+U+FF22	Ｂ	Fullwidth Latin Capital Letter B
+U+FF23	Ｃ	Fullwidth Latin Capital Letter C
+U+FF24	Ｄ	Fullwidth Latin Capital Letter D
+U+FF25	Ｅ	Fullwidth Latin Capital Letter E
+U+FF26	Ｆ	Fullwidth Latin Capital Letter F
+U+FF27	Ｇ	Fullwidth Latin Capital Letter G
+U+FF28	Ｈ	Fullwidth Latin Capital Letter H
+U+FF29	Ｉ	Fullwidth Latin Capital Letter I
+U+FF2A	Ｊ	Fullwidth Latin Capital Letter J
+U+FF2B	Ｋ	Fullwidth Latin Capital Letter K
+U+FF2C	Ｌ	Fullwidth Latin Capital Letter L
+U+FF2D	Ｍ	Fullwidth Latin Capital Letter M
+U+FF2E	Ｎ	Fullwidth Latin Capital Letter N
+U+FF2F	Ｏ	Fullwidth Latin Capital Letter O
+U+FF30	Ｐ	Fullwidth Latin Capital Letter P
+U+FF31	Ｑ	Fullwidth Latin Capital Letter Q
+U+FF32	Ｒ	Fullwidth Latin Capital Letter R
+U+FF33	Ｓ	Fullwidth Latin Capital Letter S
+U+FF34	Ｔ	Fullwidth Latin Capital Letter T
+U+FF35	Ｕ	Fullwidth Latin Capital Letter U
+U+FF36	Ｖ	Fullwidth Latin Capital Letter V
+U+FF37	Ｗ	Fullwidth Latin Capital Letter W
+U+FF38	Ｘ	Fullwidth Latin Capital Letter X
+U+FF39	Ｙ	Fullwidth Latin Capital Letter Y
+U+FF3A	Ｚ	Fullwidth Latin Capital Letter Z
+
+U+FF41	ａ	Fullwidth Latin Small Letter A
+U+FF42	ｂ	Fullwidth Latin Small Letter B
+U+FF43	ｃ	Fullwidth Latin Small Letter C
+U+FF44	ｄ	Fullwidth Latin Small Letter D
+U+FF45	ｅ	Fullwidth Latin Small Letter E
+U+FF46	ｆ	Fullwidth Latin Small Letter F
+U+FF47	ｇ	Fullwidth Latin Small Letter G
+U+FF48	ｈ	Fullwidth Latin Small Letter H
+U+FF49	ｉ	Fullwidth Latin Small Letter I
+U+FF4A	ｊ	Fullwidth Latin Small Letter J
+U+FF4B	ｋ	Fullwidth Latin Small Letter K
+U+FF4C	ｌ	Fullwidth Latin Small Letter L
+U+FF4D	ｍ	Fullwidth Latin Small Letter M
+U+FF4E	ｎ	Fullwidth Latin Small Letter N
+U+FF4F	ｏ	Fullwidth Latin Small Letter O
+U+FF50	ｐ	Fullwidth Latin Small Letter P
+U+FF51	ｑ	Fullwidth Latin Small Letter Q
+U+FF52	ｒ	Fullwidth Latin Small Letter R
+U+FF53	ｓ	Fullwidth Latin Small Letter S
+U+FF54	ｔ	Fullwidth Latin Small Letter T
+U+FF55	ｕ	Fullwidth Latin Small Letter U
+U+FF56	ｖ	Fullwidth Latin Small Letter V
+U+FF57	ｗ	Fullwidth Latin Small Letter W
+U+FF58	ｘ	Fullwidth Latin Small Letter X
+U+FF59	ｙ	Fullwidth Latin Small Letter Y
+U+FF5A	ｚ	Fullwidth Latin Small Letter Z

@@ -1,7 +1,12 @@
-// KANA characters
+// Specific WORD characters
 
-U+3099		Combining Katakana-Hiragana Voiced Sound Mark
-U+309A		Combining Katakana-Hiragana Semi-Voiced Sound Mark
+// Mid-word punctuation
+
+U+0027	'	Apostrophe
+U+002D	-	Hyphen-Minus
+U+002F	/	Solidus
+U+00B7	·	Middle Dot
+
 U+309B	゛	Katakana-Hiragana Voiced Sound Mark
 U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
 U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark

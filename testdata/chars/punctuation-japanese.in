@@ -2,17 +2,41 @@
 
 // spell-checker: disable
 
-// Strictly speaking this is in the katakana range, but we consider it a
-// punctuation.
 U+30A0	゠	Katakana-Hiragana Double Hyphen
+
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
+U+30FB	・	Katakana Middle Dot
+
+U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+U+FF65	･	Halfwidth Katakana Middle Dot
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+U+FF01	！	Fullwidth Exclamation Mark
+U+FF08	（	Fullwidth Left Parenthesis
+U+FF09	）	Fullwidth Right Parenthesis
+U+FF0C	，	Fullwidth Comma
+U+FF0E	．	Fullwidth Full Stop
+U+FF0F	／	Fullwidth Solidus
+U+FF1A	：	Fullwidth Colon
+U+FF1B	；	Fullwidth Semicolon
+U+FF1F	？	Fullwidth Question Mark
+U+FF3B	［	Fullwidth Left Square Bracket
+U+FF3D	］	Fullwidth Right Square Bracket
+U+FF5B	｛	Fullwidth Left Curly Bracket
+U+FF5D	｝	Fullwidth Right Curly Bracket
+U+FF5F	｟	Fullwidth Left White Parenthesis
+U+FF60	｠	Fullwidth Right White Parenthesis
 
 U+3001	、	Ideographic Comma
 U+3002	。	Ideographic Full Stop
-U+3003	〃	Ditto Mark
-U+3004	〄	Japanese Industrial Standard Symbol
-// U+3005	々	Ideographic Iteration Mark
-U+3006	〆	Ideographic Closing Mark
-U+3007	〇	Ideographic Number Zero
 U+3008	〈	Left Angle Bracket
 U+3009	〉	Right Angle Bracket
 U+300A	《	Left Double Angle Bracket
@@ -23,8 +47,6 @@ U+300E	『	Left White Corner Bracket
 U+300F	』	Right White Corner Bracket
 U+3010	【	Left Black Lenticular Bracket
 U+3011	】	Right Black Lenticular Bracket
-U+3012	〒	Postal Mark
-U+3013	〓	Geta Mark
 U+3014	〔	Left Tortoise Shell Bracket
 U+3015	〕	Right Tortoise Shell Bracket
 U+3016	〖	Left White Lenticular Bracket
@@ -33,44 +55,27 @@ U+3018	〘	Left White Tortoise Shell Bracket
 U+3019	〙	Right White Tortoise Shell Bracket
 U+301A	〚	Left White Square Bracket
 U+301B	〛	Right White Square Bracket
-U+301C	〜	Wave Dash
 U+301D	〝	Reversed Double Prime Quotation Mark
-U+301E	〞	Double Prime Quotation Mark
 U+301F	〟	Low Double Prime Quotation Mark
-U+3020	〠	Postal Mark Face
-U+3021	〡	Hangzhou Numeral One
-U+3022	〢	Hangzhou Numeral Two
-U+3023	〣	Hangzhou Numeral Three
-U+3024	〤	Hangzhou Numeral Four
-U+3025	〥	Hangzhou Numeral Five
-U+3026	〦	Hangzhou Numeral Six
-U+3027	〧	Hangzhou Numeral Seven
-U+3028	〨	Hangzhou Numeral Eight
-U+3029	〩	Hangzhou Numeral Nine
-U+302A	◌〪	Ideographic Level Tone Mark
-U+302B	◌〫	Ideographic Rising Tone Mark
-U+302C	◌〬	Ideographic Departing Tone Mark
-U+302D	◌〭	Ideographic Entering Tone Mark
-U+302E	〮	Hangul Single Dot Tone Mark
-U+302F	〯	Hangul Double Dot Tone Mark
-U+3030	〰	Wavy Dash
-U+3031	〱	Vertical Kana Repeat Mark
-U+3032	〲	Vertical Kana Repeat with Voiced Sound Mark
-U+3033	〳	Vertical Kana Repeat Mark Upper Half
-U+3034	〴	Vertical Kana Repeat with Voiced Sound Mark Upper Half
-U+3035	〵	Vertical Kana Repeat Mark Lower Half
-U+3036	〶	Circled Postal Mark
-U+3037	〷	Ideographic Telegraph Line Feed Separator Symbol
-U+3038	〸	Hangzhou Numeral Ten
-U+3039	〹	Hangzhou Numeral Twenty
-U+303A	〺	Hangzhou Numeral Thirty
-U+303B	〻	Vertical Ideographic Iteration Mark
-U+303C	〼	Masu Mark
-U+303D	〽	Part Alternation Mark
-U+303E	〾	Ideographic Variation Indicator
-U+303F	〿	Ideographic Half Fill Space
+U+301E	〞	Double Prime Quotation Mark
 
 U+FF61	｡	Halfwidth Ideographic Full Stop
 U+FF62	｢	Halfwidth Left Corner Bracket
 U+FF63	｣	Halfwidth Right Corner Bracket
 U+FF64	､	Halfwidth Ideographic Comma
+
+U+FF01	！	Fullwidth Exclamation Mark
+U+FF02	＂	Fullwidth Quotation Mark
+U+FF08	（	Fullwidth Left Parenthesis
+U+FF09	）	Fullwidth Right Parenthesis
+U+FF0C	，	Fullwidth Comma
+U+FF0E	．	Fullwidth Full Stop
+U+FF1A	：	Fullwidth Colon
+U+FF1B	；	Fullwidth Semicolon
+U+FF1F	？	Fullwidth Question Mark
+U+FF3B	［	Fullwidth Left Square Bracket
+U+FF3D	］	Fullwidth Right Square Bracket
+U+FF5B	｛	Fullwidth Left Curly Bracket
+U+FF5D	｝	Fullwidth Right Curly Bracket
+U+FF5F	｟	Fullwidth Left White Parenthesis
+U+FF60	｠	Fullwidth Right White Parenthesis

@@ -1,0 +1,33 @@
+// RARE characters
+
+U+308E	ゎ	Hiragana Letter Small Wa
+U+3095	ゕ	Hiragana Letter Small Ka
+U+3096	ゖ	Hiragana Letter Small Ke
+U+309F	ゟ	Hiragana Digraph Yori
+
+U+30EE	ヮ	Katakana Letter Small Wa
+U+30F5	ヵ	Katakana Letter Small Ka
+U+30F6	ヶ	Katakana Letter Small Ke
+U+30FF	ヿ	Katakana Digraph Koto
+
+U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+U+FF65	･	Halfwidth Katakana Middle Dot
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+
+U+1B150	𛅐	Hiragana Letter Small Wi
+U+1B151	𛅑	Hiragana Letter Small We
+U+1B152	𛅒	Hiragana Letter Small Wo
+
+U+1B164	𛅤	Katakana Letter Small Wi
+U+1B165	𛅥	Katakana Letter Small We
+U+1B166	𛅦	Katakana Letter Small Wo
+U+1B167	𛅧	Katakana Letter Small N

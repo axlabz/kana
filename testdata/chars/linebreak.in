@@ -1,0 +1,12 @@
+// LINEBREAK characters
+
+// ASCII range line breaks
+U+000A		<End of Line> (EOL, LF, NL)
+U+000B		<Line Tabulation> (VT)
+U+000C		<Form Feed> (FF)
+U+000D		<Carriage Return> (CR)
+U+0085		<Next Line> (NEL)
+
+// Additional Unicode line breaks
+U+2028		Line Separator
+U+2029		Paragraph Separator

@@ -180,12 +180,16 @@ pub mod flag {
 
 	//----[ Punctuation and symbols ]-----------------------------------------//
 
-	/// Non-word text punctuation. Includes both [`JAPANESE`] and [`ROMAJI`]
+	/// Punctuation characters. Includes both [`JAPANESE`] and [`ROMAJI`]
 	/// characters. The [`JAPANESE`] punctuation includes the [`FULLWIDTH`]
 	/// equivalents for ASCII.
 	///
-	/// Compared to [`SYMBOL`], punctuation is directly related to sentence
-	/// structure. This makes it particularly relevant for text segmentation.
+	/// This also includes mid-word punctuation (e.g. `・` and `ー`). Those are
+	/// flagged as [`WORD`].
+	///
+	/// The purpose of this flag is to mark characters that are particularly
+	/// relevant to text segmentation and word processing (for example, when
+	/// compared to plain [`SYMBOL`] characters).
 	pub const PUNCTUATION: Flags = Flags(1 << 8);
 
 	/// Non-word textual symbols. Note that [`PUNCTUATION`] is not included in
@@ -213,7 +217,7 @@ pub mod flag {
 	/// See also [`NUMBER`].
 	pub const FULLWIDTH: Flags = Flags(1 << 11);
 
-	/// Halfwidth [`KATAKANA`] characters.
+	/// Halfwidth [`KATAKANA`] and [`PUNCTUATION`] characters.
 	pub const HALFWIDTH: Flags = Flags(1 << 12);
 
 	/// Small [`KATAKANA`] and [`HIRAGANA`] characters.
@@ -229,8 +233,10 @@ pub mod flag {
 	/// this one.
 	pub const NUMBER: Flags = Flags(1 << 14);
 
-	/// Rare, unusual, and archaic kana characters. In general, those can be
-	/// mapped to more usual kana.
+	/// Rare, unusual, and archaic kana characters.
+	///
+	/// The purpose of this is to flag kana characters that can usually be
+	/// mapped to more usual combinations (e.g. to normalize words for lookup).
 	pub const RARE: Flags = Flags(1 << 15);
 
 	/// Kanji radical [`SYMBOL`] characters.

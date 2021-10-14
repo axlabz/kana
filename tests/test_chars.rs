@@ -126,6 +126,123 @@ fn test_flags() -> Result<(), String> {
 	}
 }
 
+#[test]
+fn test_fullwidth() {
+	check_flags(Check::Contains, "fullwidth.in", flag::FULLWIDTH);
+}
+
+#[test]
+fn test_halfwidth() {
+	check_flags(Check::Contains, "halfwidth.in", flag::HALFWIDTH);
+}
+
+#[test]
+fn test_hiragana() {
+	check_flags(Check::Contains, "hiragana.in", flag::HIRAGANA);
+}
+
+#[test]
+fn test_kana() {
+	check_flags(Check::Contains, "kana.in", flag::KANA);
+}
+
+#[test]
+fn test_katakana() {
+	check_flags(Check::Contains, "katakana.in", flag::KATAKANA);
+}
+
+#[test]
+fn test_katakana_halfwidth() {
+	check_flags(
+		Check::Contains,
+		"katakana-halfwidth.in",
+		flag::HALFWIDTH | flag::KATAKANA,
+	);
+}
+
+#[test]
+fn test_linebreak() {
+	check_flags(Check::Contains, "linebreak.in", flag::LINEBREAK);
+}
+
+#[test]
+fn test_number() {
+	check_flags(Check::Contains, "number.in", flag::NUMBER);
+}
+
+#[test]
+fn test_punctuation_japanese() {
+	check_flags(
+		Check::Contains,
+		"punctuation-japanese.in",
+		flag::PUNCTUATION | flag::JAPANESE,
+	);
+}
+
+#[test]
+fn test_punctuation_romaji() {
+	check_flags(
+		Check::Contains,
+		"punctuation-romaji.in",
+		flag::PUNCTUATION | flag::ROMAJI,
+	);
+}
+
+#[test]
+fn test_rare() {
+	check_flags(Check::Contains, "rare.in", flag::RARE);
+}
+
+#[test]
+fn test_romaji() {
+	check_flags(Check::Contains, "romaji.in", flag::ROMAJI);
+}
+
+#[test]
+fn test_roman() {
+	check_flags(Check::Contains, "roman.in", flag::ROMAN);
+}
+
+#[test]
+fn test_small() {
+	check_flags(Check::Contains, "small.in", flag::SMALL);
+}
+
+#[test]
+fn test_space() {
+	check_flags(Check::Contains, "space.in", flag::SPACE);
+}
+
+#[test]
+fn test_symbol_japanese() {
+	check_flags(
+		Check::Contains,
+		"symbol-japanese.in",
+		flag::SYMBOL | flag::JAPANESE,
+	);
+}
+
+#[test]
+fn test_symbol_romaji() {
+	check_flags(
+		Check::Contains,
+		"symbol-romaji.in",
+		flag::SYMBOL | flag::ROMAJI,
+	);
+}
+
+#[test]
+fn test_word() {
+	check_flags(Check::Contains, "word.in", flag::WORD);
+	check_flags(Check::Contains, "hiragana.in", flag::WORD);
+	check_flags(Check::Contains, "katakana.in", flag::WORD);
+	check_flags(Check::Contains, "kana.in", flag::WORD);
+	check_flags(Check::Contains, "katakana-halfwidth.in", flag::WORD);
+	check_flags(Check::Contains, "number.in", flag::WORD);
+	check_flags(Check::Contains, "roman.in", flag::WORD);
+}
+
+#[allow(dead_code)]
 enum Check {
 	Equal,
 	Contains,
@@ -194,61 +311,4 @@ fn check_flags(kind: Check, file: &'static str, expected: Flags) {
 	}
 
 	assert!(count > 0, "{}: tested no characters", filename);
-}
-
-#[test]
-fn test_space() {
-	check_flags(Check::Contains, "spaces.in", flag::SPACE);
-}
-
-#[test]
-fn test_hiragana() {
-	check_flags(Check::Contains, "hiragana.in", flag::HIRAGANA);
-}
-
-#[test]
-fn test_katakana() {
-	check_flags(Check::Contains, "katakana.in", flag::KATAKANA);
-}
-
-#[test]
-fn test_fullwidth() {
-	check_flags(Check::Contains, "fullwidth.in", flag::FULLWIDTH);
-}
-
-#[test]
-fn test_halfwidth() {
-	check_flags(Check::Contains, "halfwidth.in", flag::HALFWIDTH);
-}
-
-#[test]
-fn test_kana() {
-	check_flags(Check::Contains, "kana.in", flag::KANA);
-}
-
-#[test]
-fn test_katakana_halfwidth() {
-	check_flags(
-		Check::Equal,
-		"katakana-halfwidth.in",
-		flag::HALFWIDTH | flag::KATAKANA | flag::JAPANESE | flag::WORD,
-	);
-}
-
-#[test]
-fn test_punctuation_japanese() {
-	check_flags(
-		Check::Contains,
-		"punctuation-japanese.in",
-		flag::PUNCTUATION | flag::JAPANESE,
-	);
-}
-
-#[test]
-fn test_symbol_japanese() {
-	check_flags(
-		Check::Contains,
-		"symbol-japanese.in",
-		flag::SYMBOL | flag::JAPANESE,
-	);
 }

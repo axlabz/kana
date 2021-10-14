@@ -2,6 +2,35 @@
 
 // spell-checker: disable
 
+// FULLWIDTH characters
+
+U+FF03	＃	Fullwidth Number Sign
+U+FF04	＄	Fullwidth Dollar Sign
+U+FF05	％	Fullwidth Percent Sign
+U+FF06	＆	Fullwidth Ampersand
+U+FF07	＇	Fullwidth Apostrophe
+U+FF0A	＊	Fullwidth Asterisk
+U+FF0B	＋	Fullwidth Plus Sign
+U+FF0D	－	Fullwidth Hyphen-Minus
+U+FF1C	＜	Fullwidth Less-Than Sign
+U+FF1D	＝	Fullwidth Equals Sign
+U+FF1E	＞	Fullwidth Greater-Than Sign
+U+FF20	＠	Fullwidth Commercial At
+U+FF3C	＼	Fullwidth Reverse Solidus
+U+FF3E	＾	Fullwidth Circumflex Accent
+U+FF3F	＿	Fullwidth Low Line
+U+FF40	｀	Fullwidth Grave Accent
+U+FF5C	｜	Fullwidth Vertical Line
+U+FF5E	～	Fullwidth Tilde
+
+U+FFE0	￠	Fullwidth Cent Sign
+U+FFE1	￡	Fullwidth Pound Sign
+U+FFE2	￢	Fullwidth Not Sign
+U+FFE3	￣	Fullwidth Macron
+U+FFE4	￤	Fullwidth Broken Bar
+U+FFE5	￥	Fullwidth Yen Sign
+U+FFE6	￦	Fullwidth Won Sign
+
 U+3200	㈀	Parenthesized Hangul Kiyeok
 U+3201	㈁	Parenthesized Hangul Nieun
 U+3202	㈂	Parenthesized Hangul Tikeut

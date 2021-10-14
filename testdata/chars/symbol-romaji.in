@@ -1,0 +1,26 @@
+// SYMBOL+ROMAJI characters
+
+U+0023	#	Number Sign
+U+0024	$	Dollar Sign
+U+0025	%	Percent Sign
+U+0026	&	Ampersand
+U+002A	*	Asterisk
+U+002B	+	Plus Sign
+U+003C	<	Less-Than Sign
+U+003D	=	Equals Sign
+U+003E	>	Greater-Than Sign
+U+0040	@	Commercial At
+U+005C	\	Reverse Solidus
+U+005E	^	Circumflex Accent
+U+005F	_	Low Line
+U+0060	`	Grave Accent
+U+007C	|	Vertical Line
+U+007E	~	Tilde
+
+U+00A2	¢	Cent Sign
+U+00A3	£	Pound Sign
+U+00A5	¥	Yen Sign
+U+00A6	¦	Broken Bar
+U+00AC	¬	Not Sign
+U+00AF	¯	Macron
+U+20A9	₩	Won Sign
