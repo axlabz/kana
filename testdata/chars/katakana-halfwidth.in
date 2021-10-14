@@ -1,6 +1,5 @@
-# Halfwidth katakana characters
+// KATAKANA+HALFWIDTH characters
 
-U+FF65	･	Halfwidth Katakana Middle Dot
 U+FF66	ｦ	Halfwidth Katakana Letter Wo
 U+FF67	ｧ	Halfwidth Katakana Letter Small A
 U+FF68	ｨ	Halfwidth Katakana Letter Small I
@@ -11,7 +10,6 @@ U+FF6C	ｬ	Halfwidth Katakana Letter Small Ya
 U+FF6D	ｭ	Halfwidth Katakana Letter Small Yu
 U+FF6E	ｮ	Halfwidth Katakana Letter Small Yo
 U+FF6F	ｯ	Halfwidth Katakana Letter Small Tu
-U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
 U+FF71	ｱ	Halfwidth Katakana Letter A
 U+FF72	ｲ	Halfwidth Katakana Letter I
 U+FF73	ｳ	Halfwidth Katakana Letter U
@@ -57,5 +55,3 @@ U+FF9A	ﾚ	Halfwidth Katakana Letter Re
 U+FF9B	ﾛ	Halfwidth Katakana Letter Ro
 U+FF9C	ﾜ	Halfwidth Katakana Letter Wa
 U+FF9D	ﾝ	Halfwidth Katakana Letter N
-U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
-U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark

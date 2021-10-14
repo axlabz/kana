@@ -780,11 +780,14 @@ U+301B	〛	Right White Square Bracket
 
 U+3007	〇	Ideographic Number Zero
 
+:= JAPANESE+KANJI+WORD
+
+U+3005	々	Ideographic Iteration Mark
+
 := JAPANESE+SYMBOL
 
 U+3003	〃	Ditto Mark
 U+3004	〄	Japanese Industrial Standard Symbol
-U+3005	々	Ideographic Iteration Mark
 U+3006	〆	Ideographic Closing Mark
 U+3012	〒	Postal Mark
 U+3013	〓	Geta Mark

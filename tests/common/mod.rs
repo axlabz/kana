@@ -42,24 +42,24 @@ pub struct TestChar {
 #[derive(Debug)]
 /// Information for a [`TestChar`].
 pub enum TestCharInfo {
-	/// Defines a single character.
+	/// Defines a single character (line with no prefix).
 	Single {
 		char: char,
 		code: String,
 		description: String,
 	},
 
-	/// Defines a range of characters.
+	/// Defines a range of characters (`~` prefix).
 	Range {
 		start: char,
 		end: char,
 		description: String,
 	},
 
-	/// Defines a list of characters.
+	/// Defines a list literal of characters (`>` prefix).
 	List(Vec<char>),
 
-	/// Defines a list of flags for following characters.
+	/// Defines a list of flags for following characters (`:=` prefix).
 	Flags(kana::Flags),
 }
 

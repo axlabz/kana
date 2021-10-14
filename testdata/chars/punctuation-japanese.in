@@ -1,11 +1,16 @@
-# Japanese-style punctuation
+// PUNCTUATION+JAPANESE characters
 
-# U+3000	　	Ideographic Space
+// spell-checker: disable
+
+// Strictly speaking this is in the katakana range, but we consider it a
+// punctuation.
+U+30A0	゠	Katakana-Hiragana Double Hyphen
+
 U+3001	、	Ideographic Comma
 U+3002	。	Ideographic Full Stop
 U+3003	〃	Ditto Mark
 U+3004	〄	Japanese Industrial Standard Symbol
-# U+3005	々	Ideographic Iteration Mark
+// U+3005	々	Ideographic Iteration Mark
 U+3006	〆	Ideographic Closing Mark
 U+3007	〇	Ideographic Number Zero
 U+3008	〈	Left Angle Bracket

@@ -1,6 +1,5 @@
-# All katakana characters
+// KATAKANA characters
 
-U+30A0	゠	Katakana-Hiragana Double Hyphen
 U+30A1	ァ	Katakana Letter Small A
 U+30A2	ア	Katakana Letter A
 U+30A3	ィ	Katakana Letter Small I
@@ -91,8 +90,4 @@ U+30F7	ヷ	Katakana Letter Va
 U+30F8	ヸ	Katakana Letter Vi
 U+30F9	ヹ	Katakana Letter Ve
 U+30FA	ヺ	Katakana Letter Vo
-U+30FB	・	Katakana Middle Dot
-U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
-U+30FD	ヽ	Katakana Iteration Mark
-U+30FE	ヾ	Katakana Voiced Iteration Mark
 U+30FF	ヿ	Katakana Digraph Koto
