@@ -11,7 +11,7 @@ pub struct RangeBuilder {
 struct Range {
 	/// Start character of the range.
 	start: char,
-	/// End character of the range, inclusive.
+	/// End character of the range, exclusive.
 	end: char,
 	/// Set of flags applied to this range.
 	flags: HashSet<String>,
