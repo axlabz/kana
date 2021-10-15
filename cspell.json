@@ -2,6 +2,7 @@
 	"version": "0.2",
 	"language": "en",
 	"words": [
+		"〱〲〳〴〵",
 		"abcdefghijklmnopqrstuvwxyz",
 		"aeiou",
 		"âêîôû",
@@ -10,6 +11,7 @@
 		"âîûêô",
 		"āīūēō",
 		"bitor",
+		"geta",
 		"kangxi",
 		"masu",
 		"romaji",

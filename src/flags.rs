@@ -115,7 +115,9 @@ pub mod flag {
 
 	//----[ Overall categories ]----------------------------------------------//
 
-	/// Includes characters specific to Japanese.
+	/// Includes characters specific to Japanese. Despite its name, a lot of
+	/// the characters are general CJK character, not necessarily being used
+	/// in Japanese.
 	///
 	/// ## Notes
 	///

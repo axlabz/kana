@@ -10,7 +10,8 @@ const KANJI: Flags = flag::JAPANESE.and(flag::WORD).and(flag::KANJI);
 const HIRAGANA: Flags = flag::JAPANESE.and(flag::WORD).and(flag::HIRAGANA);
 const KATAKANA: Flags = flag::JAPANESE.and(flag::WORD).and(flag::KATAKANA);
 const KANA: Flags = flag::JAPANESE.and(flag::WORD).and(flag::KANA);
-const JAPANESE_SYMBOL: Flags = flag::JAPANESE.and(flag::SYMBOL);
+const JP_SYMBOL: Flags = flag::JAPANESE.and(flag::SYMBOL);
+const JP_PUNCTUATION: Flags = flag::JAPANESE.and(flag::PUNCTUATION);
 
 /// Returns a set of the flags mapped for the given character. The flags are a
 /// bitwise combination of the constants in the [`Flags`] namespace.
@@ -78,18 +79,18 @@ pub fn get_flags(chr: char) -> Flags {
 		'#' | '$' | '%' | '&' | '*' | '+' | '<' | '='  => flag::ROMAJI | flag::SYMBOL,
 		'>' | '@' | '^' | '_' | '`' | '|' | '~' | '\\' => flag::ROMAJI | flag::SYMBOL,
 
-		// Additional punctuation:
+		// Additional punctuation
 		"«»" => flag::ROMAJI | flag::PUNCTUATION,
+
+		// Additional symbols
+		"¢£¥¦¬¯₩" => flag::ROMAJI | flag::SYMBOL,
 
 		//--------------------------------------------------------------------//
 		// KANJI
 		//--------------------------------------------------------------------//
 
 		// '\u{2E80}'..='\u{2EFF}'   => flag::JAPANESE | flag::KANJI, // CJK Radicals Supplement
-		// '\u{3000}'..='\u{303F}'   => flag::JAPANESE | flag::KANJI, // CJK Symbols and Punctuation
 		// '\u{31C0}'..='\u{31EF}'   => flag::JAPANESE | flag::KANJI, // CJK Strokes
-		// '\u{3200}'..='\u{32FF}'   => flag::JAPANESE | flag::KANJI, // Enclosed CJK Letters and Months
-		// '\u{3300}'..='\u{33FF}'   => flag::JAPANESE | flag::KANJI, // CJK Compatibility
 
 		// For kanji we just use the Unicode ranges
 		'\u{3400}'..='\u{4DBF}'   => KANJI, // CJK Unified Ideographs Extension A
@@ -102,6 +103,10 @@ pub fn get_flags(chr: char) -> Flags {
 
 		// Numeric kanji
 		"零一二三四五六七八九十百千万億兆" => flag::NUMBER,
+
+		// We consider this a kanji for all intents and purposes:
+		// - U+3005 々 Ideographic Iteration Mark
+		'々' => KANJI,
 
 		//--------------------------------------------------------------------//
 		// HIRAGANA
@@ -134,7 +139,7 @@ pub fn get_flags(chr: char) -> Flags {
 		//--------------------------------------------------------------------//
 
 		// U+30A0 ゠ Katakana-Hiragana Double Hyphen
-		'\u{30A0}' => JAPANESE_SYMBOL,
+		'\u{30A0}' => JP_SYMBOL,
 
 		// Katakana range:
 		// - U+30A1 ァ Katakana Letter Small A
@@ -182,7 +187,7 @@ pub fn get_flags(chr: char) -> Flags {
 		// - U+32FE ㋾ Circled Katakana Wo
 		// - U+1F202 🈂 Squared Katakana Sa
 		// - U+1F213 🈓 Squared Katakana De
-		'\u{32D0}'..='\u{32FE}' | '\u{1F202}' | '\u{1F213}' => JAPANESE_SYMBOL,
+		'\u{32D0}'..='\u{32FE}' | '\u{1F202}' | '\u{1F213}' => JP_SYMBOL,
 
 		// Halfwidth katakana range:
 		// - U+FF66 ｦ Halfwidth Katakana Letter Wo
@@ -231,13 +236,65 @@ pub fn get_flags(chr: char) -> Flags {
 		// FULLWIDTH
 		//--------------------------------------------------------------------//
 
-		"！＂（ ）， ．：；？［］｛｝｟｠" => flag::FULLWIDTH | flag::JAPANESE | flag::PUNCTUATION,
+		"！＂（ ）， ．：；？［］｛｝｟｠" => flag::FULLWIDTH | JP_PUNCTUATION,
 
-		"＃＄％＆＇＊＋－／＜＝＞＠＼＾＿｀｜～￠￡￢￣￤￥￦" => flag::FULLWIDTH | flag::JAPANESE | flag::SYMBOL,
+		"＃＄％＆＇＊＋－／＜＝＞＠＼＾＿｀｜～￠￡￢￣￤￥￦" => flag::FULLWIDTH | JP_SYMBOL,
 
 		'Ａ'..='Ｚ' | 'ａ'..='ｚ' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::WORD,
 
 		'０'..='９' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::NUMBER | flag::WORD,
+
+		//--------------------------------------------------------------------//
+		// JAPANESE PUNCTUATION
+		//--------------------------------------------------------------------//
+
+		// Halfwidth:
+		// - U+FF61 ｡ Halfwidth Ideographic Full Stop
+		// - U+FF62 ｢ Halfwidth Left Corner Bracket
+		// - U+FF63 ｣ Halfwidth Right Corner Bracket
+		// - U+FF64 ､ Halfwidth Ideographic Comma
+		"｡｢｣､" => flag::HALFWIDTH | JP_PUNCTUATION,
+
+		//--------------------------------------------------------------------//
+		// JAPANESE SYMBOLS
+		//--------------------------------------------------------------------//
+
+		// Halfwidth:
+		// U+FFE8 ￨ Halfwidth Forms Light Vertical
+		// U+FFE9 ￩ Halfwidth Leftwards Arrow
+		// U+FFEA ￪ Halfwidth Upwards Arrow
+		// U+FFEB ￫ Halfwidth Rightwards Arrow
+		// U+FFEC ￬ Halfwidth Downwards Arrow
+		// U+FFED ￭ Halfwidth Black Square
+		// U+FFEE ￮ Halfwidth White Circle
+		"￨￩￪￬￫￭￮" =>  flag::HALFWIDTH | JP_SYMBOL,
+
+		// CJK Symbols and Punctuation
+
+		// Enclosed CJK Letters and Months
+		'\u{3200}'..='\u{32FF}' => JP_SYMBOL,
+
+		// CJK Compatibility
+		'\u{3300}'..='\u{33FF}' => JP_SYMBOL,
+
+		// numeric
+		"〇㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩" => flag::NUMBER,
+		"㉈㉉㉊㉋㉌㉍㉎㉏" => flag::NUMBER,
+		"㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟" => flag::NUMBER,
+		"㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉" => flag::NUMBER,
+		"㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿" => flag::NUMBER,
+
+		// CJK Symbols and Punctuation:
+
+		"〃〄〆〇〒〓〜〠〡〢〣〤〥〦〧〨〩〰〱〲〳〴〵〶〷〸〹〺〻〼〽〾〿" => JP_SYMBOL,
+
+		// U+302E 〮 Hangul Single Dot Tone Mark
+		// U+302F 〯 Hangul Double Dot Tone Mark
+		// U+302A ◌〪 Ideographic Level Tone Mark
+		// U+302B ◌〫 Ideographic Rising Tone Mark
+		// U+302C ◌〬 Ideographic Departing Tone Mark
+		// U+302D ◌〭 Ideographic Entering Tone Mark
+		'\u{302E}' | '\u{302F}' | '\u{302A}'..='\u{302D}' => JP_SYMBOL,
 
 		//--------------------------------------------------------------------//
 

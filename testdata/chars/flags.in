@@ -782,6 +782,7 @@ U+3007	〇	Ideographic Number Zero
 
 := JAPANESE+KANJI+WORD
 
+// This is used as a kanji for all intents and purposes.
 U+3005	々	Ideographic Iteration Mark
 
 := JAPANESE+SYMBOL
@@ -908,6 +909,7 @@ U+3229	㈩	Parenthesized Ideograph Ten
 
 // spell-checker: disable
 
+// For symbols we map the entire "Enclosed CJK Letters and Months" range
 U+3200	㈀	Parenthesized Hangul Kiyeok
 U+3201	㈁	Parenthesized Hangul Nieun
 U+3202	㈂	Parenthesized Hangul Tikeut
@@ -1104,6 +1106,7 @@ U+32FB	㋻	Circled Katakana Wa
 U+32FC	㋼	Circled Katakana Wi
 U+32FD	㋽	Circled Katakana We
 U+32FE	㋾	Circled Katakana Wo
+U+32FF	㋿	Square Era Name Reiwa
 
 U+3300	㌀	Square Apaato
 U+3301	㌁	Square Aruhua

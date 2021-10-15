@@ -31,6 +31,50 @@ U+FFE4	￤	Fullwidth Broken Bar
 U+FFE5	￥	Fullwidth Yen Sign
 U+FFE6	￦	Fullwidth Won Sign
 
+// CJK Symbols and Punctuation
+
+U+3003	〃	Ditto Mark
+U+3004	〄	Japanese Industrial Standard Symbol
+U+3006	〆	Ideographic Closing Mark
+U+3007	〇	Ideographic Number Zero
+U+3012	〒	Postal Mark
+U+3013	〓	Geta Mark
+U+301C	〜	Wave Dash
+U+3020	〠	Postal Mark Face
+U+3021	〡	Hangzhou Numeral One
+U+3022	〢	Hangzhou Numeral Two
+U+3023	〣	Hangzhou Numeral Three
+U+3024	〤	Hangzhou Numeral Four
+U+3025	〥	Hangzhou Numeral Five
+U+3026	〦	Hangzhou Numeral Six
+U+3027	〧	Hangzhou Numeral Seven
+U+3028	〨	Hangzhou Numeral Eight
+U+3029	〩	Hangzhou Numeral Nine
+U+302A		Ideographic Level Tone Mark
+U+302B		Ideographic Rising Tone Mark
+U+302C		Ideographic Departing Tone Mark
+U+302D		Ideographic Entering Tone Mark
+U+302E	〮	Hangul Single Dot Tone Mark
+U+302F	〯	Hangul Double Dot Tone Mark
+U+3030	〰	Wavy Dash
+U+3031	〱	Vertical Kana Repeat Mark
+U+3032	〲	Vertical Kana Repeat with Voiced Sound Mark
+U+3033	〳	Vertical Kana Repeat Mark Upper Half
+U+3034	〴	Vertical Kana Repeat with Voiced Sound Mark Upper Half
+U+3035	〵	Vertical Kana Repeat Mark Lower Half
+U+3036	〶	Circled Postal Mark
+U+3037	〷	Ideographic Telegraph Line Feed Separator Symbol
+U+3038	〸	Hangzhou Numeral Ten
+U+3039	〹	Hangzhou Numeral Twenty
+U+303A	〺	Hangzhou Numeral Thirty
+U+303B	〻	Vertical Ideographic Iteration Mark
+U+303C	〼	Masu Mark
+U+303D	〽	Part Alternation Mark
+U+303E	〾	Ideographic Variation Indicator
+U+303F	〿	Ideographic Half Fill Space
+
+// Enclosed CJK Letters and Months
+
 U+3200	㈀	Parenthesized Hangul Kiyeok
 U+3201	㈁	Parenthesized Hangul Nieun
 U+3202	㈂	Parenthesized Hangul Tikeut
@@ -285,6 +329,9 @@ U+32FB	㋻	Circled Katakana Wa
 U+32FC	㋼	Circled Katakana Wi
 U+32FD	㋽	Circled Katakana We
 U+32FE	㋾	Circled Katakana Wo
+U+32FF	㋿	Square Era Name Reiwa
+
+// CJK Compatibility
 
 U+3300	㌀	Square Apaato
 U+3301	㌁	Square Aruhua
@@ -543,6 +590,8 @@ U+33FD	㏽	Ideographic Telegraph Symbol For Day Thirty
 U+33FE	㏾	Ideographic Telegraph Symbol For Day Thirty-One
 U+33FF	㏿	Square Gal
 
+// Halfwidth
+
 U+FFE8	￨	Halfwidth Forms Light Vertical
 U+FFE9	￩	Halfwidth Leftwards Arrow
 U+FFEA	￪	Halfwidth Upwards Arrow
@@ -550,6 +599,8 @@ U+FFEB	￫	Halfwidth Rightwards Arrow
 U+FFEC	￬	Halfwidth Downwards Arrow
 U+FFED	￭	Halfwidth Black Square
 U+FFEE	￮	Halfwidth White Circle
+
+// Enclosed Ideographic Supplement
 
 U+1F202	🈂	Squared Katakana Sa
 U+1F213	🈓	Squared Katakana De

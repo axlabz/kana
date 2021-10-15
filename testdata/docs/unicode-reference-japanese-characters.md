@@ -775,6 +775,7 @@ U+32FB	㋻	Circled Katakana Wa
 U+32FC	㋼	Circled Katakana Wi
 U+32FD	㋽	Circled Katakana We
 U+32FE	㋾	Circled Katakana Wo
+U+32FF	㋿	Square Era Name Reiwa
 
 U+3300	㌀	Square Apaato
 U+3301	㌁	Square Aruhua
@@ -1040,7 +1041,6 @@ U+33FF	㏿	Square Gal
 U+1B000	𛀀	KATAKANA LETTER ARCHAIC E
 
 ```
-
 
 Phonetic extensions for Ainu:
 
