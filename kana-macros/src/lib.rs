@@ -35,7 +35,7 @@ use ranges::RangeBuilder;
 #[proc_macro]
 pub fn charinfo(input: TokenStream) -> TokenStream {
 	let mut charset = RangeBuilder::new();
-	let CharMatches(input, catch_all) = parse_macro_input!(input as CharMatches);
+	let CharMatches(type_path, input, catch_all) = parse_macro_input!(input as CharMatches);
 	for m in input {
 		for range in m.ranges {
 			for CharFlag(flag1, flag2) in &m.flags {
@@ -49,6 +49,8 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 		}
 	}
 
+	let has_catch_all = catch_all.is_some();
+
 	let to_flags = |flags: Vec<&str>| {
 		let flags = flags.into_iter().map(|x| {
 			if x.contains("::") {
@@ -59,7 +61,7 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 				quote! { #id }
 			}
 		});
-		if catch_all.is_some() {
+		if has_catch_all {
 			quote! { #( #flags )|* }
 		} else {
 			quote! { Some( #( #flags )|* ) }
@@ -92,8 +94,14 @@ pub fn charinfo(input: TokenStream) -> TokenStream {
 		quote! { _ => ::std::option::Option::None }
 	};
 
+	let return_type = if has_catch_all {
+		quote! { #type_path }
+	} else {
+		quote! { ::std::option::Option<#type_path> }
+	};
+
 	let tokens = quote! {
-		|x: char| {
+		|x: char| -> #return_type {
 			match x {
 				#( #matches )*
 				#catch_all

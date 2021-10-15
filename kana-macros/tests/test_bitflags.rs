@@ -12,7 +12,7 @@ bitflags! {
 
 #[test]
 fn with_bitflags() {
-	let info = charinfo!(
+	let info = charinfo!(Flag,
 		'a' => Flag::A,
 		'b' => Flag::B,
 		'c' => Flag::C,

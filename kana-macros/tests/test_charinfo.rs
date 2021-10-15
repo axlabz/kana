@@ -3,7 +3,7 @@ use kana_macros::charinfo;
 #[test]
 fn simple() {
 	const A: u32 = 1;
-	let info = charinfo!('a' => A);
+	let info = charinfo!(u32, 'a' => A);
 	assert_eq!(info('a'), Some(A));
 	assert_eq!(info('b'), None);
 }
@@ -14,7 +14,7 @@ fn range_inclusive() {
 	const LOWER: u32 = 2;
 	const DIGIT: u32 = 3;
 
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		'a'..='z' => LOWER,
 		'A'..='Z' => UPPER,
 		'0'..='9' => DIGIT,
@@ -42,7 +42,7 @@ fn range_exclusive() {
 	const LOWER: u32 = 2;
 	const DIGIT: u32 = 3;
 
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		'a'..'z' => LOWER,
 		'A'..'Z' => UPPER,
 		'0'..'9' => DIGIT,
@@ -72,7 +72,7 @@ fn multiple_flags() {
 	const D: u32 = 8;
 	const X: u32 = 16;
 
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		'0' => A,
 		'1' => B | C,
 		'2' => C,
@@ -97,7 +97,7 @@ fn complex() {
 	const IDENT: u32 = 1 << 5;
 	const EXTRA: u32 = 1 << 6;
 
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		'0'..='9' => DIGIT,
 		'A'..='Z' => ALPHA | UPPER,
 		'a'..='z' => ALPHA | LOWER,
@@ -134,7 +134,7 @@ fn complex_strings() {
 	const IDENT: u32 = 1 << 5;
 	const EXTRA: u32 = 1 << 6;
 
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		"0123456789" => DIGIT,
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ" => ALPHA | UPPER,
 		"abcdefghijklmnopqrstuvwxyz" => ALPHA | LOWER,
@@ -165,7 +165,7 @@ fn complex_strings() {
 fn catch_all() {
 	const A: u32 = 1;
 	const X: u32 = 2;
-	let info = charinfo!(
+	let info = charinfo!(u32,
 		'a' => A,
 		* => X,
 	);

@@ -1,11 +1,11 @@
 use syn::{
 	ext::IdentExt,
 	parse::{discouraged::Speculative, Parse},
-	Ident, LitChar, LitStr, Token,
+	Ident, LitChar, LitStr, Token, TypePath,
 };
 
 /// List of character mapping expressions used by [`charinfo!`].
-pub struct CharMatches(pub Vec<CharMatch>, pub Option<CharFlag>);
+pub struct CharMatches(pub TypePath, pub Vec<CharMatch>, pub Option<CharFlag>);
 
 /// Represents a single matching expression from [`charinfo!`].
 pub struct CharMatch {
@@ -31,6 +31,10 @@ pub struct CharRange {
 
 impl Parse for CharMatches {
 	fn parse(input: syn::parse::ParseStream) -> syn::Result<Self> {
+		// resulting type for the macro
+		let type_path = input.parse::<TypePath>()?;
+		input.parse::<Token![,]>()?;
+
 		let mut matches: Vec<CharMatch> = Vec::new();
 		let mut catch_all: Option<CharFlag> = None;
 		loop {
@@ -58,7 +62,7 @@ impl Parse for CharMatches {
 		if !input.is_empty() {
 			Err(input.error("expected either a comma or end of input"))
 		} else {
-			Ok(CharMatches(matches, catch_all))
+			Ok(CharMatches(type_path, matches, catch_all))
 		}
 	}
 }

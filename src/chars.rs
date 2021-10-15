@@ -21,7 +21,7 @@ const JP_PUNCTUATION: Flags = flag::JAPANESE.and(flag::PUNCTUATION);
 /// See the [`Flags`] namespace and individual flags for more details on the
 /// mappings and rationale behind the flags.
 pub fn get_flags(chr: char) -> Flags {
-	let get = charinfo!(
+	let get = charinfo!(Flags,
 
 		//--------------------------------------------------------------------//
 		// Spaces

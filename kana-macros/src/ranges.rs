@@ -3,13 +3,17 @@ use std::iter::once;
 
 /// Helper to build the set of ranges for the [`crate::charinfo!`] macro.
 pub struct RangeBuilder {
-	/// Sorted list of ranges added to the builder.
+	/// Sorted and non-overlapping list of ranges added to the builder.
 	ranges: Vec<Range>,
 }
 
+/// Internal range for [`RangeBuilder`].
 struct Range {
+	/// Start character of the range.
 	start: char,
+	/// End character of the range, inclusive.
 	end: char,
+	/// Set of flags applied to this range.
 	flags: HashSet<String>,
 }
 
