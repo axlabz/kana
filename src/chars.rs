@@ -78,6 +78,9 @@ pub fn get_flags(chr: char) -> Flags {
 		'#' | '$' | '%' | '&' | '*' | '+' | '<' | '='  => flag::ROMAJI | flag::SYMBOL,
 		'>' | '@' | '^' | '_' | '`' | '|' | '~' | '\\' => flag::ROMAJI | flag::SYMBOL,
 
+		// Additional punctuation:
+		"«»" => flag::ROMAJI | flag::PUNCTUATION,
+
 		//--------------------------------------------------------------------//
 		// KANJI
 		//--------------------------------------------------------------------//
@@ -96,6 +99,9 @@ pub fn get_flags(chr: char) -> Flags {
 		'\u{2B740}'..='\u{2B81F}' => KANJI, // CJK Unified Ideographs Extension D
 		'\u{2B820}'..='\u{2CEAF}' => KANJI, // CJK Unified Ideographs Extension E
 		'\u{2CEB0}'..='\u{2EBEF}' => KANJI, // CJK Unified Ideographs Extension F
+
+		// Numeric kanji
+		"零一二三四五六七八九十百千万億兆" => flag::NUMBER,
 
 		//--------------------------------------------------------------------//
 		// HIRAGANA
@@ -220,6 +226,18 @@ pub fn get_flags(chr: char) -> Flags {
 		// U+FF9E ﾞ Halfwidth Katakana Voiced Sound Mark
 		// U+FF9F ﾟ Halfwidth Katakana Semi-Voiced Sound Mark
 		'\u{FF65}' | '\u{FF70}' | '\u{FF9E}' | '\u{FF9F}' => KANA | flag::PUNCTUATION | flag::HALFWIDTH | flag::RARE,
+
+		//--------------------------------------------------------------------//
+		// FULLWIDTH
+		//--------------------------------------------------------------------//
+
+		"！＂（ ）， ．：；？［］｛｝｟｠" => flag::FULLWIDTH | flag::JAPANESE | flag::PUNCTUATION,
+
+		"＃＄％＆＇＊＋－／＜＝＞＠＼＾＿｀｜～￠￡￢￣￤￥￦" => flag::FULLWIDTH | flag::JAPANESE | flag::SYMBOL,
+
+		'Ａ'..='Ｚ' | 'ａ'..='ｚ' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN,
+
+		'０'..='９' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::NUMBER,
 
 		//--------------------------------------------------------------------//
 
