@@ -4,8 +4,11 @@
 //! helper functions related to Japanese characters.
 
 #![feature(type_alias_impl_trait)]
+#![feature(test)]
 
 extern crate kana_macros;
+
+extern crate test;
 
 mod flags;
 pub use flags::{flag, Flags};
@@ -16,20 +19,14 @@ pub use chars::get_flags;
 mod is;
 pub use is::*;
 
-/// Sample function.
-pub fn answer() -> u64 {
-	42
-}
-
-// TODO: test combining marks and spaces
-
 #[cfg(test)]
 mod tests {
-	use crate::answer;
+	use crate::get_flags;
 
-	#[test]
-	fn it_works() {
-		let result = answer();
-		assert_eq!(result, 42);
+	use test::Bencher;
+
+	#[bench]
+	fn bench_get_flags(b: &mut Bencher) {
+		b.iter(|| get_flags('日'));
 	}
 }

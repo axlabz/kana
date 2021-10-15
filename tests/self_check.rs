@@ -4,12 +4,6 @@ use common::{TestChar, TestCharInfo};
 
 mod common;
 
-/// Test that we can call the library functions.
-#[test]
-fn test_works() {
-	assert_eq!(kana::answer(), 42);
-}
-
 /// Test that we can read the `testdata` files and that empty lines and
 /// comments are properly ignored.
 #[test]

@@ -7,7 +7,7 @@ use kana::is_space;
 fn test_is_space() {
 	assert!(!is_space('x'), "`x` is not a space");
 
-	let chars = common::read_chars("./testdata/chars/spaces.in").unwrap();
+	let chars = common::read_chars("./testdata/chars/space.in").unwrap();
 	for TestChar { info, .. } in chars.into_iter() {
 		match info {
 			TestCharInfo::Single { char, code, .. } => {
