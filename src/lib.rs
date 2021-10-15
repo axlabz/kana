@@ -27,6 +27,11 @@ mod tests {
 
 	#[bench]
 	fn bench_get_flags(b: &mut Bencher) {
-		b.iter(|| get_flags('日'));
+		b.iter(|| get_flags(test::black_box('日')));
+	}
+
+	#[bench]
+	fn bench_get_none_flags(b: &mut Bencher) {
+		b.iter(|| get_flags(test::black_box('\0')));
 	}
 }

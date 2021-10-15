@@ -13,8 +13,10 @@
 		"bitor",
 		"geta",
 		"kangxi",
+		"kanjidic",
 		"masu",
 		"romaji",
+		"unoptimized",
 		"unraw",
 		"yori"
 	],
