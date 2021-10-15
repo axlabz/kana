@@ -235,9 +235,9 @@ pub fn get_flags(chr: char) -> Flags {
 
 		"＃＄％＆＇＊＋－／＜＝＞＠＼＾＿｀｜～￠￡￢￣￤￥￦" => flag::FULLWIDTH | flag::JAPANESE | flag::SYMBOL,
 
-		'Ａ'..='Ｚ' | 'ａ'..='ｚ' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN,
+		'Ａ'..='Ｚ' | 'ａ'..='ｚ' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::WORD,
 
-		'０'..='９' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::NUMBER,
+		'０'..='９' => flag::FULLWIDTH | flag::JAPANESE | flag::ROMAN | flag::NUMBER | flag::WORD,
 
 		//--------------------------------------------------------------------//
 

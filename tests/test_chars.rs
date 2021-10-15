@@ -238,7 +238,6 @@ fn test_word() {
 	check_flags(Check::Contains, "katakana.in", flag::WORD);
 	check_flags(Check::Contains, "kana.in", flag::WORD);
 	check_flags(Check::Contains, "katakana-halfwidth.in", flag::WORD);
-	check_flags(Check::Contains, "number.in", flag::WORD);
 	check_flags(Check::Contains, "roman.in", flag::WORD);
 }
 
