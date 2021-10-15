@@ -24,5 +24,7 @@
 		"target/**",
 		"testdata/**/*.int"
 	],
-	"ignoreRegExpList": []
+	"ignoreRegExpList": [
+		"\\\\u\\{[0-9A-F]+\\}"
+	]
 }
