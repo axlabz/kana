@@ -232,11 +232,14 @@ pub fn get_flags(chr: char) -> Flags {
 		// U+FF9F ﾟ Halfwidth Katakana Semi-Voiced Sound Mark
 		'\u{FF65}' | '\u{FF70}' | '\u{FF9E}' | '\u{FF9F}' => KANA | flag::PUNCTUATION | flag::HALFWIDTH | flag::RARE,
 
+		// U+303C 〼 Masu Mark
+		'〼' => KANA | flag::RARE,
+
 		//--------------------------------------------------------------------//
 		// FULLWIDTH
 		//--------------------------------------------------------------------//
 
-		"！＂（ ）， ．：；？［］｛｝｟｠" => flag::FULLWIDTH | JP_PUNCTUATION,
+		"！＂（），．：；？［］｛｝｟｠" => flag::FULLWIDTH | JP_PUNCTUATION,
 
 		"＃＄％＆＇＊＋－／＜＝＞＠＼＾＿｀｜～￠￡￢￣￤￥￦" => flag::FULLWIDTH | JP_SYMBOL,
 
@@ -254,6 +257,31 @@ pub fn get_flags(chr: char) -> Flags {
 		// - U+FF63 ｣ Halfwidth Right Corner Bracket
 		// - U+FF64 ､ Halfwidth Ideographic Comma
 		"｡｢｣､" => flag::HALFWIDTH | JP_PUNCTUATION,
+
+		// U+3001	、	Ideographic Comma
+		// U+3002	。	Ideographic Full Stop
+		// U+3008	〈	Left Angle Bracket
+		// U+3009	〉	Right Angle Bracket
+		// U+300A	《	Left Double Angle Bracket
+		// U+300B	》	Right Double Angle Bracket
+		// U+300C	「	Left Corner Bracket
+		// U+300D	」	Right Corner Bracket
+		// U+300E	『	Left White Corner Bracket
+		// U+300F	』	Right White Corner Bracket
+		// U+3010	【	Left Black Lenticular Bracket
+		// U+3011	】	Right Black Lenticular Bracket
+		// U+3014	〔	Left Tortoise Shell Bracket
+		// U+3015	〕	Right Tortoise Shell Bracket
+		// U+3016	〖	Left White Lenticular Bracket
+		// U+3017	〗	Right White Lenticular Bracket
+		// U+3018	〘	Left White Tortoise Shell Bracket
+		// U+3019	〙	Right White Tortoise Shell Bracket
+		// U+301A	〚	Left White Square Bracket
+		// U+301B	〛	Right White Square Bracket
+		// U+301D	〝	Reversed Double Prime Quotation Mark
+		// U+301E	〞	Double Prime Quotation Mark
+		// U+301F	〟	Low Double Prime Quotation Mark
+		"、。〈〉《》「」『』【】〔〕〖〗〘〙〚〛〝〞〟" => JP_PUNCTUATION,
 
 		//--------------------------------------------------------------------//
 		// JAPANESE SYMBOLS

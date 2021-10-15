@@ -16,3 +16,6 @@ U+309D	ゝ	Hiragana Iteration Mark
 U+309E	ゞ	Hiragana Voiced Iteration Mark
 U+30FD	ヽ	Katakana Iteration Mark
 U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+// This can be transliterated as "masu"
+U+303C	〼	Masu Mark
