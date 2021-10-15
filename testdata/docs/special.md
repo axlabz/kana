@@ -11,8 +11,8 @@ U+309D	ゝ	Hiragana Iteration Mark
 U+309E	ゞ	Hiragana Voiced Iteration Mark
 U+309F	ゟ	Hiragana Digraph Yori
 
-U+3099	◌゙	Combining Katakana-Hiragana Voiced Sound Mark
-U+309A	◌゚	Combining Katakana-Hiragana Semi-Voiced Sound Mark
+U+3099		Combining Katakana-Hiragana Voiced Sound Mark
+U+309A		Combining Katakana-Hiragana Semi-Voiced Sound Mark
 U+309B	゛	Katakana-Hiragana Voiced Sound Mark
 U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
 

@@ -20,6 +20,7 @@ U+2A700..U+2B734	(U+2B73F)	CJK Unified Ideographs Extension C (`𪜀` to `𫜴`)
 U+2B740..U+2B81D	(U+2B81F)	CJK Unified Ideographs Extension D (`𫝀` to `𫠝`)
 U+2B820..U+2CEAF	(U+2CEAF)	CJK Unified Ideographs Extension E (most don't render)
 U+2CEB0..U+2EBEF	(U+2EBEF)	CJK Unified Ideographs Extension F (none render)
+U+30000..U+3134F	(U+3134F)	CJK Unified Ideographs Extension G (unassigned)
 
 * In-parenthesis: the actual range ending according to the Unicode spec.
 ```

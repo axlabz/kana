@@ -96,7 +96,6 @@ pub fn get_flags(chr: char) -> Flags {
 		'\u{2B740}'..='\u{2B81F}' => KANJI, // CJK Unified Ideographs Extension D
 		'\u{2B820}'..='\u{2CEAF}' => KANJI, // CJK Unified Ideographs Extension E
 		'\u{2CEB0}'..='\u{2EBEF}' => KANJI, // CJK Unified Ideographs Extension F
-		'\u{30000}'..='\u{3134F}' => KANJI, // CJK Unified Ideographs Extension G
 
 		//--------------------------------------------------------------------//
 		// HIRAGANA
