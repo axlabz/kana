@@ -89,12 +89,10 @@ pub fn get_flags(chr: char) -> Flags {
 		// KANJI
 		//--------------------------------------------------------------------//
 
-		// '\u{2E80}'..='\u{2EFF}'   => flag::JAPANESE | flag::KANJI, // CJK Radicals Supplement
-		// '\u{31C0}'..='\u{31EF}'   => flag::JAPANESE | flag::KANJI, // CJK Strokes
-
 		// For kanji we just use the Unicode ranges
 		'\u{3400}'..='\u{4DBF}'   => KANJI, // CJK Unified Ideographs Extension A
 		'\u{4E00}'..='\u{9FFF}'   => KANJI, // CJK Unified Ideographs
+		'\u{F900}'..='\u{FAFF}'   => KANJI, // CJK Compatibility Ideographs
 		'\u{20000}'..='\u{2A6DF}' => KANJI, // CJK Unified Ideographs Extension B
 		'\u{2A700}'..='\u{2B73F}' => KANJI, // CJK Unified Ideographs Extension C
 		'\u{2B740}'..='\u{2B81F}' => KANJI, // CJK Unified Ideographs Extension D
@@ -151,7 +149,7 @@ pub fn get_flags(chr: char) -> Flags {
 		"ヮヵヶ" => flag::SMALL | flag::RARE,
 
 		// Rare characters
-		"ヰヱヸヹヺ" => flag::RARE,
+		"ヰヱヸヹヺヷ" => flag::RARE,
 
 		// Additional archaic characters
 		// - U+30FF ヿ Katakana Digraph Koto
@@ -180,7 +178,7 @@ pub fn get_flags(chr: char) -> Flags {
 		// U+31FD ㇽ Katakana Letter Small Ru
 		// U+31FE ㇾ Katakana Letter Small Re
 		// U+31FF ㇿ Katakana Letter Small Ro
-		"ㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ" => flag::SMALL | flag::RARE,
+		"ㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ" => KATAKANA | flag::SMALL | flag::RARE,
 
 		// Symbol range:
 		// - U+32D0 ㋐ Circled Katakana A
@@ -196,9 +194,9 @@ pub fn get_flags(chr: char) -> Flags {
 		'\u{FF66}'..='\u{FF6F}' | '\u{FF71}'..='\u{FF9D}' => KATAKANA | flag::HALFWIDTH,
 
 		// Halfwidth small range:
-		// - U+FF66 ｧ Halfwidth Katakana Letter Small A
+		// - U+FF67 ｧ Halfwidth Katakana Letter Small A
 		// - U+FF6F ｯ Halfwidth Katakana Letter Small Tu
-		'\u{FF66}'..='\u{FF6F}' => flag::SMALL,
+		'\u{FF67}'..='\u{FF6F}' => flag::SMALL,
 
 		//--------------------------------------------------------------------//
 		// KANA
@@ -214,9 +212,8 @@ pub fn get_flags(chr: char) -> Flags {
 		// U+309E ゞ Hiragana Voiced Iteration Mark
 		'\u{309B}' | '\u{309C}' | '\u{309D}' | '\u{309E}' => KANA | flag::PUNCTUATION | flag::RARE,
 
-		// U+30A0 ゠ Katakana-Hiragana Double Hyphen
 		// U+30FC ー Katakana-Hiragana Prolonged Sound Mark
-		'\u{30A0}' | '\u{30FC}' => KANA | flag::PUNCTUATION,
+		'\u{30FC}' => KANA | flag::PUNCTUATION,
 
 		// U+30FB ・ Katakana Middle Dot
 		// U+30FC ー Katakana-Hiragana Prolonged Sound Mark
@@ -228,9 +225,11 @@ pub fn get_flags(chr: char) -> Flags {
 
 		// U+FF65 ･ Halfwidth Katakana Middle Dot
 		// U+FF70 ｰ Halfwidth Katakana-Hiragana Prolonged Sound Mark
+		'\u{FF65}' | '\u{FF70}' => KANA | flag::PUNCTUATION | flag::HALFWIDTH,
+
 		// U+FF9E ﾞ Halfwidth Katakana Voiced Sound Mark
 		// U+FF9F ﾟ Halfwidth Katakana Semi-Voiced Sound Mark
-		'\u{FF65}' | '\u{FF70}' | '\u{FF9E}' | '\u{FF9F}' => KANA | flag::PUNCTUATION | flag::HALFWIDTH | flag::RARE,
+		'\u{FF9E}' | '\u{FF9F}' => KANA | flag::PUNCTUATION | flag::HALFWIDTH | flag::RARE,
 
 		// U+303C 〼 Masu Mark
 		'〼' => KANA | flag::RARE,
@@ -300,7 +299,7 @@ pub fn get_flags(chr: char) -> Flags {
 		// CJK Symbols and Punctuation
 
 		// Enclosed CJK Letters and Months
-		'\u{3200}'..='\u{32FF}' => JP_SYMBOL,
+		'\u{3200}'..'\u{321F}' | '\u{3220}'..='\u{32FF}' => JP_SYMBOL,
 
 		// CJK Compatibility
 		'\u{3300}'..='\u{33FF}' => JP_SYMBOL,
@@ -314,7 +313,7 @@ pub fn get_flags(chr: char) -> Flags {
 
 		// CJK Symbols and Punctuation:
 
-		"〃〄〆〇〒〓〜〠〡〢〣〤〥〦〧〨〩〰〱〲〳〴〵〶〷〸〹〺〻〼〽〾〿" => JP_SYMBOL,
+		"〃〄〆〇〒〓〜〠〡〢〣〤〥〦〧〨〩〰〱〲〳〴〵〶〷〸〹〺〻〽〾〿" => JP_SYMBOL,
 
 		// U+302E 〮 Hangul Single Dot Tone Mark
 		// U+302F 〯 Hangul Double Dot Tone Mark
@@ -323,6 +322,14 @@ pub fn get_flags(chr: char) -> Flags {
 		// U+302C ◌〬 Ideographic Departing Tone Mark
 		// U+302D ◌〭 Ideographic Entering Tone Mark
 		'\u{302E}' | '\u{302F}' | '\u{302A}'..='\u{302D}' => JP_SYMBOL,
+
+		// Radicals
+
+		// CJK Radicals Supplement
+		'\u{2E80}'..'\u{2E9A}' | '\u{2E9B}'..='\u{2EF3}' => JP_SYMBOL | flag::RADICAL,
+
+		// Kangxi Radicals, U+2F00 - U+2FDF
+		'\u{2F00}'..='\u{2FD5}' => JP_SYMBOL | flag::RADICAL,
 
 		//--------------------------------------------------------------------//
 

@@ -59,6 +59,7 @@
 // - [Spaces]
 // - [Romaji]
 // - [Fullwidth]
+// - [Halfwidth]
 // - [Kana]
 // - [Hiragana]
 // - [Katakana]
@@ -126,6 +127,7 @@ U+2029		Paragraph Separator
 
 // ASCII with fullwidth mappings
 U+0021	!	Exclamation Mark
+U+0022	"	Quotation Mark
 U+0028	(	Left Parenthesis
 U+0029	)	Right Parenthesis
 U+002C	,	Comma
@@ -157,7 +159,6 @@ U+00B7	·	Middle Dot
 := ROMAJI+SYMBOL
 
 // ASCII with direct fullwidth mappings
-U+0022	"	Quotation Mark
 U+0023	#	Number Sign
 U+0024	$	Dollar Sign
 U+0025	%	Percent Sign
@@ -290,6 +291,7 @@ U+016B	ū	Latin Small Letter U with Macron
 := JAPANESE+FULLWIDTH+PUNCTUATION
 
 U+FF01	！	Fullwidth Exclamation Mark
+U+FF02	＂	Fullwidth Quotation Mark
 U+FF08	（	Fullwidth Left Parenthesis
 U+FF09	）	Fullwidth Right Parenthesis
 U+FF0C	，	Fullwidth Comma
@@ -306,7 +308,6 @@ U+FF60	｠	Fullwidth Right White Parenthesis
 
 := JAPANESE+FULLWIDTH+SYMBOL
 
-U+FF02	＂	Fullwidth Quotation Mark
 U+FF03	＃	Fullwidth Number Sign
 U+FF04	＄	Fullwidth Dollar Sign
 U+FF05	％	Fullwidth Percent Sign
@@ -407,6 +408,17 @@ U+FF59	ｙ	Fullwidth Latin Small Letter Y
 U+FF5A	ｚ	Fullwidth Latin Small Letter Z
 
 //----------------------------------------------------------------------------//
+// [Halfwidth]
+//----------------------------------------------------------------------------//
+
+:= JAPANESE+HALFWIDTH+PUNCTUATION
+
+U+FF61	｡	Halfwidth Ideographic Full Stop
+U+FF62	｢	Halfwidth Left Corner Bracket
+U+FF63	｣	Halfwidth Right Corner Bracket
+U+FF64	､	Halfwidth Ideographic Comma
+
+//----------------------------------------------------------------------------//
 // [Kana]
 //----------------------------------------------------------------------------//
 
@@ -429,10 +441,13 @@ U+309E	ゞ	Hiragana Voiced Iteration Mark
 U+30FD	ヽ	Katakana Iteration Mark
 U+30FE	ヾ	Katakana Voiced Iteration Mark
 
-:= JAPANESE+KANA+WORD+PUNCTUATION+RARE+HALFWIDTH
+:= JAPANESE+KANA+WORD+PUNCTUATION+HALFWIDTH
 
 U+FF65	･	Halfwidth Katakana Middle Dot
 U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+
+:= JAPANESE+KANA+WORD+PUNCTUATION+RARE+HALFWIDTH
+
 U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
 U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
 
@@ -599,6 +614,8 @@ U+30F8	ヸ	Katakana Letter Vi
 U+30F9	ヹ	Katakana Letter Ve
 U+30FA	ヺ	Katakana Letter Vo
 U+1B000	𛀀	Katakana Letter Archaic E
+
+:= JAPANESE+KATAKANA+WORD+RARE+SMALL
 
 U+1B164	𛅤	Katakana Letter Small Wi
 U+1B165	𛅥	Katakana Letter Small We
@@ -775,6 +792,9 @@ U+3018	〘	Left White Tortoise Shell Bracket
 U+3019	〙	Right White Tortoise Shell Bracket
 U+301A	〚	Left White Square Bracket
 U+301B	〛	Right White Square Bracket
+U+301D	〝	Reversed Double Prime Quotation Mark
+U+301E	〞	Double Prime Quotation Mark
+U+301F	〟	Low Double Prime Quotation Mark
 
 := JAPANESE+SYMBOL+NUMBER
 
@@ -793,9 +813,6 @@ U+3006	〆	Ideographic Closing Mark
 U+3012	〒	Postal Mark
 U+3013	〓	Geta Mark
 U+301C	〜	Wave Dash
-U+301D	〝	Reversed Double Prime Quotation Mark
-U+301E	〞	Double Prime Quotation Mark
-U+301F	〟	Low Double Prime Quotation Mark
 U+3020	〠	Postal Mark Face
 U+3021	〡	Hangzhou Numeral One
 U+3022	〢	Hangzhou Numeral Two
@@ -904,6 +921,16 @@ U+3226	㈦	Parenthesized Ideograph Seven
 U+3227	㈧	Parenthesized Ideograph Eight
 U+3228	㈨	Parenthesized Ideograph Nine
 U+3229	㈩	Parenthesized Ideograph Ten
+
+:= JAPANESE+SYMBOL+HALFWIDTH
+
+U+FFE8	￨	Halfwidth Forms Light Vertical
+U+FFE9	￩	Halfwidth Leftwards Arrow
+U+FFEA	￪	Halfwidth Upwards Arrow
+U+FFEB	￫	Halfwidth Rightwards Arrow
+U+FFEC	￬	Halfwidth Downwards Arrow
+U+FFED	￭	Halfwidth Black Square
+U+FFEE	￮	Halfwidth White Circle
 
 := JAPANESE+SYMBOL
 
@@ -1368,14 +1395,6 @@ U+33FF	㏿	Square Gal
 U+1F202	🈂	Squared Katakana Sa
 U+1F213	🈓	Squared Katakana De
 
-U+FFE8	￨	Halfwidth Forms Light Vertical
-U+FFE9	￩	Halfwidth Leftwards Arrow
-U+FFEA	￪	Halfwidth Upwards Arrow
-U+FFEB	￫	Halfwidth Rightwards Arrow
-U+FFEC	￬	Halfwidth Downwards Arrow
-U+FFED	￭	Halfwidth Black Square
-U+FFEE	￮	Halfwidth White Circle
-
 // spell-checker: enable
 
 //----------------------------------------------------------------------------//
@@ -1384,7 +1403,7 @@ U+FFEE	￮	Halfwidth White Circle
 
 := JAPANESE+SYMBOL+RADICAL
 
-// Kanji Radicals (2E80 - 2EF3 / 2F00 - 2FD5)
+// Kanji Radicals (2E80 - 2EF3)
 
 > ⺀⺁⺂⺃⺄⺅⺆⺇⺈⺉⺊⺋⺌⺍⺎⺏⺐⺑⺒⺓⺔⺕⺖⺗⺘⺙⺛⺜⺝⺞⺟⺠⺡⺢⺣⺤⺥⺦⺧⺨⺩⺪⺫⺬⺭⺮⺯⺰
 > ⺱⺲⺳⺴⺵⺶⺷⺸⺹⺺⺻⺼⺽⺾⺿⻀⻁⻂⻃⻄⻅⻆⻇⻈⻉⻊⻋⻌⻍⻎⻏⻐⻑⻒⻓⻔⻕⻖⻗⻘⻙⻚⻛⻜⻝⻞⻟⻠
@@ -1409,6 +1428,10 @@ U+FFEE	￮	Halfwidth White Circle
 := JAPANESE+WORD+KANJI
 
 // All ranges
+
+~ U+4E00	U+9FFF	CJK Unified Ideographs
+~ U+F900	U+FAFF	CJK Compatibility Ideographs
+
 ~ U+03400	U+04DBF	CJK Unified Ideographs Extension A  // CJK Unified Ideographs Extension A (`㐀` to `䶵`)
 ~ U+20000	U+2A6DF	CJK Unified Ideographs Extension B  // CJK Unified Ideographs Extension B (`𠀀` to `𪛖`)
 ~ U+2A700	U+2B73F	CJK Unified Ideographs Extension C  // CJK Unified Ideographs Extension C (`𪜀` to `𫜴`)

@@ -79,7 +79,7 @@ fn test_flags() -> Result<(), String> {
 	}
 
 	// check that unmapped characters return NONE
-	for char in '\0'..='\u{FFFFF}' {
+	for char in '\0'..='\u{2FFFF}' {
 		if !charset.contains(&char) {
 			assert_eq!(
 				get_flags(char),
@@ -100,16 +100,25 @@ fn test_flags() -> Result<(), String> {
 		(expected, expected_line): (Flags, usize),
 		info: F,
 	) -> bool {
-		charset.insert(char);
+		let added = charset.insert(char);
 		let flags = get_flags(char);
-		if flags != expected {
+		let (valid, mode) = if added {
+			(flags == expected, "")
+		} else {
+			// if this is a duplicated expectation, just check that it contains
+			// the expected flags (useful to test separate flags for specific
+			// characters)
+			(flags & expected, " (contains)")
+		};
+		if !valid {
 			eprintln!(
-				"fail: character U+{:04X} at L{:03} differs from expectation (L{:03})\n      expected {}, was {}{}",
+				"fail: character U+{:04X} at L{:03} differs from expectation (L{:03})\n      expected {}, was {}{}{}",
 				char as u32,
 				line,
 				expected_line,
 				expected,
 				flags,
+				mode,
 				{
 					let info = info();
 					if info.len() > 0 {
