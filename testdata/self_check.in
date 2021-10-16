@@ -1,6 +1,6 @@
-# this file is used just for the self-check of the integration tests
+// this file is used just for the self-check of the integration tests
 
-line 1 # line comments should be ignored
+line 1 // line comments should be ignored
 line 2
 
-# empty lines should also be ignored
+// empty lines should also be ignored

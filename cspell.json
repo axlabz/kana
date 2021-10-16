@@ -2,9 +2,22 @@
 	"version": "0.2",
 	"language": "en",
 	"words": [
+		"〱〲〳〴〵",
+		"abcdefghijklmnopqrstuvwxyz",
+		"aeiou",
+		"âêîôû",
+		"āēīōū",
+		"aiueo",
+		"âîûêô",
+		"āīūēō",
+		"bitor",
+		"geta",
 		"kangxi",
+		"kanjidic",
 		"masu",
 		"romaji",
+		"unoptimized",
+		"unraw",
 		"yori"
 	],
 	"flagWords": [
@@ -13,7 +26,10 @@
 	"ignorePaths": [
 		".vscode/**",
 		"target/**",
-		"testdata/**/*.in"
+		"testdata/**/*.int"
 	],
-	"ignoreRegExpList": []
+	"ignoreRegExpList": [
+		"\\\\u\\{[0-9A-F]+\\}",
+		"^U\\+[0-9A-F]+\\t[^\\n]+"
+	]
 }

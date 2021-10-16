@@ -1,0 +1,608 @@
+// JAPANESE+SYMBOL characters
+
+// spell-checker: disable
+
+U+30A0	゠	Katakana-Hiragana Double Hyphen
+
+// FULLWIDTH characters
+
+U+FF03	＃	Fullwidth Number Sign
+U+FF04	＄	Fullwidth Dollar Sign
+U+FF05	％	Fullwidth Percent Sign
+U+FF06	＆	Fullwidth Ampersand
+U+FF07	＇	Fullwidth Apostrophe
+U+FF0A	＊	Fullwidth Asterisk
+U+FF0B	＋	Fullwidth Plus Sign
+U+FF0D	－	Fullwidth Hyphen-Minus
+U+FF0F	／	Fullwidth Solidus
+U+FF1C	＜	Fullwidth Less-Than Sign
+U+FF1D	＝	Fullwidth Equals Sign
+U+FF1E	＞	Fullwidth Greater-Than Sign
+U+FF20	＠	Fullwidth Commercial At
+U+FF3C	＼	Fullwidth Reverse Solidus
+U+FF3E	＾	Fullwidth Circumflex Accent
+U+FF3F	＿	Fullwidth Low Line
+U+FF40	｀	Fullwidth Grave Accent
+U+FF5C	｜	Fullwidth Vertical Line
+U+FF5E	～	Fullwidth Tilde
+
+U+FFE0	￠	Fullwidth Cent Sign
+U+FFE1	￡	Fullwidth Pound Sign
+U+FFE2	￢	Fullwidth Not Sign
+U+FFE3	￣	Fullwidth Macron
+U+FFE4	￤	Fullwidth Broken Bar
+U+FFE5	￥	Fullwidth Yen Sign
+U+FFE6	￦	Fullwidth Won Sign
+
+// CJK Symbols and Punctuation
+
+U+3003	〃	Ditto Mark
+U+3004	〄	Japanese Industrial Standard Symbol
+U+3006	〆	Ideographic Closing Mark
+U+3007	〇	Ideographic Number Zero
+U+3012	〒	Postal Mark
+U+3013	〓	Geta Mark
+U+301C	〜	Wave Dash
+U+3020	〠	Postal Mark Face
+U+3021	〡	Hangzhou Numeral One
+U+3022	〢	Hangzhou Numeral Two
+U+3023	〣	Hangzhou Numeral Three
+U+3024	〤	Hangzhou Numeral Four
+U+3025	〥	Hangzhou Numeral Five
+U+3026	〦	Hangzhou Numeral Six
+U+3027	〧	Hangzhou Numeral Seven
+U+3028	〨	Hangzhou Numeral Eight
+U+3029	〩	Hangzhou Numeral Nine
+U+302A		Ideographic Level Tone Mark
+U+302B		Ideographic Rising Tone Mark
+U+302C		Ideographic Departing Tone Mark
+U+302D		Ideographic Entering Tone Mark
+U+302E	〮	Hangul Single Dot Tone Mark
+U+302F	〯	Hangul Double Dot Tone Mark
+U+3030	〰	Wavy Dash
+U+3031	〱	Vertical Kana Repeat Mark
+U+3032	〲	Vertical Kana Repeat with Voiced Sound Mark
+U+3033	〳	Vertical Kana Repeat Mark Upper Half
+U+3034	〴	Vertical Kana Repeat with Voiced Sound Mark Upper Half
+U+3035	〵	Vertical Kana Repeat Mark Lower Half
+U+3036	〶	Circled Postal Mark
+U+3037	〷	Ideographic Telegraph Line Feed Separator Symbol
+U+3038	〸	Hangzhou Numeral Ten
+U+3039	〹	Hangzhou Numeral Twenty
+U+303A	〺	Hangzhou Numeral Thirty
+U+303B	〻	Vertical Ideographic Iteration Mark
+U+303D	〽	Part Alternation Mark
+U+303E	〾	Ideographic Variation Indicator
+U+303F	〿	Ideographic Half Fill Space
+
+// Enclosed CJK Letters and Months
+
+U+3200	㈀	Parenthesized Hangul Kiyeok
+U+3201	㈁	Parenthesized Hangul Nieun
+U+3202	㈂	Parenthesized Hangul Tikeut
+U+3203	㈃	Parenthesized Hangul Rieul
+U+3204	㈄	Parenthesized Hangul Mieum
+U+3205	㈅	Parenthesized Hangul Pieup
+U+3206	㈆	Parenthesized Hangul Sios
+U+3207	㈇	Parenthesized Hangul Ieung
+U+3208	㈈	Parenthesized Hangul Cieuc
+U+3209	㈉	Parenthesized Hangul Chieuch
+U+320A	㈊	Parenthesized Hangul Khieukh
+U+320B	㈋	Parenthesized Hangul Thieuth
+U+320C	㈌	Parenthesized Hangul Phieuph
+U+320D	㈍	Parenthesized Hangul Hieuh
+U+320E	㈎	Parenthesized Hangul Kiyeok A
+U+320F	㈏	Parenthesized Hangul Nieun A
+U+3210	㈐	Parenthesized Hangul Tikeut A
+U+3211	㈑	Parenthesized Hangul Rieul A
+U+3212	㈒	Parenthesized Hangul Mieum A
+U+3213	㈓	Parenthesized Hangul Pieup A
+U+3214	㈔	Parenthesized Hangul Sios A
+U+3215	㈕	Parenthesized Hangul Ieung A
+U+3216	㈖	Parenthesized Hangul Cieuc A
+U+3217	㈗	Parenthesized Hangul Chieuch A
+U+3218	㈘	Parenthesized Hangul Khieukh A
+U+3219	㈙	Parenthesized Hangul Thieuth A
+U+321A	㈚	Parenthesized Hangul Phieuph A
+U+321B	㈛	Parenthesized Hangul Hieuh A
+U+321C	㈜	Parenthesized Hangul Cieuc U
+U+321D	㈝	Parenthesized Korean Character Ojeon
+U+321E	㈞	Parenthesized Korean Character O Hu
+U+3220	㈠	Parenthesized Ideograph One
+U+3221	㈡	Parenthesized Ideograph Two
+U+3222	㈢	Parenthesized Ideograph Three
+U+3223	㈣	Parenthesized Ideograph Four
+U+3224	㈤	Parenthesized Ideograph Five
+U+3225	㈥	Parenthesized Ideograph Six
+U+3226	㈦	Parenthesized Ideograph Seven
+U+3227	㈧	Parenthesized Ideograph Eight
+U+3228	㈨	Parenthesized Ideograph Nine
+U+3229	㈩	Parenthesized Ideograph Ten
+U+322A	㈪	Parenthesized Ideograph Moon
+U+322B	㈫	Parenthesized Ideograph Fire
+U+322C	㈬	Parenthesized Ideograph Water
+U+322D	㈭	Parenthesized Ideograph Wood
+U+322E	㈮	Parenthesized Ideograph Metal
+U+322F	㈯	Parenthesized Ideograph Earth
+U+3230	㈰	Parenthesized Ideograph Sun
+U+3231	㈱	Parenthesized Ideograph Stock
+U+3232	㈲	Parenthesized Ideograph Have
+U+3233	㈳	Parenthesized Ideograph Society
+U+3234	㈴	Parenthesized Ideograph Name
+U+3235	㈵	Parenthesized Ideograph Special
+U+3236	㈶	Parenthesized Ideograph Financial
+U+3237	㈷	Parenthesized Ideograph Congratulation
+U+3238	㈸	Parenthesized Ideograph Labor
+U+3239	㈹	Parenthesized Ideograph Represent
+U+323A	㈺	Parenthesized Ideograph Call
+U+323B	㈻	Parenthesized Ideograph Study
+U+323C	㈼	Parenthesized Ideograph Supervise
+U+323D	㈽	Parenthesized Ideograph Enterprise
+U+323E	㈾	Parenthesized Ideograph Resource
+U+323F	㈿	Parenthesized Ideograph Alliance
+U+3240	㉀	Parenthesized Ideograph Festival
+U+3241	㉁	Parenthesized Ideograph Rest
+U+3242	㉂	Parenthesized Ideograph Self
+U+3243	㉃	Parenthesized Ideograph Reach
+U+3244	㉄	Circled Ideograph Question
+U+3245	㉅	Circled Ideograph Kindergarten
+U+3246	㉆	Circled Ideograph School
+U+3247	㉇	Circled Ideograph Koto
+U+3248	㉈	Circled Number Ten On Black Square
+U+3249	㉉	Circled Number Twenty On Black Square
+U+324A	㉊	Circled Number Thirty On Black Square
+U+324B	㉋	Circled Number Forty On Black Square
+U+324C	㉌	Circled Number Fifty On Black Square
+U+324D	㉍	Circled Number Sixty On Black Square
+U+324E	㉎	Circled Number Seventy On Black Square
+U+324F	㉏	Circled Number Eighty On Black Square
+U+3250	㉐	Partnership Sign
+U+3251	㉑	Circled Number Twenty One
+U+3252	㉒	Circled Number Twenty Two
+U+3253	㉓	Circled Number Twenty Three
+U+3254	㉔	Circled Number Twenty Four
+U+3255	㉕	Circled Number Twenty Five
+U+3256	㉖	Circled Number Twenty Six
+U+3257	㉗	Circled Number Twenty Seven
+U+3258	㉘	Circled Number Twenty Eight
+U+3259	㉙	Circled Number Twenty Nine
+U+325A	㉚	Circled Number Thirty
+U+325B	㉛	Circled Number Thirty One
+U+325C	㉜	Circled Number Thirty Two
+U+325D	㉝	Circled Number Thirty Three
+U+325E	㉞	Circled Number Thirty Four
+U+325F	㉟	Circled Number Thirty Five
+U+3260	㉠	Circled Hangul Kiyeok
+U+3261	㉡	Circled Hangul Nieun
+U+3262	㉢	Circled Hangul Tikeut
+U+3263	㉣	Circled Hangul Rieul
+U+3264	㉤	Circled Hangul Mieum
+U+3265	㉥	Circled Hangul Pieup
+U+3266	㉦	Circled Hangul Sios
+U+3267	㉧	Circled Hangul Ieung
+U+3268	㉨	Circled Hangul Cieuc
+U+3269	㉩	Circled Hangul Chieuch
+U+326A	㉪	Circled Hangul Khieukh
+U+326B	㉫	Circled Hangul Thieuth
+U+326C	㉬	Circled Hangul Phieuph
+U+326D	㉭	Circled Hangul Hieuh
+U+326E	㉮	Circled Hangul Kiyeok A
+U+326F	㉯	Circled Hangul Nieun A
+U+3270	㉰	Circled Hangul Tikeut A
+U+3271	㉱	Circled Hangul Rieul A
+U+3272	㉲	Circled Hangul Mieum A
+U+3273	㉳	Circled Hangul Pieup A
+U+3274	㉴	Circled Hangul Sios A
+U+3275	㉵	Circled Hangul Ieung A
+U+3276	㉶	Circled Hangul Cieuc A
+U+3277	㉷	Circled Hangul Chieuch A
+U+3278	㉸	Circled Hangul Khieukh A
+U+3279	㉹	Circled Hangul Thieuth A
+U+327A	㉺	Circled Hangul Phieuph A
+U+327B	㉻	Circled Hangul Hieuh A
+U+327C	㉼	Circled Korean Character Chamko
+U+327D	㉽	Circled Korean Character Jueui
+U+327E	㉾	Circled Hangul Ieung U
+U+327F	㉿	Korean Standard Symbol
+U+3280	㊀	Circled Ideograph One
+U+3281	㊁	Circled Ideograph Two
+U+3282	㊂	Circled Ideograph Three
+U+3283	㊃	Circled Ideograph Four
+U+3284	㊄	Circled Ideograph Five
+U+3285	㊅	Circled Ideograph Six
+U+3286	㊆	Circled Ideograph Seven
+U+3287	㊇	Circled Ideograph Eight
+U+3288	㊈	Circled Ideograph Nine
+U+3289	㊉	Circled Ideograph Ten
+U+328A	㊊	Circled Ideograph Moon
+U+328B	㊋	Circled Ideograph Fire
+U+328C	㊌	Circled Ideograph Water
+U+328D	㊍	Circled Ideograph Wood
+U+328E	㊎	Circled Ideograph Metal
+U+328F	㊏	Circled Ideograph Earth
+U+3290	㊐	Circled Ideograph Sun
+U+3291	㊑	Circled Ideograph Stock
+U+3292	㊒	Circled Ideograph Have
+U+3293	㊓	Circled Ideograph Society
+U+3294	㊔	Circled Ideograph Name
+U+3295	㊕	Circled Ideograph Special
+U+3296	㊖	Circled Ideograph Financial
+U+3297	㊗	Circled Ideograph Congratulation
+U+3298	㊘	Circled Ideograph Labor
+U+3299	㊙	Circled Ideograph Secret
+U+329A	㊚	Circled Ideograph Male
+U+329B	㊛	Circled Ideograph Female
+U+329C	㊜	Circled Ideograph Suitable
+U+329D	㊝	Circled Ideograph Excellent
+U+329E	㊞	Circled Ideograph Print
+U+329F	㊟	Circled Ideograph Attention
+U+32A0	㊠	Circled Ideograph Item
+U+32A1	㊡	Circled Ideograph Rest
+U+32A2	㊢	Circled Ideograph Copy
+U+32A3	㊣	Circled Ideograph Correct
+U+32A4	㊤	Circled Ideograph High
+U+32A5	㊥	Circled Ideograph Centre
+U+32A6	㊦	Circled Ideograph Low
+U+32A7	㊧	Circled Ideograph Left
+U+32A8	㊨	Circled Ideograph Right
+U+32A9	㊩	Circled Ideograph Medicine
+U+32AA	㊪	Circled Ideograph Religion
+U+32AB	㊫	Circled Ideograph Study
+U+32AC	㊬	Circled Ideograph Supervise
+U+32AD	㊭	Circled Ideograph Enterprise
+U+32AE	㊮	Circled Ideograph Resource
+U+32AF	㊯	Circled Ideograph Alliance
+U+32B0	㊰	Circled Ideograph Night
+U+32B1	㊱	Circled Number Thirty Six
+U+32B2	㊲	Circled Number Thirty Seven
+U+32B3	㊳	Circled Number Thirty Eight
+U+32B4	㊴	Circled Number Thirty Nine
+U+32B5	㊵	Circled Number Forty
+U+32B6	㊶	Circled Number Forty One
+U+32B7	㊷	Circled Number Forty Two
+U+32B8	㊸	Circled Number Forty Three
+U+32B9	㊹	Circled Number Forty Four
+U+32BA	㊺	Circled Number Forty Five
+U+32BB	㊻	Circled Number Forty Six
+U+32BC	㊼	Circled Number Forty Seven
+U+32BD	㊽	Circled Number Forty Eight
+U+32BE	㊾	Circled Number Forty Nine
+U+32BF	㊿	Circled Number Fifty
+U+32C0	㋀	Ideographic Telegraph Symbol For January
+U+32C1	㋁	Ideographic Telegraph Symbol For February
+U+32C2	㋂	Ideographic Telegraph Symbol For March
+U+32C3	㋃	Ideographic Telegraph Symbol For April
+U+32C4	㋄	Ideographic Telegraph Symbol For May
+U+32C5	㋅	Ideographic Telegraph Symbol For June
+U+32C6	㋆	Ideographic Telegraph Symbol For July
+U+32C7	㋇	Ideographic Telegraph Symbol For August
+U+32C8	㋈	Ideographic Telegraph Symbol For September
+U+32C9	㋉	Ideographic Telegraph Symbol For October
+U+32CA	㋊	Ideographic Telegraph Symbol For November
+U+32CB	㋋	Ideographic Telegraph Symbol For December
+U+32CC	㋌	Square Hg
+U+32CD	㋍	Square Erg
+U+32CE	㋎	Square Ev
+U+32CF	㋏	Limited Liability Sign
+U+32D0	㋐	Circled Katakana A
+U+32D1	㋑	Circled Katakana I
+U+32D2	㋒	Circled Katakana U
+U+32D3	㋓	Circled Katakana E
+U+32D4	㋔	Circled Katakana O
+U+32D5	㋕	Circled Katakana Ka
+U+32D6	㋖	Circled Katakana Ki
+U+32D7	㋗	Circled Katakana Ku
+U+32D8	㋘	Circled Katakana Ke
+U+32D9	㋙	Circled Katakana Ko
+U+32DA	㋚	Circled Katakana Sa
+U+32DB	㋛	Circled Katakana Si
+U+32DC	㋜	Circled Katakana Su
+U+32DD	㋝	Circled Katakana Se
+U+32DE	㋞	Circled Katakana So
+U+32DF	㋟	Circled Katakana Ta
+U+32E0	㋠	Circled Katakana Ti
+U+32E1	㋡	Circled Katakana Tu
+U+32E2	㋢	Circled Katakana Te
+U+32E3	㋣	Circled Katakana To
+U+32E4	㋤	Circled Katakana Na
+U+32E5	㋥	Circled Katakana Ni
+U+32E6	㋦	Circled Katakana Nu
+U+32E7	㋧	Circled Katakana Ne
+U+32E8	㋨	Circled Katakana No
+U+32E9	㋩	Circled Katakana Ha
+U+32EA	㋪	Circled Katakana Hi
+U+32EB	㋫	Circled Katakana Hu
+U+32EC	㋬	Circled Katakana He
+U+32ED	㋭	Circled Katakana Ho
+U+32EE	㋮	Circled Katakana Ma
+U+32EF	㋯	Circled Katakana Mi
+U+32F0	㋰	Circled Katakana Mu
+U+32F1	㋱	Circled Katakana Me
+U+32F2	㋲	Circled Katakana Mo
+U+32F3	㋳	Circled Katakana Ya
+U+32F4	㋴	Circled Katakana Yu
+U+32F5	㋵	Circled Katakana Yo
+U+32F6	㋶	Circled Katakana Ra
+U+32F7	㋷	Circled Katakana Ri
+U+32F8	㋸	Circled Katakana Ru
+U+32F9	㋹	Circled Katakana Re
+U+32FA	㋺	Circled Katakana Ro
+U+32FB	㋻	Circled Katakana Wa
+U+32FC	㋼	Circled Katakana Wi
+U+32FD	㋽	Circled Katakana We
+U+32FE	㋾	Circled Katakana Wo
+U+32FF	㋿	Square Era Name Reiwa
+
+// CJK Compatibility
+
+U+3300	㌀	Square Apaato
+U+3301	㌁	Square Aruhua
+U+3302	㌂	Square Anpea
+U+3303	㌃	Square Aaru
+U+3304	㌄	Square Iningu
+U+3305	㌅	Square Inti
+U+3306	㌆	Square Uon
+U+3307	㌇	Square Esukuudo
+U+3308	㌈	Square Eekaa
+U+3309	㌉	Square Onsu
+U+330A	㌊	Square Oomu
+U+330B	㌋	Square Kairi
+U+330C	㌌	Square Karatto
+U+330D	㌍	Square Karorii
+U+330E	㌎	Square Garon
+U+330F	㌏	Square Ganma
+U+3310	㌐	Square Giga
+U+3311	㌑	Square Ginii
+U+3312	㌒	Square Kyurii
+U+3313	㌓	Square Girudaa
+U+3314	㌔	Square Kiro
+U+3315	㌕	Square Kiroguramu
+U+3316	㌖	Square Kiromeetoru
+U+3317	㌗	Square Kirowatto
+U+3318	㌘	Square Guramu
+U+3319	㌙	Square Guramuton
+U+331A	㌚	Square Kuruzeiro
+U+331B	㌛	Square Kuroone
+U+331C	㌜	Square Keesu
+U+331D	㌝	Square Koruna
+U+331E	㌞	Square Koopo
+U+331F	㌟	Square Saikuru
+U+3320	㌠	Square Santiimu
+U+3321	㌡	Square Siringu
+U+3322	㌢	Square Senti
+U+3323	㌣	Square Sento
+U+3324	㌤	Square Daasu
+U+3325	㌥	Square Desi
+U+3326	㌦	Square Doru
+U+3327	㌧	Square Ton
+U+3328	㌨	Square Nano
+U+3329	㌩	Square Notto
+U+332A	㌪	Square Haitu
+U+332B	㌫	Square Paasento
+U+332C	㌬	Square Paatu
+U+332D	㌭	Square Baareru
+U+332E	㌮	Square Piasutoru
+U+332F	㌯	Square Pikuru
+U+3330	㌰	Square Piko
+U+3331	㌱	Square Biru
+U+3332	㌲	Square Huaraddo
+U+3333	㌳	Square Huiito
+U+3334	㌴	Square Bussyeru
+U+3335	㌵	Square Huran
+U+3336	㌶	Square Hekutaaru
+U+3337	㌷	Square Peso
+U+3338	㌸	Square Penihi
+U+3339	㌹	Square Herutu
+U+333A	㌺	Square Pensu
+U+333B	㌻	Square Peezi
+U+333C	㌼	Square Beeta
+U+333D	㌽	Square Pointo
+U+333E	㌾	Square Boruto
+U+333F	㌿	Square Hon
+U+3340	㍀	Square Pondo
+U+3341	㍁	Square Hooru
+U+3342	㍂	Square Hoon
+U+3343	㍃	Square Maikuro
+U+3344	㍄	Square Mairu
+U+3345	㍅	Square Mahha
+U+3346	㍆	Square Maruku
+U+3347	㍇	Square Mansyon
+U+3348	㍈	Square Mikuron
+U+3349	㍉	Square Miri
+U+334A	㍊	Square Miribaaru
+U+334B	㍋	Square Mega
+U+334C	㍌	Square Megaton
+U+334D	㍍	Square Meetoru
+U+334E	㍎	Square Yaado
+U+334F	㍏	Square Yaaru
+U+3350	㍐	Square Yuan
+U+3351	㍑	Square Rittoru
+U+3352	㍒	Square Rira
+U+3353	㍓	Square Rupii
+U+3354	㍔	Square Ruuburu
+U+3355	㍕	Square Remu
+U+3356	㍖	Square Rentogen
+U+3357	㍗	Square Watto
+U+3358	㍘	Ideographic Telegraph Symbol For Hour Zero
+U+3359	㍙	Ideographic Telegraph Symbol For Hour One
+U+335A	㍚	Ideographic Telegraph Symbol For Hour Two
+U+335B	㍛	Ideographic Telegraph Symbol For Hour Three
+U+335C	㍜	Ideographic Telegraph Symbol For Hour Four
+U+335D	㍝	Ideographic Telegraph Symbol For Hour Five
+U+335E	㍞	Ideographic Telegraph Symbol For Hour Six
+U+335F	㍟	Ideographic Telegraph Symbol For Hour Seven
+U+3360	㍠	Ideographic Telegraph Symbol For Hour Eight
+U+3361	㍡	Ideographic Telegraph Symbol For Hour Nine
+U+3362	㍢	Ideographic Telegraph Symbol For Hour Ten
+U+3363	㍣	Ideographic Telegraph Symbol For Hour Eleven
+U+3364	㍤	Ideographic Telegraph Symbol For Hour Twelve
+U+3365	㍥	Ideographic Telegraph Symbol For Hour Thirteen
+U+3366	㍦	Ideographic Telegraph Symbol For Hour Fourteen
+U+3367	㍧	Ideographic Telegraph Symbol For Hour Fifteen
+U+3368	㍨	Ideographic Telegraph Symbol For Hour Sixteen
+U+3369	㍩	Ideographic Telegraph Symbol For Hour Seventeen
+U+336A	㍪	Ideographic Telegraph Symbol For Hour Eighteen
+U+336B	㍫	Ideographic Telegraph Symbol For Hour Nineteen
+U+336C	㍬	Ideographic Telegraph Symbol For Hour Twenty
+U+336D	㍭	Ideographic Telegraph Symbol For Hour Twenty-One
+U+336E	㍮	Ideographic Telegraph Symbol For Hour Twenty-Two
+U+336F	㍯	Ideographic Telegraph Symbol For Hour Twenty-Three
+U+3370	㍰	Ideographic Telegraph Symbol For Hour Twenty-Four
+U+3371	㍱	Square Hpa
+U+3372	㍲	Square Da
+U+3373	㍳	Square Au
+U+3374	㍴	Square Bar
+U+3375	㍵	Square Ov
+U+3376	㍶	Square Pc
+U+3377	㍷	Square Dm
+U+3378	㍸	Square Dm Squared
+U+3379	㍹	Square Dm Cubed
+U+337A	㍺	Square Iu
+U+337B	㍻	Square Era Name Heisei
+U+337C	㍼	Square Era Name Syouwa
+U+337D	㍽	Square Era Name Taisyou
+U+337E	㍾	Square Era Name Meizi
+U+337F	㍿	Square Corporation
+U+3380	㎀	Square Pa Amps
+U+3381	㎁	Square Na
+U+3382	㎂	Square Mu A
+U+3383	㎃	Square Ma
+U+3384	㎄	Square Ka
+U+3385	㎅	Square Kb
+U+3386	㎆	Square Mb
+U+3387	㎇	Square Gb
+U+3388	㎈	Square Cal
+U+3389	㎉	Square Kcal
+U+338A	㎊	Square Pf
+U+338B	㎋	Square Nf
+U+338C	㎌	Square Mu F
+U+338D	㎍	Square Mu G
+U+338E	㎎	Square Mg
+U+338F	㎏	Square Kg
+U+3390	㎐	Square Hz
+U+3391	㎑	Square Khz
+U+3392	㎒	Square Mhz
+U+3393	㎓	Square Ghz
+U+3394	㎔	Square Thz
+U+3395	㎕	Square Mu L
+U+3396	㎖	Square Ml
+U+3397	㎗	Square Dl
+U+3398	㎘	Square Kl
+U+3399	㎙	Square Fm
+U+339A	㎚	Square Nm
+U+339B	㎛	Square Mu M
+U+339C	㎜	Square Mm
+U+339D	㎝	Square Cm
+U+339E	㎞	Square Km
+U+339F	㎟	Square Mm Squared
+U+33A0	㎠	Square Cm Squared
+U+33A1	㎡	Square M Squared
+U+33A2	㎢	Square Km Squared
+U+33A3	㎣	Square Mm Cubed
+U+33A4	㎤	Square Cm Cubed
+U+33A5	㎥	Square M Cubed
+U+33A6	㎦	Square Km Cubed
+U+33A7	㎧	Square M Over S
+U+33A8	㎨	Square M Over S Squared
+U+33A9	㎩	Square Pa
+U+33AA	㎪	Square Kpa
+U+33AB	㎫	Square Mpa
+U+33AC	㎬	Square Gpa
+U+33AD	㎭	Square Rad
+U+33AE	㎮	Square Rad Over S
+U+33AF	㎯	Square Rad Over S Squared
+U+33B0	㎰	Square Ps
+U+33B1	㎱	Square Ns
+U+33B2	㎲	Square Mu S
+U+33B3	㎳	Square Ms
+U+33B4	㎴	Square Pv
+U+33B5	㎵	Square Nv
+U+33B6	㎶	Square Mu V
+U+33B7	㎷	Square Mv
+U+33B8	㎸	Square Kv
+U+33B9	㎹	Square Mv Mega
+U+33BA	㎺	Square Pw
+U+33BB	㎻	Square Nw
+U+33BC	㎼	Square Mu W
+U+33BD	㎽	Square Mw
+U+33BE	㎾	Square Kw
+U+33BF	㎿	Square Mw Mega
+U+33C0	㏀	Square K Ohm
+U+33C1	㏁	Square M Ohm
+U+33C2	㏂	Square Am
+U+33C3	㏃	Square Bq
+U+33C4	㏄	Square Cc
+U+33C5	㏅	Square Cd
+U+33C6	㏆	Square C Over Kg
+U+33C7	㏇	Square Co
+U+33C8	㏈	Square Db
+U+33C9	㏉	Square Gy
+U+33CA	㏊	Square Ha
+U+33CB	㏋	Square Hp
+U+33CC	㏌	Square In
+U+33CD	㏍	Square Kk
+U+33CE	㏎	Square Km Capital
+U+33CF	㏏	Square Kt
+U+33D0	㏐	Square Lm
+U+33D1	㏑	Square Ln
+U+33D2	㏒	Square Log
+U+33D3	㏓	Square Lx
+U+33D4	㏔	Square Mb Small
+U+33D5	㏕	Square Mil
+U+33D6	㏖	Square Mol
+U+33D7	㏗	Square Ph
+U+33D8	㏘	Square Pm
+U+33D9	㏙	Square Ppm
+U+33DA	㏚	Square Pr
+U+33DB	㏛	Square Sr
+U+33DC	㏜	Square Sv
+U+33DD	㏝	Square Wb
+U+33DE	㏞	Square V Over M
+U+33DF	㏟	Square A Over M
+U+33E0	㏠	Ideographic Telegraph Symbol For Day One
+U+33E1	㏡	Ideographic Telegraph Symbol For Day Two
+U+33E2	㏢	Ideographic Telegraph Symbol For Day Three
+U+33E3	㏣	Ideographic Telegraph Symbol For Day Four
+U+33E4	㏤	Ideographic Telegraph Symbol For Day Five
+U+33E5	㏥	Ideographic Telegraph Symbol For Day Six
+U+33E6	㏦	Ideographic Telegraph Symbol For Day Seven
+U+33E7	㏧	Ideographic Telegraph Symbol For Day Eight
+U+33E8	㏨	Ideographic Telegraph Symbol For Day Nine
+U+33E9	㏩	Ideographic Telegraph Symbol For Day Ten
+U+33EA	㏪	Ideographic Telegraph Symbol For Day Eleven
+U+33EB	㏫	Ideographic Telegraph Symbol For Day Twelve
+U+33EC	㏬	Ideographic Telegraph Symbol For Day Thirteen
+U+33ED	㏭	Ideographic Telegraph Symbol For Day Fourteen
+U+33EE	㏮	Ideographic Telegraph Symbol For Day Fifteen
+U+33EF	㏯	Ideographic Telegraph Symbol For Day Sixteen
+U+33F0	㏰	Ideographic Telegraph Symbol For Day Seventeen
+U+33F1	㏱	Ideographic Telegraph Symbol For Day Eighteen
+U+33F2	㏲	Ideographic Telegraph Symbol For Day Nineteen
+U+33F3	㏳	Ideographic Telegraph Symbol For Day Twenty
+U+33F4	㏴	Ideographic Telegraph Symbol For Day Twenty-One
+U+33F5	㏵	Ideographic Telegraph Symbol For Day Twenty-Two
+U+33F6	㏶	Ideographic Telegraph Symbol For Day Twenty-Three
+U+33F7	㏷	Ideographic Telegraph Symbol For Day Twenty-Four
+U+33F8	㏸	Ideographic Telegraph Symbol For Day Twenty-Five
+U+33F9	㏹	Ideographic Telegraph Symbol For Day Twenty-Six
+U+33FA	㏺	Ideographic Telegraph Symbol For Day Twenty-Seven
+U+33FB	㏻	Ideographic Telegraph Symbol For Day Twenty-Eight
+U+33FC	㏼	Ideographic Telegraph Symbol For Day Twenty-Nine
+U+33FD	㏽	Ideographic Telegraph Symbol For Day Thirty
+U+33FE	㏾	Ideographic Telegraph Symbol For Day Thirty-One
+U+33FF	㏿	Square Gal
+
+// Halfwidth
+
+U+FFE8	￨	Halfwidth Forms Light Vertical
+U+FFE9	￩	Halfwidth Leftwards Arrow
+U+FFEA	￪	Halfwidth Upwards Arrow
+U+FFEB	￫	Halfwidth Rightwards Arrow
+U+FFEC	￬	Halfwidth Downwards Arrow
+U+FFED	￭	Halfwidth Black Square
+U+FFEE	￮	Halfwidth White Circle
+
+// Enclosed Ideographic Supplement
+
+U+1F202	🈂	Squared Katakana Sa
+U+1F213	🈓	Squared Katakana De

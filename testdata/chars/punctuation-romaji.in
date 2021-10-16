@@ -1,0 +1,23 @@
+// PUNCTUATION+ROMAJI characters
+
+U+0021	!	Exclamation Mark
+U+0028	(	Left Parenthesis
+U+0029	)	Right Parenthesis
+U+002C	,	Comma
+U+002E	.	Full Stop
+U+003A	:	Colon
+U+003B	;	Semicolon
+U+003F	?	Question Mark
+U+005B	[	Left Square Bracket
+U+005D	]	Right Square Bracket
+U+007B	{	Left Curly Bracket
+U+007D	}	Right Curly Bracket
+
+U+00AB	«	Left-Pointing Double Angle Quotation Mark
+U+00BB	»	Right-Pointing Double Angle Quotation Mark
+
+U+0022	"	Quotation Mark
+U+0027	'	Apostrophe      // Used to disambiguate sillables
+U+002D	-	Hyphen-Minus    // Represent the long vowel mark
+U+002F	/	Solidus         // Maps to a katakana middle dot
+U+00B7	·	Middle Dot

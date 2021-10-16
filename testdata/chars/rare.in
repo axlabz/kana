@@ -1,22 +1,33 @@
-# Rare and miscellaneous
+// RARE characters
 
-U+1B000	𛀀	KATAKANA LETTER ARCHAIC E
+U+308E	ゎ	Hiragana Letter Small Wa
+U+3095	ゕ	Hiragana Letter Small Ka
+U+3096	ゖ	Hiragana Letter Small Ke
+U+309F	ゟ	Hiragana Digraph Yori
 
-# Phonetic extensions for Ainu:
+U+30EE	ヮ	Katakana Letter Small Wa
+U+30F5	ヵ	Katakana Letter Small Ka
+U+30F6	ヶ	Katakana Letter Small Ke
+U+30FF	ヿ	Katakana Digraph Koto
 
-U+31F0	ㇰ	KATAKANA LETTER SMALL KU
-U+31F1	ㇱ	KATAKANA LETTER SMALL SI
-U+31F2	ㇲ	KATAKANA LETTER SMALL SU
-U+31F3	ㇳ	KATAKANA LETTER SMALL TO
-U+31F4	ㇴ	KATAKANA LETTER SMALL NU
-U+31F5	ㇵ	KATAKANA LETTER SMALL HA
-U+31F6	ㇶ	KATAKANA LETTER SMALL HI
-U+31F7	ㇷ	KATAKANA LETTER SMALL HU
-U+31F8	ㇸ	KATAKANA LETTER SMALL HE
-U+31F9	ㇹ	KATAKANA LETTER SMALL HO
-U+31FA	ㇺ	KATAKANA LETTER SMALL MU
-U+31FB	ㇻ	KATAKANA LETTER SMALL RA
-U+31FC	ㇼ	KATAKANA LETTER SMALL RI
-U+31FD	ㇽ	KATAKANA LETTER SMALL RU
-U+31FE	ㇾ	KATAKANA LETTER SMALL RE
-U+31FF	ㇿ	KATAKANA LETTER SMALL RO
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+
+U+1B150	𛅐	Hiragana Letter Small Wi
+U+1B151	𛅑	Hiragana Letter Small We
+U+1B152	𛅒	Hiragana Letter Small Wo
+
+U+1B164	𛅤	Katakana Letter Small Wi
+U+1B165	𛅥	Katakana Letter Small We
+U+1B166	𛅦	Katakana Letter Small Wo
+U+1B167	𛅧	Katakana Letter Small N
+
+U+303C	〼	Masu Mark

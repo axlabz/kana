@@ -1,0 +1,27 @@
+// Specific WORD characters
+
+// Mid-word punctuation
+
+U+0027	'	Apostrophe
+U+002D	-	Hyphen-Minus
+U+002F	/	Solidus
+U+00B7	·	Middle Dot
+
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
+U+30FB	・	Katakana Middle Dot
+
+U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+U+FF65	･	Halfwidth Katakana Middle Dot
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+U+3005	々	Ideographic Iteration Mark
+
+U+303C	〼	Masu Mark

@@ -1,0 +1,54 @@
+// SMALL characters
+
+// Hiragana
+
+U+3041	ぁ	Hiragana Letter Small A
+U+3043	ぃ	Hiragana Letter Small I
+U+3045	ぅ	Hiragana Letter Small U
+U+3047	ぇ	Hiragana Letter Small E
+U+3049	ぉ	Hiragana Letter Small O
+U+3063	っ	Hiragana Letter Small Tu
+U+3083	ゃ	Hiragana Letter Small Ya
+U+3085	ゅ	Hiragana Letter Small Yu
+U+3087	ょ	Hiragana Letter Small Yo
+U+308E	ゎ	Hiragana Letter Small Wa
+U+3095	ゕ	Hiragana Letter Small Ka
+U+3096	ゖ	Hiragana Letter Small Ke
+
+// Katakana
+
+U+30A1	ァ	Katakana Letter Small A
+U+30A3	ィ	Katakana Letter Small I
+U+30A5	ゥ	Katakana Letter Small U
+U+30A7	ェ	Katakana Letter Small E
+U+30A9	ォ	Katakana Letter Small O
+U+30C3	ッ	Katakana Letter Small Tu
+U+30E3	ャ	Katakana Letter Small Ya
+U+30E5	ュ	Katakana Letter Small Yu
+U+30E7	ョ	Katakana Letter Small Yo
+U+30EE	ヮ	Katakana Letter Small Wa
+U+30F5	ヵ	Katakana Letter Small Ka
+U+30F6	ヶ	Katakana Letter Small Ke
+
+// Halfwidth katakana
+
+U+FF67	ｧ	Halfwidth Katakana Letter Small A
+U+FF68	ｨ	Halfwidth Katakana Letter Small I
+U+FF69	ｩ	Halfwidth Katakana Letter Small U
+U+FF6A	ｪ	Halfwidth Katakana Letter Small E
+U+FF6B	ｫ	Halfwidth Katakana Letter Small O
+U+FF6C	ｬ	Halfwidth Katakana Letter Small Ya
+U+FF6D	ｭ	Halfwidth Katakana Letter Small Yu
+U+FF6E	ｮ	Halfwidth Katakana Letter Small Yo
+U+FF6F	ｯ	Halfwidth Katakana Letter Small Tu
+
+// Rare
+
+U+1B150	𛅐	Hiragana Letter Small Wi
+U+1B151	𛅑	Hiragana Letter Small We
+U+1B152	𛅒	Hiragana Letter Small Wo
+
+U+1B164	𛅤	Katakana Letter Small Wi
+U+1B165	𛅥	Katakana Letter Small We
+U+1B166	𛅦	Katakana Letter Small Wo
+U+1B167	𛅧	Katakana Letter Small N

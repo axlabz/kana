@@ -1,0 +1,78 @@
+// PUNCTUATION+JAPANESE characters
+
+// spell-checker: disable
+
+U+309B	゛	Katakana-Hiragana Voiced Sound Mark
+U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
+U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
+U+30FB	・	Katakana Middle Dot
+
+U+FF70	ｰ	Halfwidth Katakana-Hiragana Prolonged Sound Mark
+U+FF65	･	Halfwidth Katakana Middle Dot
+U+FF9E	ﾞ	Halfwidth Katakana Voiced Sound Mark
+U+FF9F	ﾟ	Halfwidth Katakana Semi-Voiced Sound Mark
+
+U+309D	ゝ	Hiragana Iteration Mark
+U+309E	ゞ	Hiragana Voiced Iteration Mark
+U+30FD	ヽ	Katakana Iteration Mark
+U+30FE	ヾ	Katakana Voiced Iteration Mark
+
+U+FF01	！	Fullwidth Exclamation Mark
+U+FF08	（	Fullwidth Left Parenthesis
+U+FF09	）	Fullwidth Right Parenthesis
+U+FF0C	，	Fullwidth Comma
+U+FF0E	．	Fullwidth Full Stop
+U+FF1A	：	Fullwidth Colon
+U+FF1B	；	Fullwidth Semicolon
+U+FF1F	？	Fullwidth Question Mark
+U+FF3B	［	Fullwidth Left Square Bracket
+U+FF3D	］	Fullwidth Right Square Bracket
+U+FF5B	｛	Fullwidth Left Curly Bracket
+U+FF5D	｝	Fullwidth Right Curly Bracket
+U+FF5F	｟	Fullwidth Left White Parenthesis
+U+FF60	｠	Fullwidth Right White Parenthesis
+
+U+3001	、	Ideographic Comma
+U+3002	。	Ideographic Full Stop
+U+3008	〈	Left Angle Bracket
+U+3009	〉	Right Angle Bracket
+U+300A	《	Left Double Angle Bracket
+U+300B	》	Right Double Angle Bracket
+U+300C	「	Left Corner Bracket
+U+300D	」	Right Corner Bracket
+U+300E	『	Left White Corner Bracket
+U+300F	』	Right White Corner Bracket
+U+3010	【	Left Black Lenticular Bracket
+U+3011	】	Right Black Lenticular Bracket
+U+3014	〔	Left Tortoise Shell Bracket
+U+3015	〕	Right Tortoise Shell Bracket
+U+3016	〖	Left White Lenticular Bracket
+U+3017	〗	Right White Lenticular Bracket
+U+3018	〘	Left White Tortoise Shell Bracket
+U+3019	〙	Right White Tortoise Shell Bracket
+U+301A	〚	Left White Square Bracket
+U+301B	〛	Right White Square Bracket
+U+301D	〝	Reversed Double Prime Quotation Mark
+U+301F	〟	Low Double Prime Quotation Mark
+U+301E	〞	Double Prime Quotation Mark
+
+U+FF61	｡	Halfwidth Ideographic Full Stop
+U+FF62	｢	Halfwidth Left Corner Bracket
+U+FF63	｣	Halfwidth Right Corner Bracket
+U+FF64	､	Halfwidth Ideographic Comma
+
+U+FF01	！	Fullwidth Exclamation Mark
+U+FF02	＂	Fullwidth Quotation Mark
+U+FF08	（	Fullwidth Left Parenthesis
+U+FF09	）	Fullwidth Right Parenthesis
+U+FF0C	，	Fullwidth Comma
+U+FF0E	．	Fullwidth Full Stop
+U+FF1A	：	Fullwidth Colon
+U+FF1B	；	Fullwidth Semicolon
+U+FF1F	？	Fullwidth Question Mark
+U+FF3B	［	Fullwidth Left Square Bracket
+U+FF3D	］	Fullwidth Right Square Bracket
+U+FF5B	｛	Fullwidth Left Curly Bracket
+U+FF5D	｝	Fullwidth Right Curly Bracket
+U+FF5F	｟	Fullwidth Left White Parenthesis
+U+FF60	｠	Fullwidth Right White Parenthesis
