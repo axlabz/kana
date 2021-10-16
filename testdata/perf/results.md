@@ -5,18 +5,30 @@ Results of running `cargo --example perf`
 ## Release
 
 ```
-λ cargo run --release --example perf
+   Compiling kana-macros v0.1.0 (D:\Work\ax-lab\kana\kana-macros)
    Compiling kana v0.1.0 (D:\Work\ax-lab\kana)
-    Finished release [optimized] target(s) in 0.52s
+    Finished release [optimized] target(s) in 1.53s
      Running `target\release\examples\perf.exe`
+
+>> Testing kanjidic.dat...
 => file read (15634322 bytes)
-   took 13.093ms
-=> plain sum (15340356 chars = 3798409398)
-   took 9.8232ms
+   took 10.3779ms
+=> char count (15340356 chars)
+   took 8.5963ms
 => plain bitwise (196607)
-   took 8.7583ms
+   took 8.9031ms
 => get_flags (JAPANESE+ROMAJI+SPACE+HIRAGANA+KATAKANA+KANA+KANJI+ROMAN+PUNCTUATION+SYMBOL+WORD+SMALL+NUMBER+LINEBREAK)
-   took 111.8916ms
+   took 106.194ms
+
+>> Testing japanese.dat...
+=> file read (6747701 bytes)
+   took 10.9343ms
+=> char count (2537283 chars)
+   took 5.7161ms
+=> plain bitwise (196607)
+   took 5.7395ms
+=> get_flags (JAPANESE+ROMAJI+SPACE+HIRAGANA+KATAKANA+KANA+KANJI+ROMAN+PUNCTUATION+SYMBOL+WORD+FULLWIDTH+SMALL+NUMBER+RARE+RADICAL+LINEBREAK)
+   took 24.8695ms
 ```
 
 ## Debug
@@ -24,14 +36,26 @@ Results of running `cargo --example perf`
 ```
 λ cargo run --example perf
    Compiling kana v0.1.0 (D:\Work\ax-lab\kana)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.47s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.86s
      Running `target\debug\examples\perf.exe`
+
+>> Testing kanjidic.dat...
 => file read (15634322 bytes)
-   took 11.721ms
-=> plain sum (15340356 chars = 3798409398)
-   took 569.611ms
+   took 13.6094ms
+=> char count (15340356 chars)
+   took 561.1783ms
 => plain bitwise (196607)
-   took 564.1717ms
+   took 556.3479ms
 => get_flags (JAPANESE+ROMAJI+SPACE+HIRAGANA+KATAKANA+KANA+KANJI+ROMAN+PUNCTUATION+SYMBOL+WORD+SMALL+NUMBER+LINEBREAK)
-   took 4.2933987s
+   took 4.2392532s
+
+>> Testing japanese.dat...
+=> file read (6747701 bytes)
+   took 11.2286ms
+=> char count (2537283 chars)
+   took 181.451ms
+=> plain bitwise (196607)
+   took 186.1117ms
+=> get_flags (JAPANESE+ROMAJI+SPACE+HIRAGANA+KATAKANA+KANA+KANJI+ROMAN+PUNCTUATION+SYMBOL+WORD+FULLWIDTH+SMALL+NUMBER+RARE+RADICAL+LINEBREAK)
+   took 878.48ms
 ```
