@@ -7,7 +7,7 @@ mod common;
 /// Test that we can read the `testdata` files and that empty lines and
 /// comments are properly ignored.
 #[test]
-fn test_can_read_testdata() {
+fn can_read_testdata() {
 	let lines: Vec<String> = common::read_lines("./testdata/self_check.in")
 		.unwrap()
 		.map(|(x, _)| x)
@@ -17,7 +17,7 @@ fn test_can_read_testdata() {
 
 /// Test that we can read and parse the `testdata` character tables.
 #[test]
-fn test_can_read_chardata() {
+fn can_read_chardata() {
 	let chars: Vec<_> = common::read_chars("./testdata/chars/flags.in")
 		.unwrap()
 		.collect();

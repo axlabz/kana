@@ -4,7 +4,7 @@ use common::{TestChar, TestCharInfo};
 use kana::is_space;
 
 #[test]
-fn test_is_space() {
+fn space() {
 	assert!(!is_space('x'), "`x` is not a space");
 
 	let chars = common::read_chars("./testdata/chars/space.in").unwrap();

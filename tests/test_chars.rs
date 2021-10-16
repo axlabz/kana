@@ -5,9 +5,14 @@ use std::collections::HashSet;
 use common::{TestChar, TestCharInfo};
 use kana::{flag, get_flags, Flags};
 
-/// Main test for character flags.
+/// Test the `flags.in` table containing the expected flags for all mapped
+/// characters.
+///
+/// This does an exact test of all flags per character, and also tests
+/// characters outside the range to make sure they are unmapped (and that
+/// the `flags.in` file is not missing any character).
 #[test]
-fn test_flags() -> Result<(), String> {
+fn all_flags() -> Result<(), String> {
 	// parse the test input
 	let chars = common::read_chars("./testdata/chars/flags.in").unwrap();
 
@@ -135,33 +140,40 @@ fn test_flags() -> Result<(), String> {
 	}
 }
 
+//----------------------------------------------------------------------------//
+// Flag-specific tests
+//----------------------------------------------------------------------------//
+
+// Tests below check that the given characters contain a specific flag. This
+// provides a second redundant test in relation to `flags.in` above.
+
 #[test]
-fn test_fullwidth() {
+fn fullwidth() {
 	check_flags(Check::Contains, "fullwidth.in", flag::FULLWIDTH);
 }
 
 #[test]
-fn test_halfwidth() {
+fn halfwidth() {
 	check_flags(Check::Contains, "halfwidth.in", flag::HALFWIDTH);
 }
 
 #[test]
-fn test_hiragana() {
+fn hiragana() {
 	check_flags(Check::Contains, "hiragana.in", flag::HIRAGANA);
 }
 
 #[test]
-fn test_kana() {
+fn kana() {
 	check_flags(Check::Contains, "kana.in", flag::KANA);
 }
 
 #[test]
-fn test_katakana() {
+fn katakana() {
 	check_flags(Check::Contains, "katakana.in", flag::KATAKANA);
 }
 
 #[test]
-fn test_katakana_halfwidth() {
+fn katakana_halfwidth() {
 	check_flags(
 		Check::Contains,
 		"katakana-halfwidth.in",
@@ -170,17 +182,17 @@ fn test_katakana_halfwidth() {
 }
 
 #[test]
-fn test_linebreak() {
+fn linebreak() {
 	check_flags(Check::Contains, "linebreak.in", flag::LINEBREAK);
 }
 
 #[test]
-fn test_number() {
+fn number() {
 	check_flags(Check::Contains, "number.in", flag::NUMBER);
 }
 
 #[test]
-fn test_punctuation_japanese() {
+fn punctuation_japanese() {
 	check_flags(
 		Check::Contains,
 		"punctuation-japanese.in",
@@ -189,7 +201,7 @@ fn test_punctuation_japanese() {
 }
 
 #[test]
-fn test_punctuation_romaji() {
+fn punctuation_romaji() {
 	check_flags(
 		Check::Contains,
 		"punctuation-romaji.in",
@@ -198,32 +210,32 @@ fn test_punctuation_romaji() {
 }
 
 #[test]
-fn test_rare() {
+fn rare() {
 	check_flags(Check::Contains, "rare.in", flag::RARE);
 }
 
 #[test]
-fn test_romaji() {
+fn romaji() {
 	check_flags(Check::Contains, "romaji.in", flag::ROMAJI);
 }
 
 #[test]
-fn test_roman() {
+fn roman() {
 	check_flags(Check::Contains, "roman.in", flag::ROMAN);
 }
 
 #[test]
-fn test_small() {
+fn small() {
 	check_flags(Check::Contains, "small.in", flag::SMALL);
 }
 
 #[test]
-fn test_space() {
+fn space() {
 	check_flags(Check::Contains, "space.in", flag::SPACE);
 }
 
 #[test]
-fn test_symbol_japanese() {
+fn symbol_japanese() {
 	check_flags(
 		Check::Contains,
 		"symbol-japanese.in",
@@ -232,7 +244,7 @@ fn test_symbol_japanese() {
 }
 
 #[test]
-fn test_symbol_romaji() {
+fn symbol_romaji() {
 	check_flags(
 		Check::Contains,
 		"symbol-romaji.in",
@@ -241,7 +253,7 @@ fn test_symbol_romaji() {
 }
 
 #[test]
-fn test_word() {
+fn word() {
 	check_flags(Check::Contains, "word.in", flag::WORD);
 	check_flags(Check::Contains, "hiragana.in", flag::WORD);
 	check_flags(Check::Contains, "katakana.in", flag::WORD);
@@ -249,6 +261,10 @@ fn test_word() {
 	check_flags(Check::Contains, "katakana-halfwidth.in", flag::WORD);
 	check_flags(Check::Contains, "roman.in", flag::WORD);
 }
+
+//----------------------------------------------------------------------------//
+// Helper code
+//----------------------------------------------------------------------------//
 
 #[allow(dead_code)]
 enum Check {

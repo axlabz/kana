@@ -371,7 +371,7 @@ mod tests {
 	use super::*;
 
 	#[test]
-	fn flags_support_bit_ops() {
+	fn support_bit_ops() {
 		let flag: Flags = flag::HIRAGANA | flag::KATAKANA;
 		assert!(flag & flag::HIRAGANA);
 		assert!(flag & flag::KATAKANA);
@@ -379,7 +379,7 @@ mod tests {
 	}
 
 	#[test]
-	fn flags_and() {
+	fn and() {
 		const FLAG: Flags = flag::HIRAGANA.and(flag::KATAKANA);
 		assert!(FLAG & flag::HIRAGANA);
 		assert!(FLAG & flag::KATAKANA);
@@ -387,7 +387,7 @@ mod tests {
 	}
 
 	#[test]
-	fn flags_are_unique() {
+	fn are_unique() {
 		for i in 0..ALL_FLAGS.len() {
 			for j in i + 1..ALL_FLAGS.len() {
 				let l = ALL_FLAGS[i].0;
@@ -411,7 +411,7 @@ mod tests {
 	}
 
 	#[test]
-	fn flags_should_parse() {
+	fn should_parse() {
 		let mut combined = flag::NONE;
 		for &(flag, name) in ALL_FLAGS.iter() {
 			let parsed: Flags = name.parse().unwrap();
@@ -429,7 +429,7 @@ mod tests {
 	}
 
 	#[test]
-	fn flags_should_parse_display() {
+	fn should_parse_display() {
 		let mut combined = flag::NONE;
 		for &(flag, _) in ALL_FLAGS.iter() {
 			let text = format!("{}", flag);
