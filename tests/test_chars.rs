@@ -262,6 +262,17 @@ fn word() {
 	check_flags(Check::Contains, "roman.in", flag::WORD);
 }
 
+#[test]
+fn word_are_either_romaji_or_japanese() {
+	assert_all(|_, flags| {
+		if flags & flag::WORD {
+			flags & flag::JAPANESE || flags & flag::ROMAJI
+		} else {
+			true
+		}
+	})
+}
+
 //----------------------------------------------------------------------------//
 // Helper code
 //----------------------------------------------------------------------------//
@@ -272,6 +283,8 @@ enum Check {
 	Contains,
 }
 
+/// Test that the given expected flags are equal or contained in all characters
+/// from the testdata character file.
 fn check_flags(kind: Check, file: &'static str, expected: Flags) {
 	let filename = format!("./testdata/chars/{}", file);
 	let chars = common::read_chars(&filename).unwrap();
@@ -335,4 +348,68 @@ fn check_flags(kind: Check, file: &'static str, expected: Flags) {
 	}
 
 	assert!(count > 0, "{}: tested no characters", filename);
+}
+
+/// Check that the given condition is valid for all mapped character.
+fn assert_all<F: Fn(char, Flags) -> bool>(condition: F) {
+	// parse the test input
+	let chars = common::read_chars("./testdata/chars/flags.in").unwrap();
+
+	// process all lines in the input
+	for TestChar { line, info } in chars.into_iter() {
+		match info {
+			TestCharInfo::Flags(_) => {
+				// for this test we ignore expected flags
+			}
+			TestCharInfo::List(chars) => {
+				for char in chars.into_iter() {
+					check_char(&condition, char, line, || String::new());
+				}
+			}
+			TestCharInfo::Single {
+				char,
+				code,
+				description,
+			} => {
+				check_char(&condition, char, line, || {
+					format!("{} - {}", code, description)
+				});
+			}
+			TestCharInfo::Range {
+				start,
+				end,
+				description,
+			} => {
+				for char in start..=end {
+					check_char(&condition, char, line, || format!("{}", description));
+				}
+			}
+		}
+	}
+
+	/// Helper to test a single character expectation.
+	fn check_char<F: Fn(char, Flags) -> bool, Info: Fn() -> String>(
+		condition: &F,
+		char: char,
+		line: usize,
+		info: Info,
+	) {
+		let flags = get_flags(char);
+		if !condition(char, flags) {
+			panic!(
+				"condition failed for U+{:04X} at flags.in:{:03} ({}){}",
+				char as u32,
+				line,
+				flags,
+				{
+					let info = info();
+					if info.len() > 0 {
+						format!("\n      {}", info)
+					} else {
+						info
+					}
+				}
+			);
+		}
+	}
 }
