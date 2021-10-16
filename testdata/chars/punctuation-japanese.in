@@ -2,8 +2,6 @@
 
 // spell-checker: disable
 
-U+30A0	゠	Katakana-Hiragana Double Hyphen
-
 U+309B	゛	Katakana-Hiragana Voiced Sound Mark
 U+309C	゜	Katakana-Hiragana Semi-Voiced Sound Mark
 U+30FC	ー	Katakana-Hiragana Prolonged Sound Mark
@@ -24,7 +22,6 @@ U+FF08	（	Fullwidth Left Parenthesis
 U+FF09	）	Fullwidth Right Parenthesis
 U+FF0C	，	Fullwidth Comma
 U+FF0E	．	Fullwidth Full Stop
-U+FF0F	／	Fullwidth Solidus
 U+FF1A	：	Fullwidth Colon
 U+FF1B	；	Fullwidth Semicolon
 U+FF1F	？	Fullwidth Question Mark

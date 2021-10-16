@@ -279,7 +279,7 @@ impl BitAnd for Flags {
 	type Output = bool;
 
 	fn bitand(self, rhs: Self) -> Self::Output {
-		self.0 & rhs.0 != 0
+		self.0 & rhs.0 == rhs.0
 	}
 }
 
@@ -370,14 +370,18 @@ impl std::fmt::Debug for Flags {
 mod tests {
 	use super::*;
 
+	/// Test that flags support the bitwise OR operator for combining and the
+	/// bitwise AND operator for testing.
 	#[test]
 	fn support_bit_ops() {
 		let flag: Flags = flag::HIRAGANA | flag::KATAKANA;
 		assert!(flag & flag::HIRAGANA);
 		assert!(flag & flag::KATAKANA);
 		assert!(!(flag & flag::JAPANESE));
+		assert!(!(flag & (flag::KATAKANA | flag::JAPANESE)));
 	}
 
+	/// Test the `and()` function for combining flags in `const` values.
 	#[test]
 	fn and() {
 		const FLAG: Flags = flag::HIRAGANA.and(flag::KATAKANA);
@@ -386,6 +390,7 @@ mod tests {
 		assert!(!(FLAG & flag::JAPANESE));
 	}
 
+	/// Make sure that the defined flag constants are unique and don't overlap.
 	#[test]
 	fn are_unique() {
 		for i in 0..ALL_FLAGS.len() {
@@ -410,6 +415,7 @@ mod tests {
 		}
 	}
 
+	/// Check that all flags parse properly.
 	#[test]
 	fn should_parse() {
 		let mut combined = flag::NONE;
@@ -428,6 +434,7 @@ mod tests {
 		assert_eq!(parsed, combined);
 	}
 
+	/// Check that all flags can parse their display representation.
 	#[test]
 	fn should_parse_display() {
 		let mut combined = flag::NONE;

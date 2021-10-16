@@ -2,6 +2,8 @@
 
 // spell-checker: disable
 
+U+30A0	゠	Katakana-Hiragana Double Hyphen
+
 // FULLWIDTH characters
 
 U+FF03	＃	Fullwidth Number Sign
@@ -12,6 +14,7 @@ U+FF07	＇	Fullwidth Apostrophe
 U+FF0A	＊	Fullwidth Asterisk
 U+FF0B	＋	Fullwidth Plus Sign
 U+FF0D	－	Fullwidth Hyphen-Minus
+U+FF0F	／	Fullwidth Solidus
 U+FF1C	＜	Fullwidth Less-Than Sign
 U+FF1D	＝	Fullwidth Equals Sign
 U+FF1E	＞	Fullwidth Greater-Than Sign
@@ -68,7 +71,6 @@ U+3038	〸	Hangzhou Numeral Ten
 U+3039	〹	Hangzhou Numeral Twenty
 U+303A	〺	Hangzhou Numeral Thirty
 U+303B	〻	Vertical Ideographic Iteration Mark
-U+303C	〼	Masu Mark
 U+303D	〽	Part Alternation Mark
 U+303E	〾	Ideographic Variation Indicator
 U+303F	〿	Ideographic Half Fill Space
