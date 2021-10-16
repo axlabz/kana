@@ -4,7 +4,12 @@ use syn::{
 	Ident, LitChar, LitStr, Token, TypePath,
 };
 
-/// List of character mapping expressions used by [`charinfo!`].
+/// Parsed arguments of [`charinfo!`].
+///
+/// The elements in the tuple are:
+/// - type of the character flags;
+/// - vector of character matching expressions;
+/// - optional catch-all character flag.
 pub struct CharMatches(pub TypePath, pub Vec<CharMatch>, pub Option<CharFlag>);
 
 /// Represents a single matching expression from [`charinfo!`].
