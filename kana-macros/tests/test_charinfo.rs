@@ -1,5 +1,6 @@
 use kana_macros::charinfo;
 
+/// Test the simplest case.
 #[test]
 fn simple() {
 	const A: u32 = 1;
@@ -8,6 +9,7 @@ fn simple() {
 	assert_eq!(info('b'), None);
 }
 
+/// Test using inclusive ranges.
 #[test]
 fn range_inclusive() {
 	const UPPER: u32 = 1;
@@ -36,6 +38,7 @@ fn range_inclusive() {
 	assert_eq!(info('9'), Some(DIGIT));
 }
 
+/// Test exclusive ranges.
 #[test]
 fn range_exclusive() {
 	const UPPER: u32 = 1;
@@ -64,6 +67,7 @@ fn range_exclusive() {
 	assert_eq!(info('9'), None);
 }
 
+/// Test multiple flags per character.
 #[test]
 fn multiple_flags() {
 	const A: u32 = 1;
@@ -87,6 +91,7 @@ fn multiple_flags() {
 	assert_eq!(info('3'), Some(A | B | C | D));
 }
 
+/// Test a complex example.
 #[test]
 fn complex() {
 	const ALPHA: u32 = 1 << 0;
@@ -124,6 +129,7 @@ fn complex() {
 	assert_eq!(info('\x08'), Some(EXTRA));
 }
 
+/// Test the complex example but using the string syntax.
 #[test]
 fn complex_strings() {
 	const ALPHA: u32 = 1 << 0;
@@ -161,6 +167,7 @@ fn complex_strings() {
 	assert_eq!(info('\x06'), Some(EXTRA));
 }
 
+/// Test the catch-all rule.
 #[test]
 fn catch_all() {
 	const A: u32 = 1;
@@ -172,4 +179,28 @@ fn catch_all() {
 	assert_eq!(info('a'), A);
 	assert_eq!(info('b'), X);
 	assert_eq!(info('c'), X);
+}
+
+/// Test with chars outside the lookup range.
+#[test]
+fn large_chars() {
+	const A: u32 = 1;
+	const B: u32 = 2;
+
+	let info = charinfo!(u32, '\u{1FFF0}'..'\u{1FFF4}' => A);
+
+	assert_eq!(info('a'), None);
+	assert_eq!(info('\u{1FFF0}'), Some(A));
+	assert_eq!(info('\u{1FFF1}'), Some(A));
+	assert_eq!(info('\u{1FFF2}'), Some(A));
+	assert_eq!(info('\u{1FFF3}'), Some(A));
+	assert_eq!(info('\u{1FFF4}'), None);
+
+	let info = charinfo!(u32, '\u{1FFF0}'..'\u{1FFF4}' => A, 'b' => B);
+
+	assert_eq!(info('a'), None);
+	assert_eq!(info('b'), Some(B));
+	assert_eq!(info('\u{1FFF0}'), Some(A));
+	assert_eq!(info('\u{1FFF3}'), Some(A));
+	assert_eq!(info('\u{1FFF4}'), None);
 }
