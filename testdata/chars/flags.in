@@ -306,6 +306,10 @@ U+FF5D	｝	Fullwidth Right Curly Bracket
 U+FF5F	｟	Fullwidth Left White Parenthesis
 U+FF60	｠	Fullwidth Right White Parenthesis
 
+:= JAPANESE+FULLWIDTH+KANA+PUNCTUATION+WORD+SYMBOL
+
+U+FF0D	－	Fullwidth Hyphen-Minus
+
 := JAPANESE+FULLWIDTH+SYMBOL
 
 U+FF03	＃	Fullwidth Number Sign
@@ -315,7 +319,6 @@ U+FF06	＆	Fullwidth Ampersand
 U+FF07	＇	Fullwidth Apostrophe
 U+FF0A	＊	Fullwidth Asterisk
 U+FF0B	＋	Fullwidth Plus Sign
-U+FF0D	－	Fullwidth Hyphen-Minus
 U+FF0F	／	Fullwidth Solidus
 
 U+FF1C	＜	Fullwidth Less-Than Sign

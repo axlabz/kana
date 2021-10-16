@@ -217,7 +217,8 @@ pub fn get_flags(chr: char) -> Flags {
 
 		// U+30FB ・ Katakana Middle Dot
 		// U+30FC ー Katakana-Hiragana Prolonged Sound Mark
-		'\u{30FB}' | '\u{30FC}' => KANA | flag::PUNCTUATION,
+		// U+FF0D － Fullwidth Hyphen-Minus
+		'\u{30FB}' | '\u{30FC}' | '－' => KANA | flag::PUNCTUATION,
 
 		// U+30FD ヽ Katakana Iteration Mark
 		// U+30FE ヾ Katakana Voiced Iteration Mark
