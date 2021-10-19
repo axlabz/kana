@@ -19,6 +19,11 @@ pub use chars::get_flags;
 mod is;
 pub use is::*;
 
+mod convert;
+pub use convert::*;
+
+pub mod transform;
+
 /// For word characters, returns either [`flag::JAPANESE`] or [`flag::ROMAJI`]
 /// depending on the type of word.
 pub fn word_type(chr: char) -> Option<Flags> {
