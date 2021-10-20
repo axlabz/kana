@@ -1,51 +1,123 @@
 use std::char::{ToLowercase, ToUppercase};
 
-use crate::{Chars, Transform};
+use crate::{Text, Transform};
 
 /// Lower-case the input text.
-pub fn lower() -> impl Transform {
-	Lower { iter: None }
+pub fn lower() -> Lower {
+	Lower {}
 }
 
 /// Upper-case the input text.
-pub fn upper() -> impl Transform {
-	Upper { iter: None }
+pub fn upper() -> Upper {
+	Upper {}
 }
 
-struct Lower {
-	iter: Option<ToLowercase>,
-}
+pub struct Lower {}
 
-impl Transform for Lower {
-	fn push(&mut self, next: char) -> Chars {
-		self.iter = Some(next.to_lowercase());
-		self.drain()
-	}
+impl<I: Iterator<Item = Text>> Transform<I> for Lower {
+	type Output = LowerIter<I>;
 
-	fn drain(&mut self) -> Chars {
-		if let Some(iter) = &mut self.iter {
-			Chars::read_iter(iter)
-		} else {
-			Chars::None
+	fn convert(&self, input: I) -> Self::Output {
+		LowerIter {
+			inner: input,
+			lower: None,
+			after: None,
 		}
 	}
 }
 
-struct Upper {
-	iter: Option<ToUppercase>,
+pub struct Upper {}
+
+impl<I: Iterator<Item = Text>> Transform<I> for Upper {
+	type Output = UpperIter<I>;
+
+	fn convert(&self, input: I) -> Self::Output {
+		UpperIter {
+			inner: input,
+			upper: None,
+			after: None,
+		}
+	}
 }
 
-impl Transform for Upper {
-	fn push(&mut self, next: char) -> Chars {
-		self.iter = Some(next.to_uppercase());
-		self.drain()
-	}
+pub struct LowerIter<I: Iterator<Item = Text>> {
+	inner: I,
+	lower: Option<ToLowercase>,
+	after: Option<&'static str>,
+}
 
-	fn drain(&mut self) -> Chars {
-		if let Some(iter) = &mut self.iter {
-			Chars::read_iter(iter)
-		} else {
-			Chars::None
+impl<I: Iterator<Item = Text>> Iterator for LowerIter<I> {
+	type Item = Text;
+
+	fn next(&mut self) -> Option<Self::Item> {
+		loop {
+			if let Some(lower) = &mut self.lower {
+				if let Some(next) = lower.next() {
+					return Some(Text::Char(next));
+				} else {
+					self.lower = None;
+				}
+			}
+
+			if let Some(str) = self.after {
+				let next = str.chars().next().unwrap();
+				self.lower = Some(next.to_lowercase());
+				let str = &str[next.len_utf8()..];
+				self.after = if str.len() > 0 { Some(str) } else { None };
+			} else {
+				match self.inner.next() {
+					None => {
+						return None;
+					}
+					Some(Text::Char(char)) => {
+						self.lower = Some(char.to_lowercase());
+					}
+					Some(Text::Static(str)) => {
+						self.after = Some(str);
+					}
+				}
+			}
+		}
+	}
+}
+
+pub struct UpperIter<I: Iterator<Item = Text>> {
+	inner: I,
+	upper: Option<ToUppercase>,
+	after: Option<&'static str>,
+}
+
+impl<I: Iterator<Item = Text>> Iterator for UpperIter<I> {
+	type Item = Text;
+
+	fn next(&mut self) -> Option<Self::Item> {
+		loop {
+			if let Some(upper) = &mut self.upper {
+				if let Some(next) = upper.next() {
+					return Some(Text::Char(next));
+				} else {
+					self.upper = None;
+				}
+			}
+
+			if let Some(str) = self.after {
+				let next = str.chars().next().unwrap();
+				self.upper = Some(next.to_uppercase());
+				let str = &str[next.len_utf8()..];
+				self.after = if str.len() > 0 { Some(str) } else { None };
+			} else {
+				match self.inner.next() {
+					None => {
+						return None;
+					}
+					Some(Text::Char(char)) => {
+						self.upper = Some(char.to_uppercase());
+					}
+					Some(Text::Static(str)) => {
+						self.after = Some(str);
+					}
+				}
+			}
 		}
 	}
 }
