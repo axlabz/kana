@@ -2,7 +2,7 @@ use std::{fs::File, io::Read, time::Instant};
 
 use kana::{
 	transform::{self, Chainable},
-	Text, Transform,
+	Transform,
 };
 
 fn convert(filename: &'static str) {
@@ -239,78 +239,99 @@ fn using_convert_lc(input: &str) -> String {
 
 struct KanaConverter {}
 
-struct KanaIter<I: Iterator<Item = Text>> {
+struct KanaIter<I: Iterator<Item = char>> {
 	inner: I,
-	next: Option<char>,
+	ahead: Option<char>,
+	input: Option<char>,
 	is_ji: bool,
 }
 
-impl<I: Iterator<Item = Text>> Transform<I> for KanaConverter {
+impl<I: Iterator<Item = char>> Transform<I> for KanaConverter {
 	type Output = KanaIter<I>;
 
 	fn convert(&self, input: I) -> Self::Output {
 		KanaIter {
 			inner: input,
-			next: None,
+			ahead: None,
+			input: None,
 			is_ji: false,
 		}
 	}
 }
 
-impl<I: Iterator<Item = Text>> KanaIter<I> {
-	fn push_char(&mut self, next: char) -> Option<Text> {
-		if self.is_ji {
-			self.is_ji = false;
-			let output = match next {
-				'ゃ' => Text::Static("ja"),
-				'ょ' => Text::Static("jo"),
-				'ゅ' => Text::Static("ju"),
-				_ => {
-					self.next = Some(next);
-					Text::Static("ji")
-				}
-			};
-			return Some(output);
+impl<I: Iterator<Item = char>> Iterator for KanaIter<I> {
+	type Item = char;
+
+	fn next(&mut self) -> Option<char> {
+		if let Some(char) = self.ahead {
+			self.ahead = None;
+			return Some(char);
+		}
+
+		let next = if let Some(char) = self.input {
+			self.input = None;
+			Some(char)
 		} else {
-			let output = match next {
-				'あ' => Text::Char('a'),
-				'い' => Text::Char('i'),
-				'う' => Text::Char('u'),
-				'え' => Text::Char('e'),
-				'お' => Text::Char('o'),
-				'か' => Text::Static("ka"),
-				'き' => Text::Static("ki"),
-				'く' => Text::Static("ku"),
-				'け' => Text::Static("ke"),
-				'こ' => Text::Static("ko"),
-				'じ' => {
-					self.is_ji = true;
-					return self.next();
+			self.inner.next()
+		};
+		match next {
+			None => None,
+			Some(next) => {
+				if self.is_ji {
+					self.is_ji = false;
+					match next {
+						'ゃ' => {
+							self.ahead = Some('a');
+							return Some('j');
+						}
+						'ょ' => {
+							self.ahead = Some('o');
+							return Some('j');
+						}
+						'ゅ' => {
+							self.ahead = Some('u');
+							return Some('j');
+						}
+						_ => {
+							self.input = Some(next);
+							self.ahead = Some('i');
+							return Some('j');
+						}
+					};
+				} else {
+					match next {
+						'あ' => return Some('a'),
+						'い' => return Some('i'),
+						'う' => return Some('u'),
+						'え' => return Some('e'),
+						'お' => return Some('o'),
+						'か' => {
+							self.ahead = Some('a');
+							return Some('k');
+						}
+						'き' => {
+							self.ahead = Some('i');
+							return Some('k');
+						}
+						'く' => {
+							self.ahead = Some('u');
+							return Some('k');
+						}
+						'け' => {
+							self.ahead = Some('e');
+							return Some('k');
+						}
+						'こ' => {
+							self.ahead = Some('o');
+							return Some('k');
+						}
+						'じ' => {
+							self.is_ji = true;
+							self.next()
+						}
+						_ => Some(next),
+					}
 				}
-				_ => Text::Char(next),
-			};
-			return Some(output);
-		}
-	}
-}
-
-impl<I: Iterator<Item = Text>> Iterator for KanaIter<I> {
-	type Item = Text;
-
-	fn next(&mut self) -> Option<Self::Item> {
-		if let Some(next) = std::mem::take(&mut self.next) {
-			return self.push_char(next);
-		}
-
-		match self.inner.next() {
-			None => {
-				return None;
-			}
-			Some(Text::Static(_)) => {
-				unimplemented!()
-			}
-			Some(Text::Char(next)) => {
-				return self.push_char(next);
 			}
 		}
 	}

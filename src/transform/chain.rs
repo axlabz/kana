@@ -1,12 +1,15 @@
 use std::marker::PhantomData;
 
-use crate::{Text, Transform};
+use crate::Transform;
 
-pub trait Chainable<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> {
+/// Extension method to chain two transforms using [`ChainTransform`].
+pub trait Chainable<I: Iterator<Item = char>, A: Transform<I>, B: Transform<A::Output>> {
+	/// Returns a new transform that applies the `other` transform to the
+	/// output of the current transform.
 	fn chain(self, other: B) -> ChainTransform<I, A, B>;
 }
 
-impl<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> Chainable<I, A, B> for A {
+impl<I: Iterator<Item = char>, A: Transform<I>, B: Transform<A::Output>> Chainable<I, A, B> for A {
 	/// Returns a new transform that applies the given `other` transform to
 	/// the output of the current transform.
 	fn chain(self, other: B) -> ChainTransform<I, A, B> {
@@ -14,13 +17,15 @@ impl<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> Chainab
 	}
 }
 
-pub struct ChainTransform<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> {
+/// Transform that chains two transforms together, applying the second one to
+/// the output of the first.
+pub struct ChainTransform<I: Iterator<Item = char>, A: Transform<I>, B: Transform<A::Output>> {
 	head: A,
 	tail: B,
 	phantom: PhantomData<I>,
 }
 
-impl<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> ChainTransform<I, A, B> {
+impl<I: Iterator<Item = char>, A: Transform<I>, B: Transform<A::Output>> ChainTransform<I, A, B> {
 	fn new(head: A, tail: B) -> Self {
 		Self {
 			head,
@@ -30,7 +35,7 @@ impl<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> ChainTr
 	}
 }
 
-impl<I: Iterator<Item = Text>, A: Transform<I>, B: Transform<A::Output>> Transform<I>
+impl<I: Iterator<Item = char>, A: Transform<I>, B: Transform<A::Output>> Transform<I>
 	for ChainTransform<I, A, B>
 {
 	type Output = B::Output;
