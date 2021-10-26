@@ -8,6 +8,18 @@ use chars::{CharFlag, CharMatches};
 mod ranges;
 use ranges::RangeBuilder;
 
+mod table;
+
+/// Builds a table of string conversions.
+#[proc_macro]
+pub fn table(input: TokenStream) -> TokenStream {
+	let table = parse_macro_input!(input as table::TableSet);
+	println!("{:#?}", table);
+
+	let tokens = quote! {};
+	tokens.into()
+}
+
 /// Receives a list of character matching expressions and returns a closure
 /// function that maps a single `char` to the respective mapping combination.
 ///
