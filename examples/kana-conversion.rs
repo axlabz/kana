@@ -1,9 +1,11 @@
 use std::{fs::File, io::Read, time::Instant};
 
+use automato::transducer;
 use kana::{
 	transform::{self, Chainable},
 	Transform,
 };
+use lazy_static::lazy_static;
 
 fn convert(filename: &'static str) {
 	println!("\n>> Testing {}...", filename);
@@ -76,6 +78,21 @@ fn convert(filename: &'static str) {
 	let elapsed = start.elapsed();
 	println!(
 		"=> kana::convert ({} bytes)\n   took {:?}",
+		output.len(),
+		elapsed
+	);
+
+	if output != expected {
+		panic!("output does not match expected");
+	}
+
+	//----[ Using transducer ]------------------------------------------------//
+
+	let start = Instant::now();
+	let output = using_transducer(&text);
+	let elapsed = start.elapsed();
+	println!(
+		"=> transducer ({} bytes)\n   took {:?}",
 		output.len(),
 		elapsed
 	);
@@ -229,6 +246,10 @@ fn plain_conversion_lc(mut input: &str) -> String {
 	output
 }
 
+//----------------------------------------------------------------------------//
+// Convert
+//----------------------------------------------------------------------------//
+
 fn using_convert(input: &str) -> String {
 	kana::convert(KanaConverter {}, input.chars()).collect()
 }
@@ -337,6 +358,41 @@ impl<I: Iterator<Item = char>> Iterator for KanaIter<I> {
 	}
 }
 
+//----------------------------------------------------------------------------//
+// Transducer
+//----------------------------------------------------------------------------//
+
+lazy_static! {
+	static ref BUILDER: transducer::Builder = {
+		let mut builder = transducer::Builder::new();
+		builder.add("じ", "ji");
+		builder.add("じゃ", "ja");
+		builder.add("じょ", "jo");
+		builder.add("じゅ", "ju");
+		builder.add("あ", "a");
+		builder.add("い", "i");
+		builder.add("う", "u");
+		builder.add("え", "e");
+		builder.add("お", "o");
+		builder.add("か", "ka");
+		builder.add("き", "ki");
+		builder.add("く", "ku");
+		builder.add("け", "ke");
+		builder.add("こ", "ko");
+		builder
+	};
+	static ref TRANSDUCER: transducer::Transducer = BUILDER.compile();
+}
+
+fn using_transducer(input: &str) -> String {
+	TRANSDUCER.parse_str(input)
+}
+
+//----------------------------------------------------------------------------//
+
 fn main() {
+	// initialize
+	TRANSDUCER.parse_str("");
+
 	convert("kanjidic.dat");
 }

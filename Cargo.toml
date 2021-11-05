@@ -10,6 +10,7 @@ edition = "2018"
 [dependencies]
 kana-macros = { path = "kana-macros" }
 lazy_static = "1"
+automato = { git = "https://github.com/ax-lab/automato" }
 
 [dev-dependencies]
 regex = "1"
