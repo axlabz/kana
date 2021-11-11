@@ -1,6 +1,7 @@
 use std::{fs::File, io::Read, time::Instant};
 
 use automato::transducer;
+use automato_macros::transducer;
 use kana::{
 	transform::{self, Chainable},
 	Transform,
@@ -89,10 +90,23 @@ fn convert(filename: &'static str) {
 	//----[ Using transducer ]------------------------------------------------//
 
 	let start = Instant::now();
-	let output = using_transducer(&text);
+	let output = using_transducer_raw(&text);
 	let elapsed = start.elapsed();
 	println!(
-		"=> transducer ({} bytes)\n   took {:?}",
+		"=> transducer raw ({} bytes)\n   took {:?}",
+		output.len(),
+		elapsed
+	);
+
+	if output != expected {
+		panic!("output does not match expected");
+	}
+
+	let start = Instant::now();
+	let output = using_transducer_compiled(&text);
+	let elapsed = start.elapsed();
+	println!(
+		"=> transducer compiled ({} bytes)\n   took {:?}",
 		output.len(),
 		elapsed
 	);
@@ -384,8 +398,29 @@ lazy_static! {
 	static ref TRANSDUCER: transducer::Transducer = BUILDER.compile();
 }
 
-fn using_transducer(input: &str) -> String {
+fn using_transducer_raw(input: &str) -> String {
 	TRANSDUCER.parse_str(input)
+}
+
+fn using_transducer_compiled(input: &str) -> String {
+	transducer!(kana:
+		"じ" => "ji",
+		"じゃ" => "ja",
+		"じょ" => "jo",
+		"じゅ" => "ju",
+		"あ" => "a",
+		"い" => "i",
+		"う" => "u",
+		"え" => "e",
+		"お" => "o",
+		"か" => "ka",
+		"き" => "ki",
+		"く" => "ku",
+		"け" => "ke",
+		"こ" => "ko",
+	);
+
+	kana::new(input.chars()).collect()
 }
 
 //----------------------------------------------------------------------------//

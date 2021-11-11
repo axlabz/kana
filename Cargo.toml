@@ -14,3 +14,5 @@ automato = { git = "https://github.com/ax-lab/automato" }
 
 [dev-dependencies]
 regex = "1"
+automato = { git = "https://github.com/ax-lab/automato" }
+automato-macros = { git = "https://github.com/ax-lab/automato" }
